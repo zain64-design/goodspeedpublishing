@@ -6,7 +6,11 @@
 }
 
 @layer base {}
-@layer components {}
+@layer components {
+  .btn-primary {
+    @apply bg-(--btn-primary) font-medium text-(--btn-primary-text) capitalize rounded-3xl border-2 border-primary transition duration-500 ease-in-out hover:bg-white p-2 [&>span]:contents;
+  }
+}
 @layer utilities {}
 
 @theme inline {
@@ -15,6 +19,9 @@
   --font-poppins: var(--font-poppins-sans), Arial, Helvetica, sans-serif;
   --color-primary: #C2F15E;
   --color-secondary: #8340EE;
+
+  --btn-primary: #C5E84A;
+  --btn-primary-text: #0B0B0E;
 }
 
 /* @media (prefers-color-scheme: dark) {
