@@ -4,8 +4,22 @@
   --background: #ebebeb;
   --foreground: #232323;
 }
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #232323;
+    --foreground: #ebebeb;
+  }
+} */
+@custom-variant dark (&:where(.dark, .dark *));
+body {
+  @apply overflow-x-hidden scroll-smooth bg-background text-foreground font-poppins;
+}
 
-@layer base {}
+@layer base {
+    h1, h2, h3, h4, h5, h6 {
+    text-wrap-style: balance;
+  }
+}
 @layer components {
   .btn-primary {
     @apply bg-primary-btn w-full font-medium text-primary-btn-text capitalize rounded-2xl border-2 border-primary-btn transition duration-500 ease-in-out hover:bg-white p-2 [&>span]:contents;
@@ -13,6 +27,12 @@
   .btn-secondary {
     @apply bg-secondary-btn w-full font-medium text-white capitalize rounded-2xl border-2 border-secondary-btn transition duration-500 ease-in-out hover:bg-white hover:text-secondary-btn p-2 [&>span]:contents;
   }
+  /* .ct-right-border {
+    @apply relative;
+    &::after {
+      @apply content-[''] absolute top-0 right-0 bottom-0 h-full w-px bg-grey-bg-50;
+    }
+  } */
 }
 @layer utilities {}
 
@@ -37,18 +57,10 @@
 
   --color-primary-btn: #C5E84A;
   --color-secondary-btn: #7C3AED;
-  --text-primary-btn-text: #0B0B0E;
+  --color-primary-btn-text: #0B0B0E;
 
-  --text-grey-50:#D5D5D5;
-}
+  --color-grey-bg-50: rgba(255, 255, 255, 0.15);
 
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #232323;
-    --foreground: #ebebeb;
-  }
-} */
-@custom-variant dark (&:where(.dark, .dark *));
-body {
-  @apply overflow-x-hidden scroll-smooth bg-background text-foreground font-poppins;
+  --color-grey-text-50:#D5D5D5;
+  --color-grey-text-100:#8E8E8E;
 }
