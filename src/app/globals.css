@@ -8,20 +8,38 @@
 @layer base {}
 @layer components {
   .btn-primary {
-    @apply bg-(--btn-primary) font-medium text-(--btn-primary-text) capitalize rounded-3xl border-2 border-primary transition duration-500 ease-in-out hover:bg-white p-2 [&>span]:contents;
+    @apply bg-primary-btn w-full font-medium text-primary-btn-text capitalize rounded-2xl border-2 border-primary-btn transition duration-500 ease-in-out hover:bg-white p-2 [&>span]:contents;
+  }
+  .btn-secondary {
+    @apply bg-secondary-btn w-full font-medium text-white capitalize rounded-2xl border-2 border-secondary-btn transition duration-500 ease-in-out hover:bg-white hover:text-secondary-btn p-2 [&>span]:contents;
   }
 }
 @layer utilities {}
 
 @theme inline {
+    /* --breakpoint-*: initial; */
+  --breakpoint-xs: 280px;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --breakpoint-2xl: 1400px;
+  --breakpoint-4xl: 1600px;
+  --breakpoint-6xl: 1820px;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
   --font-poppins: var(--font-poppins-sans), Arial, Helvetica, sans-serif;
+
   --color-primary: #C2F15E;
   --color-secondary: #8340EE;
+  --color-mid: #232323;
 
-  --btn-primary: #C5E84A;
-  --btn-primary-text: #0B0B0E;
+  --color-primary-btn: #C5E84A;
+  --color-secondary-btn: #7C3AED;
+  --text-primary-btn-text: #0B0B0E;
+
+  --text-grey-50:#D5D5D5;
 }
 
 /* @media (prefers-color-scheme: dark) {

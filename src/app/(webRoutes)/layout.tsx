@@ -6,7 +6,7 @@ import Footer from "@/app/_components/webComp/common/footer/Footer";
 
 const poppins = Poppins({
   variable: "--font-poppins-sans",
-  weight: ['400', '500', '600', '700', '800'],
+  weight: ['300', '400', '500', '600', '700', '800'],
   subsets: ["latin"],
   display: "swap",
 });
@@ -16,19 +16,12 @@ export const metadata: Metadata = {
   description: "Home Web Page for GoodSpeed Publishing",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({children,}:Readonly<{children: React.ReactNode;}>) {
   return (
-    <html
-      lang="en"
-      className={`${poppins.variable} h-full antialiased`}
-    >
+    <html lang="en" className={`${poppins.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
         <Header/>
-        <main>{children}</main>
+        <main className="">{children}</main>
         <Footer/>
       </body>
     </html>
