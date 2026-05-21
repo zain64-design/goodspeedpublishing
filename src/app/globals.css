@@ -22,17 +22,56 @@ body {
 }
 @layer components {
   .btn-primary {
-    @apply bg-primary-btn w-full font-medium text-primary-btn-text capitalize rounded-2xl border-2 border-primary-btn transition duration-500 ease-in-out hover:bg-white p-2 [&>span]:contents;
+    @apply overflow-hidden bg-primary-btn w-full font-medium text-primary-btn-text capitalize rounded-2xl border-2 border-primary-btn transition duration-500 ease-in-out p-2 [&>span]:contents;
+    transform: perspective(1px) translateZ(0);
+    &::before {
+    @apply content-[''] absolute inset-0 -z-10 bg-white scale-x-0 transition-transform duration-500 ease-out;
+    transform-origin: 100% 50%;
+  }
+    &:hover, &:focus, &:active {
+    @apply text-primary-btn-text;
+
+    &::before {
+      @apply scale-x-100;
+      transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+    }
+  }
   }
   .btn-secondary {
-    @apply bg-secondary-btn w-full font-medium text-white capitalize rounded-2xl border-2 border-secondary-btn transition duration-500 ease-in-out hover:bg-white hover:text-secondary-btn p-2 [&>span]:contents;
+    @apply overflow-hidden bg-secondary-btn w-full font-medium text-white capitalize rounded-2xl border-2 border-secondary-btn transition duration-500 ease-in-out p-2 [&>span]:contents;
+    transform: perspective(1px) translateZ(0);
+    &::before {
+    @apply content-[''] absolute inset-0 -z-10 bg-white scale-x-0 transition-transform duration-500 ease-out;
+    transform-origin: 0 50%;
   }
-  /* .ct-right-border {
-    @apply relative;
-    &::after {
-      @apply content-[''] absolute top-0 right-0 bottom-0 h-full w-px bg-grey-bg-50;
+    &:hover, &:focus, &:active {
+    @apply text-primary-btn-text;
+
+    &::before {
+      @apply scale-x-100;
+      transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
     }
-  } */
+  }
+  }
+    .btn-mid {
+    @apply overflow-hidden bg-mid-50 w-full font-medium text-white capitalize rounded-2xl border-2 border-mid-50 transition duration-500 ease-in-out p-2 [&>span]:contents;
+    transform: perspective(1px) translateZ(0);
+    &::before {
+    @apply content-[''] absolute inset-0 -z-10 bg-white scale-x-0 transition-transform duration-500 ease-out;
+    transform-origin: 0 50%;
+  }
+    &:hover, &:focus, &:active {
+    @apply text-mid-50;
+
+    &::before {
+      @apply scale-x-100;
+      transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+    }
+  }
+  }
+  .bs-transition {
+    @apply transition duration-500 ease-in-out; 
+  }
 }
 @layer utilities {}
 
@@ -51,16 +90,33 @@ body {
 
   --font-poppins: var(--font-poppins-sans), Arial, Helvetica, sans-serif;
 
+  /* global color start */
   --color-primary: #C2F15E;
+  --color-primary-50: #C5E84A;
   --color-secondary: #8340EE;
   --color-mid: #232323;
+  --color-mid-50: #0B0B0E;
 
+  /* specific border color start */
+  --color-grey-50: rgba(255, 255, 255, 0.15);
+  --color-grey-100: #D4D4D4;
+
+  /* specific button bg start */
   --color-primary-btn: #C5E84A;
   --color-secondary-btn: #7C3AED;
+
+  /* specific button text start */
   --color-primary-btn-text: #0B0B0E;
 
-  --color-grey-bg-50: rgba(255, 255, 255, 0.15);
-
+/* specific text color start */
   --color-grey-text-50:#D5D5D5;
   --color-grey-text-100:#8E8E8E;
+  --color-grey-text-200:#737373;
+
+  --color-black-text-50: rgba(11, 11, 14, 0.75);
+  --color-black-text-100: #0B0B0E;
+
+  /* specific box-shadow */
+  --shadow-light-shadow: 0 29.26px 36.575px -7.315px rgba(0, 0, 0, 0.10), 
+                 0 11.704px 14.63px -8.778px rgba(0, 0, 0, 0.10);
 }
