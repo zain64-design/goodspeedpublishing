@@ -3,68 +3,8 @@ import Text from "@/app/_components/ui/Text"
 import logoLight from "@public/images/logo-light.webp"
 import logoFooter from "@public/images/logo-footer.webp"
 import Links from "./Links"
-import { HiOutlinePhone } from "react-icons/hi";
-import { HiOutlineEnvelope } from "react-icons/hi2";
-import { GrLocation } from "react-icons/gr";
-
-const navigation = [
-        {
-            id: 1,
-            title: "Book Writing",
-            href: "/"
-        },
-        {
-            id: 2,
-            title: "Book Editing",
-            href: "/"
-        },
-        {
-            id: 3,
-            title: "Book Marketing",
-            href: "/"
-        },
-        {
-            id: 4,
-            title: "Book Publishing",
-            href: "/"
-        },
-        {
-            id: 5,
-            title: "Audio Books",
-            href: "/"
-        },
-        {
-            id: 6,
-            title: "About",
-            href: "/"
-        },
-        {
-            id: 7,
-            title: "Schedule a Call",
-            href: "/"
-        }
-    ]
-
-        const contactInfo = [
-        {
-            id: 1,
-            brandInfo: "+1(646)-389-2410",
-            href: "tel:+16463892410",
-            icon: <HiOutlinePhone />
-        },
-        {
-            id: 2,
-            brandInfo: "info@goodspeedpublishing.com",
-            href: "mailto:info@goodspeedpublishing.com",
-            icon: <HiOutlineEnvelope />
-        },
-        {
-            id: 3,
-            brandInfo: "276 5th Avenue New York, NY 10001",
-            href: "void:;",
-            icon: <GrLocation />
-        }
-    ]
+import { navigation } from "@/app/_components/webComp/common/footer/navigationData"
+import { contactInfo } from "@/app/_components/webComp/common/footer/contactData"
 
 export default function Footer() {
   return (

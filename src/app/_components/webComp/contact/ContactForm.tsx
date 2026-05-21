@@ -1,6 +1,6 @@
 import CustomInput from "@/app/_components/ui/CustomInput"
-import CustomTextarea from "../../ui/CustomTextarea"
-import CustomBtn from "../../ui/CustomBtn"
+import CustomTextarea from "@/app/_components/ui/CustomTextarea"
+import CustomBtn from "@/app/_components/ui/CustomBtn"
 
 type Props = {}
 

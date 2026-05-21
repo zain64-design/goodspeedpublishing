@@ -1,0 +1,26 @@
+import BrandLogo from '@/app/_components/webComp/brands/BrandLogo';
+import logo1 from "@public/images/brands/brand1.webp"
+import logo2 from "@public/images/brands/brand2.webp"
+import logo3 from "@public/images/brands/brand3.webp"
+import logo4 from "@public/images/brands/brand4.webp"
+import logo5 from "@public/images/brands/brand5.webp"
+import logo6 from "@public/images/brands/brand6.webp"
+import logo7 from "@public/images/brands/brand7.webp"
+
+const logos = [
+  { id: 1, name: 'BookRix', src: logo1 },
+  { id: 2, name: 'Apple Books', src: logo2 },
+  { id: 3, name: 'BAM!', src: logo3 },
+  { id: 4, name: 'Lulu', src: logo4 },
+  { id: 5, name: 'Scribd', src: logo5 },
+  { id: 6, name: 'Google', src: logo6 },
+  { id: 7, name: 'Amazon', src: logo7 },
+]
+
+export default function Brands() {
+  return (
+    <section className="w-full mx-auto my-8 md:my-10">
+        <BrandLogo logos={logos}/>
+    </section>
+  )
+}

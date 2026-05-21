@@ -19,6 +19,10 @@ body {
     h1, h2, h3, h4, h5, h6 {
     text-wrap-style: balance;
   }
+  /* @supports (container-type:scroll-state) {
+    header {container-type: scroll-state}
+  @container scroll-state(stuck: top) { .logo {}}
+  } */
 }
 @layer components {
   .btn-primary {

@@ -5,7 +5,7 @@ type ContactItem = {
     id: number,
     brandInfo?: string,
     href: string,
-    icon?: React.ReactNode
+    icon?: React.ElementType
 }
 
 type Props = {

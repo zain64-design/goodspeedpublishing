@@ -1,3 +1,4 @@
+import React from 'react'
 import Text from '@/app/_components/ui/Text'
 import Link from 'next/link'
 import { twMerge } from 'tailwind-merge'
@@ -7,7 +8,7 @@ type LinkItem = {
     title?: string,
     brandInfo?: string,
     href: string,
-    icon?: React.ReactNode
+    icon?: React.ElementType
 }
 
 type Props = {
@@ -28,7 +29,7 @@ export default function Links({ links, info, className, itemClassName, linkClass
                     return (
                         <Text as="li" key={id} className={twMerge(itemClassName)}>
                             <Link href={href} className={twMerge(linkClassName)}>
-                                {icon && <Text as="span" className={twMerge(iconClassName)}>{icon}</Text>}{title ?? brandInfo}
+                                {icon && <Text as="span" className={twMerge(iconClassName)}>{React.createElement(icon)}</Text>}{title ?? brandInfo}
                             </Link>
                         </Text>
                     )
