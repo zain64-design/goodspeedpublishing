@@ -23,19 +23,17 @@ type Props = {
 export default function Links({ links, info, className, itemClassName, linkClassName, iconClassName }: Props) {
     const data = links ?? info ?? []
     return (
-        <>
-            <Text as="ul" className={twMerge(className)}>
-                {data.map(({ id, title, href, brandInfo, icon }) => {
-                    return (
-                        <Text as="li" key={id} className={twMerge(itemClassName)}>
-                            <Link href={href} className={twMerge(linkClassName)}>
-                                {icon && <Text as="span" className={twMerge(iconClassName)}>{React.createElement(icon)}</Text>}{title ?? brandInfo}
-                            </Link>
-                        </Text>
-                    )
-                })}
-            </Text>
-        </>
+        <Text as="ul" className={twMerge(className)}>
+            {data.map(({ id, title, href, brandInfo, icon }) => {
+                return (
+                    <Text as="li" key={id} className={twMerge(itemClassName)}>
+                        <Link href={href} className={twMerge(linkClassName)}>
+                            {icon && <Text as="span" className={twMerge(iconClassName)}>{React.createElement(icon)}</Text>}{title ?? brandInfo}
+                        </Link>
+                    </Text>
+                )
+            })}
+        </Text>
 
     )
 }

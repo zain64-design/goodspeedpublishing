@@ -6,8 +6,7 @@ type Props = {}
 
 export default function ContactForm({ }: Props) {
   return (
-    <>
-      <form action="" className="w-full bg-white p-4 sm:p-6 md:p-8 lg:p-10 xl:pt-12 xl:pb-5 xl:px-10 2xl:pt-17 2xl:pb-7.5 2xl:px-14.5 rounded-[25px] md:rounded-[42px] shadow-light-shadow">
+    <form action="" className="w-full bg-white p-4 sm:p-6 md:p-8 lg:p-10 xl:pt-12 xl:pb-5 xl:px-10 2xl:pt-17 2xl:pb-7.5 2xl:px-14.5 rounded-[25px] md:rounded-[42px] shadow-light-shadow">
         <div className="flex flex-row flex-wrap gap-x-7.25 gap-y-2 sm:gap-y-6 md:gap-y-10">
           <CustomInput
             label="name"
@@ -51,6 +50,5 @@ export default function ContactForm({ }: Props) {
           <CustomBtn type="submit" buttonClass="btn-mid rounded-2xl mt-4! md:mt-0! xl:rounded-[24px] inline-flex items-center h-[50px] xl:h-[70px] 2xl:h-[93px] max-w-full flex-row-reverse justify-center gap-[11px] text-base md:text-lg 2xl:text-[23px]" label="Send Message"/>
         </div>
       </form>
-    </>
   )
 }
