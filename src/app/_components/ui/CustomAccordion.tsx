@@ -1,13 +1,16 @@
 'use client'
-import React from 'react'
 import { Accordion, AccordionTab } from 'primereact/accordion'
+import { LuPlus, LuMinus } from "react-icons/lu";
 import { CgChevronDown } from "react-icons/cg"
 
-export default function FaqAccordion() {
-    return (
-        <Accordion
+type Props = {}
+
+export default function CustomAccordion({}: Props) {
+  return (
+    <>
+            <Accordion
             activeIndex={0}
-            className="accord-ct-border mt-[32px]"
+            className="accord-ct mt-[32px]"
             expandIcon={<CgChevronDown className="text-(--text-black) text-2xl" />}
             collapseIcon={<CgChevronDown className="text-(--text-black) text-2xl" />}
         >
@@ -37,5 +40,6 @@ export default function FaqAccordion() {
                 </p>
             </AccordionTab>
         </Accordion>
-    )
+    </>
+  )
 }

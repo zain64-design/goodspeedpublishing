@@ -57,7 +57,7 @@ body {
     }
   }
   }
-    .btn-mid {
+  .btn-mid {
     @apply overflow-hidden bg-mid-50 w-full font-medium text-white capitalize rounded-2xl border-2 border-mid-50 transition duration-500 ease-in-out p-2 [&>span]:contents;
     transform: perspective(1px) translateZ(0);
     &::before {
@@ -76,6 +76,27 @@ body {
   .bs-transition {
     @apply transition duration-500 ease-in-out; 
   }
+  /* .accord-ct .p-accordion-tab { @apply mb-3 border border-white-50 rounded-2xl overflow-hidden bg-white-50; }
+  .accord-ct .p-accordion-header-link {
+    @apply bg-white-50 text-black-text-100 border-0 rounded-none px-5 py-4 font-medium text-sm md:text-base flex items-center justify-between;
+  }
+  .accord-ct .p-accordion-tab.p-accordion-tab-active .p-accordion-header-link, .accord-ct .p-accordion-tab.p-accordion-tab-active .accord-ct-content {
+    @apply bg-white;
+  }
+  .accord-ct-content { @apply bg-white-50 border-0 text-grey-text-300 px-5 py-4 text-sm; } */
+
+   .accord-ct .p-accordion-tab {
+  @apply border border-white-50 rounded-3xl overflow-hidden mb-4;
+ }
+ .accord-ct-icon .p-accordion-header-link {
+  @apply flex-row-reverse border-0 bg-white-50 p-3 h-[66px]; 
+}
+ .accord-ct-icon .p-accordion-header-text {
+  @apply text-lg text-(--text-black-200)
+ }
+.accord-ct-content .p-accordion-content {
+  @apply border-white-50 border-0 p-[0_15px_15px];
+}
 }
 @layer utilities {}
 
@@ -102,6 +123,7 @@ body {
   --color-secondary: #8340EE;
   --color-mid: #232323;
   --color-mid-50: #0B0B0E;
+  --color-white-50: #f7f7f7;
 
   /* specific border color start */
   --color-grey-50: rgba(255, 255, 255, 0.15);
@@ -118,6 +140,7 @@ body {
   --color-grey-text-50:#D5D5D5;
   --color-grey-text-100:#8E8E8E;
   --color-grey-text-200:#737373;
+  --color-grey-text-300:#525252;
 
   --color-black-text-50: rgba(11, 11, 14, 0.75);
   --color-black-text-100: #0B0B0E;
