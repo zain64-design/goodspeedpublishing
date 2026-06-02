@@ -8,12 +8,13 @@ type ImageProps = {
     className?: string, 
     placeholder?: "blur" | "empty", 
     blurDataURL?: string,
-    priority?: boolean,
     loading?: "eager" | "lazy"
+    fetchPriority?: "high" | "low" | "auto"
+    preload?: boolean
 }
 
-export default function ImageComp({ src, width, height, alt, className, placeholder, blurDataURL, priority = false, loading  }: ImageProps) {
+export default function ImageComp({ src, width, height, alt, className, placeholder, blurDataURL, loading = "lazy", fetchPriority = "auto", preload = false  }: ImageProps) {
     return (
-        <Image src={src} width={width} height={height} alt={alt} className={className} placeholder={placeholder} blurDataURL={blurDataURL} priority={priority} loading={loading} />
+        <Image src={src} width={width} height={height} alt={alt} className={className} placeholder={placeholder} blurDataURL={blurDataURL} loading={loading} fetchPriority={fetchPriority} preload={preload} />
     )
 }

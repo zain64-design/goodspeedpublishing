@@ -10,7 +10,7 @@ export default function Footer() {
   return (
     <footer className="bg-mid mt-10 md:mt-30 pt-10 md:pt-15 xl:pt-20 2xl:pt-31.5">
       <div className="max-w-300 mx-auto px-4 lg:px-6">
-        <ImageComp src={logoLight} width={608} height={77} className="max-w-60 md:max-w-80 lg:max-w-100 xl:max-w-130 2xl:max-w-152 w-full object-contain" alt="footer-logo" loading="eager" priority />
+        <ImageComp src={logoLight} width={608} height={77} className="max-w-60 md:max-w-80 lg:max-w-100 xl:max-w-130 2xl:max-w-152 w-full object-contain" alt="footer-logo"/>
         <div className="flex flex-row flex-wrap justify-between gap-2 text-white mt-8 mb-8 lg:mb-25 lg:mt-15">
           <div className="w-full lg:w-90 xl:w-105.5">
             <Text as="h5" className="text-2xl md:text-[24px] xl:text-[28px] capitalize font-bold mb-4 lg:mb-9">About Us</Text>
