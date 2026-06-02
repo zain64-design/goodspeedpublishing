@@ -11,8 +11,8 @@ export default function CustomAccordion({}: Props) {
             <Accordion
             activeIndex={0}
             className="accord-ct mt-[32px]"
-            expandIcon={<CgChevronDown className="text-(--text-black) text-2xl" />}
-            collapseIcon={<CgChevronDown className="text-(--text-black) text-2xl" />}
+            expandIcon={<LuPlus className="text-(--text-black) text-2xl" />}
+            collapseIcon={<LuMinus className="text-(--text-black) text-2xl" />}
         >
             <AccordionTab header="Lorem ipsum dolor sit amet" contentClassName='accord-ct-content' headerClassName='accord-ct-icon'>
                 <p className="m-0">

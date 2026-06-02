@@ -76,27 +76,29 @@ body {
   .bs-transition {
     @apply transition duration-500 ease-in-out; 
   }
-  /* .accord-ct .p-accordion-tab { @apply mb-3 border border-white-50 rounded-2xl overflow-hidden bg-white-50; }
-  .accord-ct .p-accordion-header-link {
-    @apply bg-white-50 text-black-text-100 border-0 rounded-none px-5 py-4 font-medium text-sm md:text-base flex items-center justify-between;
-  }
-  .accord-ct .p-accordion-tab.p-accordion-tab-active .p-accordion-header-link, .accord-ct .p-accordion-tab.p-accordion-tab-active .accord-ct-content {
-    @apply bg-white;
-  }
-  .accord-ct-content { @apply bg-white-50 border-0 text-grey-text-300 px-5 py-4 text-sm; } */
+  .accord-ct-content { @apply border-0 text-grey-text-300 text-lg; }
 
    .accord-ct .p-accordion-tab {
   @apply border border-white-50 rounded-3xl overflow-hidden mb-4;
  }
- .accord-ct-icon .p-accordion-header-link {
+ /* .accord-ct-icon .p-accordion-header-link {
   @apply flex-row-reverse border-0 bg-white-50 p-3 h-[66px]; 
-}
- .accord-ct-icon .p-accordion-header-text {
-  @apply text-lg text-(--text-black-200)
- }
+} */
 .accord-ct-content .p-accordion-content {
-  @apply border-white-50 border-0 p-[0_15px_15px];
+  @apply border-white-50 border-0 px-7.5;
 }
+  .accord-ct .p-accordion-header-link {
+    @apply bg-white-50 border-0 rounded-none px-7.5 py-7 font-medium text-sm md:text-base flex flex-row-reverse items-center;
+  }
+   .accord-ct-icon .p-accordion-header-text {
+  @apply text-[23px] text-(--text-black-200) font-medium;
+ }
+    .accord-ct .p-accordion-tab .p-accordion-header-link, .accord-ct .p-accordion-tab .accord-ct-content {
+    @apply bg-white-50;
+  }
+  .accord-ct .p-accordion-tab.p-accordion-tab-active .p-accordion-header-link, .accord-ct .p-accordion-tab.p-accordion-tab-active .accord-ct-content {
+    @apply bg-white;
+  }
 }
 @layer utilities {}
 
