@@ -2,10 +2,7 @@ import ContactInfo from '@/app/_components/webComp/contact/ContactInfo'
 import ContactForm from '@/app/_components/webComp/contact/ContactForm';
 import { contactInfo } from "@/app/_components/webComp/common/footer/contactData"
 
-type Props = {}
-
-
-export default function Contact({ }: Props) {
+export default function Contact() {
     return (
         <section className="md:container mx-auto px-4">
             <div className="overflow-hidden bg-primary-50 bg-no-repeat bg-top-left bg-size-[491px,280px] bg-[url('/images/contact-box-elem.webp')] rounded-[30px] md:rounded-[62px] p-3.5 sm:p-5 lg:p-8 xl:p-10 2xl:p-15 flex flex-row flex-wrap items-center justify-between gap-6">

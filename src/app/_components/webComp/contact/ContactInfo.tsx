@@ -1,15 +1,9 @@
 import Text from '@/app/_components/ui/Text'
 import Links from '@/app/_components/webComp/common/footer/Links'
-
-type ContactItem = {
-    id: number,
-    brandInfo?: string,
-    href: string,
-    icon?: React.ElementType
-}
+import type {LinkItem} from '@/app/_types'
 
 type Props = {
-    contactInfo: ContactItem[]
+    contactInfo: LinkItem[]
 }
 
 export default function ContactInfo({contactInfo}: Props) {

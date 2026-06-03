@@ -15,6 +15,13 @@ const logos = [
   { id: 5, name: 'Scribd', src: logo5 },
   { id: 6, name: 'Google', src: logo6 },
   { id: 7, name: 'Amazon', src: logo7 },
+  { id: 8, name: 'BookRix', src: logo1 },
+  { id: 9, name: 'Apple Books', src: logo2 },
+  { id: 10, name: 'BAM!', src: logo3 },
+  { id: 11, name: 'Lulu', src: logo4 },
+  { id: 12, name: 'Scribd', src: logo5 },
+  { id: 13, name: 'Google', src: logo6 },
+  { id: 14, name: 'Amazon', src: logo7 },
 ]
 
 export default function Brands() {

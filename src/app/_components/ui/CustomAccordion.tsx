@@ -1,7 +1,8 @@
 'use client'
 import { Accordion, AccordionTab } from 'primereact/accordion'
 import { LuPlus, LuMinus } from "react-icons/lu";
-import { CgChevronDown } from "react-icons/cg"
+import Text from './Text';
+
 
 type Props = {}
 
@@ -10,9 +11,9 @@ export default function CustomAccordion({}: Props) {
     <>
             <Accordion
             activeIndex={0}
-            className="accord-ct mt-[32px]"
-            expandIcon={<LuPlus className="text-(--text-black) text-2xl" />}
-            collapseIcon={<LuMinus className="text-(--text-black) text-2xl" />}
+            className="accord-ct mt-8"
+            expandIcon={<Text as="span" className="icon-rounded icon-plus"><LuPlus /></Text>}
+            collapseIcon={<Text as="span" className="icon-rounded icon-minus"><LuMinus /></Text>}
         >
             <AccordionTab header="Lorem ipsum dolor sit amet" contentClassName='accord-ct-content' headerClassName='accord-ct-icon'>
                 <p className="m-0">

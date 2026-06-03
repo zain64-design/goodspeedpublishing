@@ -76,22 +76,21 @@ body {
   .bs-transition {
     @apply transition duration-500 ease-in-out; 
   }
-  .accord-ct-content { @apply border-0 text-grey-text-300 text-lg; }
 
    .accord-ct .p-accordion-tab {
-  @apply border border-white-50 rounded-3xl overflow-hidden mb-4;
+  @apply border border-white-50 rounded-[22px] overflow-hidden mb-[15px];
  }
- /* .accord-ct-icon .p-accordion-header-link {
-  @apply flex-row-reverse border-0 bg-white-50 p-3 h-[66px]; 
-} */
-.accord-ct-content .p-accordion-content {
-  @apply border-white-50 border-0 px-7.5;
-}
-  .accord-ct .p-accordion-header-link {
-    @apply bg-white-50 border-0 rounded-none px-7.5 py-7 font-medium text-sm md:text-base flex flex-row-reverse items-center;
+   .accord-ct .p-accordion-tab.p-accordion-tab-active {
+    @apply shadow-accordion-shadow;
   }
-   .accord-ct-icon .p-accordion-header-text {
-  @apply text-[23px] text-(--text-black-200) font-medium;
+  .accord-ct .p-accordion-tab .accord-ct-icon .p-accordion-header-link {
+    @apply bg-white-50 border-0 rounded-none px-4.5 py-3 md:px-5.5 md:py-4 lg:px-7.5 lg:py-6 flex-row-reverse gap-x-3;
+  }
+   .accord-ct .p-accordion-tab .accord-ct-icon .p-accordion-header-link .p-accordion-header-text {
+  @apply text-sm sm:text-base md:text-lg lg:text-[23px] !leading-[20px] md:!leading-[26px] lg:!leading-[32px] text-(--text-black-200) font-medium;
+ }
+    .accord-ct .p-accordion-tab.p-accordion-tab-active .accord-ct-icon .p-accordion-header-link .p-accordion-header-text {
+  @apply font-semibold;
  }
     .accord-ct .p-accordion-tab .p-accordion-header-link, .accord-ct .p-accordion-tab .accord-ct-content {
     @apply bg-white-50;
@@ -99,6 +98,15 @@ body {
   .accord-ct .p-accordion-tab.p-accordion-tab-active .p-accordion-header-link, .accord-ct .p-accordion-tab.p-accordion-tab-active .accord-ct-content {
     @apply bg-white;
   }
+
+  .accord-ct .accord-ct-content .p-accordion-content { @apply border-white-50 pt-0 px-4.5 py-3 md:px-5.5 md:py-4 lg:px-7.5 lg:py-6 text-grey-text-300 text-xs sm:text-sm md:text-base lg:text-lg font-normal;}
+    .accord-ct .p-accordion-tab .accord-ct-icon .icon-rounded {
+    @apply text-[20px] inline-flex items-center justify-center rounded-full transition min-w-7 h-7 md:min-w-9 md:h-9 duration-300 ease-in-out text-mid-50 bg-primary-50;
+  }
+  .accord-ct .p-accordion-tab.p-accordion-tab-active .accord-ct-icon .icon-rounded {
+    @apply bg-secondary text-white rotate-180;
+  }
+
 }
 @layer utilities {}
 
@@ -126,6 +134,7 @@ body {
   --color-mid: #232323;
   --color-mid-50: #0B0B0E;
   --color-white-50: #f7f7f7;
+    --color-white-100: #FEFCFD;
 
   /* specific border color start */
   --color-grey-50: rgba(255, 255, 255, 0.15);
@@ -148,6 +157,7 @@ body {
   --color-black-text-100: #0B0B0E;
 
   /* specific box-shadow */
-  --shadow-light-shadow: 0 29.26px 36.575px -7.315px rgba(0, 0, 0, 0.10), 
-                 0 11.704px 14.63px -8.778px rgba(0, 0, 0, 0.10);
+  --shadow-light-shadow: 0 29.26px 36.575px -7.315px rgba(0, 0, 0, 0.10),0 11.704px 14.63px -8.778px rgba(0, 0, 0, 0.10);
+  --shadow-accordion-shadow: 0 12.874px 19.311px -3.862px rgba(0, 0, 0, 0.10), 0 5.15px 7.724px -5.15px rgba(0, 0, 0, 0.10);
+      
 }

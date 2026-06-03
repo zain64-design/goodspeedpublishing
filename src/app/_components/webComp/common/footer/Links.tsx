@@ -2,14 +2,7 @@ import React from 'react'
 import Text from '@/app/_components/ui/Text'
 import Link from 'next/link'
 import { twMerge } from 'tailwind-merge'
-
-type LinkItem = {
-    id: number,
-    title?: string,
-    brandInfo?: string,
-    href: string,
-    icon?: React.ElementType
-}
+import type { LinkItem } from '@/app/_types'
 
 type Props = {
     links?: LinkItem[]

@@ -1,17 +1,5 @@
-import Image, { StaticImageData } from "next/image"
-
-type ImageProps = { 
-    src: string | StaticImageData, 
-    width?: number, 
-    height?: number, 
-    alt: string, 
-    className?: string, 
-    placeholder?: "blur" | "empty", 
-    blurDataURL?: string,
-    loading?: "eager" | "lazy"
-    fetchPriority?: "high" | "low" | "auto"
-    preload?: boolean
-}
+import Image from "next/image"
+import type { ImageProps } from "@/app/_types"
 
 export default function ImageComp({ src, width, height, alt, className, placeholder, blurDataURL, loading = "lazy", fetchPriority = "auto", preload = false  }: ImageProps) {
     return (

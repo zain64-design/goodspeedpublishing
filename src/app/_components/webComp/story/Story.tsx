@@ -1,9 +1,7 @@
 import StorySlider from "@/app/_components/webComp/story/StorySlider"
 import Text from "../../ui/Text"
 
-type Props = {}
-
-export default function Story({ }: Props) {
+export default function Story() {
   return (
     <section className="md:container mx-auto px-4">
       <div className="overflow-hidden bg-primary-100 bg-no-repeat bg-[position:top_left,right_80px_bottom] bg-[size:491px_280px,735px_189px] bg-[url('/images/contact-box-elem.webp'),url('/images/story-box-elem.webp')] rounded-[30px] md:rounded-[62px] p-3.5 sm:p-5 lg:p-8 xl:p-10 2xl:p-11 4xl:p-14">

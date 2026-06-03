@@ -1,23 +1,6 @@
 'use client'
-import React from 'react'
 import { twMerge } from 'tailwind-merge'
-
-type Props = {
-    label?: string
-    type?: React.HTMLInputTypeAttribute
-    name?: string
-    value?: string | number
-    onChange?: React.ChangeEventHandler<HTMLInputElement>
-    defaultValue?: string | number
-    autoComplete?: string
-    placeholder?: string
-    required?: boolean
-    wrapperClassName?: string
-    labelClassName?: string
-    inputClassName?: string
-    iconToggler?: React.ReactNode
-    allowNegative?: boolean
-}
+import type { CustomInputProps } from '@/app/_types'
 
 export default function CustomInput({
     label,
@@ -34,7 +17,7 @@ export default function CustomInput({
     inputClassName = "",
     iconToggler = null,
     allowNegative = false,
-}: Props) {
+}: CustomInputProps) {
     return (
         <div className={twMerge("flex flex-col", wrapperClassName)}>
             {label && (

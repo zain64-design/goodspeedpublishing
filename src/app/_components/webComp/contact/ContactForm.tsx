@@ -2,9 +2,7 @@ import CustomInput from "@/app/_components/ui/CustomInput"
 import CustomTextarea from "@/app/_components/ui/CustomTextarea"
 import CustomBtn from "@/app/_components/ui/CustomBtn"
 
-type Props = {}
-
-export default function ContactForm({ }: Props) {
+export default function ContactForm() {
   return (
     <form action="" className="w-full bg-white p-4 sm:p-6 md:p-8 lg:p-10 xl:pt-12 xl:pb-5 xl:px-10 2xl:pt-17 2xl:pb-7.5 2xl:px-14.5 rounded-[25px] md:rounded-[42px] shadow-light-shadow">
         <div className="flex flex-row flex-wrap gap-x-7.25 gap-y-2 sm:gap-y-6 md:gap-y-10">

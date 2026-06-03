@@ -1,19 +1,6 @@
 'use client'
-import React from 'react'
 import { twMerge } from 'tailwind-merge'
-
-type Props = {
-    label?: string
-    name?: string
-    value?: string
-    onChange?: React.ChangeEventHandler<HTMLTextAreaElement>
-    placeholder?: string
-    required?: boolean
-    rows?: number
-    wrapperClassName?: string
-    labelClassName?: string
-    textareaClassName?: string
-}
+import type { CustomTextareaProps } from '@/app/_types'
 
 export default function CustomTextarea({
     label,
@@ -26,7 +13,7 @@ export default function CustomTextarea({
     wrapperClassName = "",
     labelClassName = "",
     textareaClassName = "",
-}: Props) {
+}: CustomTextareaProps) {
     return (
         <div className={twMerge("flex flex-col", wrapperClassName)}>
             {label && (

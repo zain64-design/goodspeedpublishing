@@ -2,19 +2,9 @@
 import React from 'react'
 import { twMerge } from 'tailwind-merge'
 import { Button } from 'primereact/button'
+import type { CustomBtnProps } from '@/app/_types'
 
-type CustomBtnProps = {
-    type?: "button" | "submit" | "reset";
-    onClick?: () => void;
-    disabled?: boolean;
-    label?: string;
-    icon?: React.ElementType | React.ReactElement;
-    isLoading?: boolean;
-    buttonClass?: string;
-    size?: "small" | "large" | "normal";
-}
-
-const CustomBtn = ({
+export default function CustomBtn({
     type = 'button',
     onClick,
     disabled = false,
@@ -23,7 +13,7 @@ const CustomBtn = ({
     buttonClass = '',
     isLoading = false,
     size = 'normal'
-}: CustomBtnProps) => {
+}: CustomBtnProps) {
 
     const renderIcon = () =>
         !icon ? undefined
@@ -43,5 +33,3 @@ const CustomBtn = ({
         />
     )
 }
-
-export default CustomBtn

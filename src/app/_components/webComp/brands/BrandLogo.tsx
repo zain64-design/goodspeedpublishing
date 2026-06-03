@@ -3,11 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay } from 'swiper/modules'
 import 'swiper/css'
 import ImageComp from '@/app/_components/ui/Image'
-import { StaticImageData } from "next/image"
-
-type LogoItem = {
-    id: number, name: string, src: string | StaticImageData
-}
+import { LogoItem } from '@/app/_types'
 
 type Props = {
     logos: LogoItem[]
@@ -55,9 +51,9 @@ export default function BrandLogo({ logos }: Props) {
     [mask-image:linear-gradient(to_right,transparent_0%,#000_10%,#000_90%,transparent_100%)]
     [-webkit-mask-image:linear-gradient(to_right,transparent_0%,#000_10%,#000_90%,transparent_100%)]'
         >
-            {logos.concat(logos).map((l, idx) => (
-                <SwiperSlide key={`${l.id}-${idx}`} className="!flex items-center justify-center bg-white rounded-2xl md:rounded-3xl px-6 py-4 sm:px-6 sm:py-11">
-                    <ImageComp src={l.src} width={192} height={40} alt={l.name} className="max-w-20 h-7 sm:max-w-30 sm:h-8 lg:max-w-48 lg:h-9 w-auto object-contain" />
+            {logos.map(({id, name, src}) => (
+                <SwiperSlide key={id} className="!flex items-center justify-center bg-white rounded-2xl md:rounded-3xl px-6 py-4 sm:px-6 sm:py-11">
+                    <ImageComp src={src} width={192} height={40} alt={name} className="max-w-20 h-7 sm:max-w-30 sm:h-8 lg:max-w-48 lg:h-9 w-auto object-contain" />
                 </SwiperSlide>
             ))}
         </Swiper>
