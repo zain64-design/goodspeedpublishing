@@ -26,7 +26,7 @@ const logos = [
 
 export default function Brands() {
   return (
-    <section className="w-full mx-auto my-8 md:my-10">
+    <section className="w-full mx-auto py-6.25 md:py-12.5">
         <BrandLogo logos={logos}/>
     </section>
   )

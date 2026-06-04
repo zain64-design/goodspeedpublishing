@@ -11,7 +11,7 @@ export default function CustomAccordion({}: Props) {
     <>
             <Accordion
             activeIndex={0}
-            className="accord-ct mt-8"
+            className="accord-ct"
             expandIcon={<Text as="span" className="icon-rounded icon-plus"><LuPlus /></Text>}
             collapseIcon={<Text as="span" className="icon-rounded icon-minus"><LuMinus /></Text>}
         >

@@ -29,6 +29,7 @@ export type ImageProps = {
     src: string | StaticImageData, 
     width?: number, 
     height?: number, 
+    quality?: number,
     alt: string, 
     className?: string, 
     placeholder?: "blur" | "empty", 
