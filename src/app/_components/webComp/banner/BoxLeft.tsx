@@ -23,7 +23,7 @@ export default function BoxLeft({ }: Props) {
                         </Text>
                     </div>
                     <Text as="h6" className="text-mid font-semibold text-xs sm:text-sm md:text-base xl:text-lg 2xl:text-[22px] 4xl:text-2xl leading-5 md:leading-7 2xl:leading-7.5 mb-4 sm:mb-6 md:mb-0">Get Your Free, Personalized Publishing Plan.</Text>
-                        <CustomBtn label="claim my plan" buttonClass="btn-mid uppercase inline-flex items-center !mt-4 md:!mt-5 xl:!mt-[40px] h-[50px] xl:h-[60px] 2xl:h-[90px] md:max-w-[347px] flex-row-reverse justify-center gap-[11px] text-xs xl:text-base 2xl:text-[23px]"/>
+                        <CustomBtn label="claim my plan" buttonClass="btn-mid uppercase rounded-2xl xl:rounded-[24px] inline-flex items-center !mt-4 md:!mt-5 xl:!mt-[40px] h-[50px] xl:h-[60px] 2xl:h-[90px] md:max-w-[347px] flex-row-reverse justify-center gap-[11px] text-xs xl:text-base 2xl:text-[23px]"/>
                 </div>
                 <ImageComp src={LeftBoxElem} width={345} height={381} preload={true} className="max-w-full max-h-95.25 block object-contain" alt="element-outline-book" />
             </div>
