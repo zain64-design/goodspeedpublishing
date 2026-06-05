@@ -27,6 +27,7 @@ export default function BoxRight({}: Props) {
     desktopHeight={719}
     mobileWidth={342}
     mobileHeight={419}
+    fetchPriority="high"
     className="max-w-full max-h-80 sm:max-h-85 md:max-h-100 lg:max-h-100 xl:max-h-120 2xl:max-h-160 4xl:max-h-180 mx-auto block object-contain"
 />
     </div>

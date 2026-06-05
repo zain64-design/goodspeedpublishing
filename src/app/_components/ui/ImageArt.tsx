@@ -10,7 +10,8 @@ export default function ImageArt({
     desktopWidth,
     desktopHeight,
     className,
-    breakpoint = 768
+    breakpoint = 768,
+    fetchPriority = "auto"
 }: ArtDirectionProps) {
     const { props: { srcSet: desktop, ...rest } } = getImageProps({
         src: desktopSrc,
@@ -34,7 +35,7 @@ export default function ImageArt({
         <picture>
             <source media={`(min-width: ${breakpoint}px)`} srcSet={desktop} />
             <source media={`(max-width: ${breakpoint - 1}px)`} srcSet={mobile} />
-            <img {...rest} className={className} style={{ width: '100%', height: 'auto' }} />
+            <img {...rest} className={className} fetchPriority={fetchPriority} />
         </picture>
     )
 }

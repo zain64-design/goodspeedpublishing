@@ -49,6 +49,7 @@ export type ArtDirectionProps = {
     desktopHeight: number
     className?: string
     breakpoint?: number
+    fetchPriority?: "high" | "low" | "auto"
 }
 
 export type CustomTextareaProps = {
