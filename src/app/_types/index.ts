@@ -37,7 +37,8 @@ export type ImageProps = {
     blurDataURL?: string,
     loading?: "eager" | "lazy"
     fetchPriority?: "high" | "low" | "auto"
-    preload?: boolean
+    preload?: boolean,
+    unoptimized?: boolean
 
 }
 
