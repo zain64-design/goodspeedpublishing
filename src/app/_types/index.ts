@@ -30,6 +30,7 @@ export type ImageProps = {
     width?: number, 
     height?: number, 
     quality?: number,
+    sizes?: string,
     alt: string, 
     className?: string, 
     placeholder?: "blur" | "empty", 
@@ -37,6 +38,7 @@ export type ImageProps = {
     loading?: "eager" | "lazy"
     fetchPriority?: "high" | "low" | "auto"
     preload?: boolean
+
 }
 
 export type ArtDirectionProps = {

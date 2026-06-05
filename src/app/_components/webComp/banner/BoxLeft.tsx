@@ -20,7 +20,7 @@ export default function BoxLeft({ }: Props) {
             </Text>
             <div className="w-full sm:w-[calc(100%-20%)] xl:w-[calc(100%-20%)] 2xl:w-[calc(100%-30%)] 4xl:w-[calc(100%-35%)]">
                 <div className="flex flex-row flex-wrap items-center gap-2 mb-4 sm:mb-5 md:mb-6 lg:mb-8 2xl:gap-4 xl:mb-13.25">
-                    <ImageComp src={LeftBoxBook} width={216} height={77} quality={50} preload={true} className="max-w-30 md:max-w-35 xl:max-w-50 2xl:max-w-54 block object-contain" alt="element-books" />
+                    <ImageComp src={LeftBoxBook} width={216} height={77} quality={50} preload={true} sizes="(max-width: 767px) 120px, (max-width: 1199px) 140px, (max-width: 1399px) 200px, 216px" className="max-w-30 md:max-w-35 xl:max-w-50 2xl:max-w-54 block object-contain" alt="element-books" />
                     <Text as="p" className="text-mid font-black text-xl lg:text-2xl xl:text-4xl 4xl:text-[40px] text-left capitalize flex flex-row items-baseline-last max-w-42.5 gap-2.5">
                         2k+
                         <Text as="span" className="font-medium text-sm leading-normal! lg:text-sm xl:text-base xl:leading-5! 4xl:text-lg 4xl:leading-5.5! text-trim">published books</Text>
