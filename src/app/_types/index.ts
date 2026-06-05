@@ -39,6 +39,18 @@ export type ImageProps = {
     preload?: boolean
 }
 
+export type ArtDirectionProps = {
+    mobileSrc: string | StaticImageData
+    desktopSrc: string | StaticImageData
+    alt: string
+    mobileWidth: number
+    mobileHeight: number
+    desktopWidth: number
+    desktopHeight: number
+    className?: string
+    breakpoint?: number
+}
+
 export type CustomTextareaProps = {
     label?: string
     name?: string

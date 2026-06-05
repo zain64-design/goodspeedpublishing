@@ -6,7 +6,7 @@ export default function Contact() {
     return (
         <section className="py-6.25 md:py-12.5">
             <div className="md:container mx-auto px-4">
-                <div className="overflow-hidden bg-primary-50 bg-no-repeat bg-top-left bg-size-[491px,280px] bg-[url('/images/contact-box-elem.webp')] rounded-[30px] md:rounded-[62px] p-3.5 sm:p-5 lg:p-8 xl:p-10 2xl:p-15 flex flex-row flex-wrap items-center justify-between gap-6">
+                <div className="overflow-hidden bg-primary-50 bg-no-repeat bg-top-left bg-[size:160px_91px] sm:bg-size-[160px_91px] md:bg-size-[220px_125px] lg:bg-size-[280px_160px] xl:bg-size-[320px_182px] 2xl:bg-size-[380px_217px] 4xl:bg-size-[491px_280px] bg-[url('/images/contact-box-elem.webp')] rounded-[30px] md:rounded-[62px] p-3.5 sm:p-5 lg:p-8 xl:p-10 2xl:p-15 flex flex-row flex-wrap items-center justify-between gap-6">
                     <div className="w-full xl:max-w-2/5 2xl:max-w-2/5 xs:pl-1 md:pl-5 xl:pl-0">
                         <ContactInfo contactInfo={contactInfo} />
                     </div>
