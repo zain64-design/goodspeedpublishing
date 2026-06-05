@@ -1,4 +1,3 @@
-import ImageComp from '@/app/_components/ui/Image'
 import { getImageProps } from 'next/image'
 import ImageArt from '@/app/_components/ui/ImageArt'
 import RightBoxThumb from "@public/images/right-box-thumb.webp"
@@ -28,6 +27,7 @@ export default function BoxRight({}: Props) {
     mobileWidth={342}
     mobileHeight={419}
     fetchPriority="high"
+    loading="eager"
     className="max-w-full max-h-80 sm:max-h-85 md:max-h-100 lg:max-h-100 xl:max-h-120 2xl:max-h-160 4xl:max-h-180 mx-auto block object-contain"
 />
     </div>

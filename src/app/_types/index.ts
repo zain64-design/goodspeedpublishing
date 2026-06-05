@@ -50,6 +50,7 @@ export type ArtDirectionProps = {
     className?: string
     breakpoint?: number
     fetchPriority?: "high" | "low" | "auto"
+    loading?: "eager" | "lazy"
 }
 
 export type CustomTextareaProps = {
