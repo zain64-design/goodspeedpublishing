@@ -9,7 +9,6 @@ import Stats from "@/app/_components/webComp/stats/Stats";
 export default function Home() {
     return (
         <>
-        {/*zain */}
             <Banner />
             <Announcement />
             <Stats/>
