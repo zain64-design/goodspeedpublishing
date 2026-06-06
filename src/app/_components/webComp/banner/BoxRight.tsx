@@ -22,8 +22,8 @@ export default function BoxRight({}: Props) {
     desktopSrc={RightBoxThumb}
     mobileSrc={RightBoxThumbMobile}
     alt="hero"
-    desktopWidth={612}
-    desktopHeight={719}
+    desktopWidth={409}
+    desktopHeight={480}
     mobileWidth={342}
     mobileHeight={419}
     fetchPriority="high"
