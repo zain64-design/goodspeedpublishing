@@ -102,17 +102,3 @@ export type IconProps = {
     className?: string
     color?: string
 }
-
-export type TabItem = {
-    id: number
-    title: string,
-    category: string
-    content?: React.ReactNode
-}
-
-export type GenreItem = {
-    id: number
-    title: string
-    category: string
-    info: string
-}
