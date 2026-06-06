@@ -9,6 +9,7 @@ const poppins = Poppins({
   variable: "--font-poppins-sans",
   weight: ['300', '400', '500', '600', '700', '800'],
   subsets: ["latin"],
+  style: ['normal', 'italic'],
   display: "swap",
 });
 

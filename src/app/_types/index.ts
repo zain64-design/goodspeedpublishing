@@ -25,15 +25,15 @@ export type CustomBtnProps = {
 }
 
 
-export type ImageProps = { 
-    src: string | StaticImageData, 
-    width?: number, 
-    height?: number, 
+export type ImageProps = {
+    src: string | StaticImageData,
+    width?: number,
+    height?: number,
     quality?: number,
     sizes?: string,
-    alt: string, 
-    className?: string, 
-    placeholder?: "blur" | "empty", 
+    alt: string,
+    className?: string,
+    placeholder?: "blur" | "empty",
     blurDataURL?: string,
     loading?: "eager" | "lazy"
     fetchPriority?: "high" | "low" | "auto"
@@ -84,4 +84,35 @@ export type CustomInputProps = {
     inputClassName?: string
     iconToggler?: React.ReactNode
     allowNegative?: boolean
+}
+
+export type BadgeVariant = 'primary' | 'secondary' | 'outline' | 'ghost'
+
+export type BadgeProps = {
+    label: string
+    variant?: BadgeVariant
+    leftIcon?: React.ReactNode
+    rightIcon?: React.ReactNode
+    className?: string
+}
+
+export type IconProps = {
+    width?: number | string
+    height?: number | string
+    className?: string
+    color?: string
+}
+
+export type TabItem = {
+    id: number
+    title: string,
+    category: string
+    content?: React.ReactNode
+}
+
+export type GenreItem = {
+    id: number
+    title: string
+    category: string
+    info: string
 }

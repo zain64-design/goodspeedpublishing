@@ -76,7 +76,7 @@ body {
   .bs-transition {
     @apply transition duration-500 ease-in-out; 
   }
-  .text-trim {text-box: trim-start cap alphabetic;}
+  .text-trim {text-spacing-trim: space-all;}
    .accord-ct .p-accordion-tab {
   @apply border border-white-50 rounded-[14px] md:rounded-[18px] lg:rounded-[22px] overflow-hidden mb-[15px];
  }
@@ -107,6 +107,8 @@ body {
     @apply bg-secondary text-white rotate-180;
   }
 
+  
+
 }
 @layer utilities {}
 
@@ -134,6 +136,7 @@ body {
   --color-secondary-lt: #e5daf5;
   --color-mid: #232323;
   --color-mid-50: #0B0B0E;
+  --color-mid-100: #2e2e2e;
   --color-white-50: #f7f7f7;
   --color-white-100: #FEFCFD;
 
@@ -153,6 +156,10 @@ body {
   --color-grey-text-100:#8E8E8E;
   --color-grey-text-200:#737373;
   --color-grey-text-300:#525252;
+  --color-grey-text-400:rgba(255, 255, 255, 0.70);
+  --color-grey-text-500:rgba(255, 255, 255, 0.60);
+
+  --color-grey-border-50: rgba(255, 255, 255, 0.10);
 
   --color-black-text-50: rgba(11, 11, 14, 0.75);
   --color-black-text-100: #0B0B0E;
