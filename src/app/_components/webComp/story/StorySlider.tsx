@@ -36,11 +36,11 @@ export default function StorySlider({}: Props) {
                 <div className="md:max-w-140 lg:max-w-200 xl:max-w-240 2xl:max-w-280 4xl:max-w-300 6xl:max-w-330 mx-auto grid grid-cols-2 gap-6 lg:gap-x-8 xl:gap-x-8 2xl:gap-x-8 4xl:gap-x-10 6xl:gap-x-18.5 items-center md:pt-10 lg:pt-20 xl:pt-23.25 bg-no-repeat bg-[position:top_50px_center] md:bg-size-[151px,67px] lg:bg-size-[170px,77px] xl:bg-size-[303px,87px] md:bg-[url('/images/book-slider-elem.webp')]">
                   <div className="text-center">
                     <Text as="p" className="text-black-text-100 font-playfair italic font-bold sm:text-base md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl 4xl:text-5xl mb-2 md:mb-6">Before</Text>
-                    <ImageComp src={slide.before} width={665} height={430} alt="Before" className="w-full" />
+                    <ImageComp src={slide.before} width={464} height={300} alt="Before" className="w-full" />
                   </div>
                   <div className="text-center">
                     <Text as="p" className="text-black-text-100 font-playfair italic font-bold sm:text-base md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl 4xl:text-5xl mb-2 md:mb-6">After</Text>
-                    <ImageComp src={slide.after} width={665} height={430} alt="After" className="w-full" />
+                    <ImageComp src={slide.after} width={464} height={300} alt="After" className="w-full" />
                   </div>
                 </div>
               </SwiperSlide>
