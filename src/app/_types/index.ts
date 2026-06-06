@@ -96,3 +96,9 @@ export type BadgeProps = {
     className?: string
 }
 
+export type IconProps = {
+    width?: number | string
+    height?: number | string
+    className?: string
+    color?: string
+}
