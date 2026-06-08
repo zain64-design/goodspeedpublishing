@@ -45,7 +45,7 @@ export default function ContactForm() {
             textareaClassName="w-full p-[10px] sm:p-[15px] bg-white rounded-0 text-base text-black-text-100 tracking-normal focus:outline-none focus:shadow-none border-b-1 border-grey-100 placeholder:text-(--text-white) placeholder:capitalize"
             required
           />
-          <CustomBtn type="submit" buttonClass="btn-mid rounded-2xl mt-4! md:mt-0! xl:rounded-[24px] inline-flex items-center h-[50px] xl:h-[70px] 2xl:h-[93px] max-w-full flex-row-reverse justify-center gap-[11px] text-base md:text-lg 2xl:text-[23px]" label="Send Message"/>
+          <CustomBtn type="submit" buttonClass="btn-mid mt-4! md:mt-0! xl:rounded-[24px] inline-flex items-center h-[50px] xl:h-[70px] 2xl:h-[93px] max-w-full flex-row-reverse justify-center gap-[11px] text-base md:text-lg 2xl:text-[23px]" label="Send Message"/>
         </div>
       </form>
   )

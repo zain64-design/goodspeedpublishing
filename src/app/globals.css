@@ -26,10 +26,10 @@ body {
 }
 @layer components {
   .btn-primary {
-    @apply overflow-hidden bg-primary-btn w-full font-medium text-primary-btn-text capitalize rounded-2xl border-2 border-primary-btn transition duration-500 ease-in-out p-2 [&>span]:contents;
+    @apply overflow-hidden bg-primary-btn w-full font-medium text-primary-btn-text capitalize rounded-xl xl:rounded-2xl border-2 border-primary-btn transition duration-500 ease-in-out p-2 [&>span]:contents;
     transform: perspective(1px) translateZ(0);
     &::before {
-    @apply content-[''] absolute inset-0 -z-10 bg-white rounded-[14px] scale-x-0 transition-transform duration-500 ease-out;
+    @apply content-[''] absolute inset-0 -z-10 bg-white rounded-[10px] xl:rounded-[14px] scale-x-0 transition-transform duration-500 ease-out;
     transform-origin: 100% 50%;
   }
     &:hover, &:focus, &:active {
@@ -42,10 +42,10 @@ body {
   }
   }
   .btn-secondary {
-    @apply overflow-hidden bg-secondary-btn w-full font-medium text-white capitalize rounded-2xl border-2 border-secondary-btn transition duration-500 ease-in-out p-2 [&>span]:contents;
+    @apply overflow-hidden bg-secondary-btn w-full font-medium text-white capitalize rounded-xl xl:rounded-2xl border-2 border-secondary-btn transition duration-500 ease-in-out p-2 [&>span]:contents;
     transform: perspective(1px) translateZ(0);
     &::before {
-    @apply content-[''] absolute inset-0 -z-10 bg-white rounded-[14px] scale-x-0 transition-transform duration-500 ease-out;
+    @apply content-[''] absolute inset-0 -z-10 bg-white rounded-[10px] xl:rounded-[14px] scale-x-0 transition-transform duration-500 ease-out;
     transform-origin: 0 50%;
   }
     &:hover, &:focus, &:active {
@@ -58,10 +58,10 @@ body {
   }
   }
   .btn-mid {
-    @apply overflow-hidden bg-mid-50 w-full font-medium text-white capitalize rounded-2xl border-2 border-mid-50 transition duration-500 ease-in-out p-2 [&>span]:contents;
+    @apply overflow-hidden bg-mid-50 w-full font-medium text-white capitalize rounded-xl xl:rounded-2xl border-2 border-mid-50 transition duration-500 ease-in-out p-2 [&>span]:contents;
     transform: perspective(1px) translateZ(0);
     &::before {
-    @apply content-[''] absolute inset-0 -z-10 bg-white rounded-[14px] scale-x-0 transition-transform duration-500 ease-out;
+    @apply content-[''] absolute inset-0 -z-10 bg-white rounded-[10px] xl:rounded-[14px] scale-x-0 transition-transform duration-500 ease-out;
     transform-origin: 0 50%;
   }
     &:hover, &:focus, &:active {

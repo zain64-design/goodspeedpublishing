@@ -7,12 +7,12 @@ type Props = {}
 export default function Stats({}: Props) {
   return (
     <section className="py-6.25 md:py-12.5">
-      <div className="md:container mx-auto overflow-hidden bg-mid bg-no-repeat bg-[position:top_left,right_80px_bottom] bg-[size:160px_91px,280px_73px] sm:bg-[size:160px_91px,280px_73px] md:bg-[size:220px_125px,340px_88px] lg:bg-[size:280px_160px,440px_114px] xl:bg-[size:320px_182px,520px_135px] 2xl:bg-[size:380px_217px,640px_166px] 4xl:bg-[size:491px_280px,735px_189px] bg-[url('/images/stats-elem-one.webp'),url('/images/stats-elem-two.webp')] rounded-[30px] md:rounded-[62px] py-16.75 px-3.5 sm:py-16.75 sm:px-5 lg:py-16.75 lg:px-8 xl:py-16.75 xl:px-10 2xl:py-16.75 2xl:px-13 4xl:py-16.75 4xl:px-30.75">
-        <div className="flex flex-wrap flex-row items-center justify-between gap-36">
-            <div className="w-full md:w-[45%]">
+      <div className="md:container mx-auto px-4">
+        <div className="overflow-hidden bg-mid bg-no-repeat bg-[position:top_156px_left,right_bottom] bg-[size:41px_126px,280px_63px] sm:bg-[size:51px_157px,280px_63px] md:bg-[size:61px_188px,340px_77px] lg:bg-[size:68px_210px,440px_99px] xl:bg-[size:74px_219px,520px_117px] 2xl:bg-[size:74px_219px,640px_145px] bg-[url('/images/stats-elem-one.webp'),url('/images/stats-elem-two.webp')] rounded-[30px] md:rounded-[56px] lg:rounded-[62px] py-6 px-3.5 sm:py-8 sm:px-5 lg:py-12 lg:px-8 xl:py-14 xl:px-10 2xl:py-16.75 2xl:px-13 4xl:py-16.75 4xl:px-30.75 flex flex-wrap flex-row items-center justify-between gap-6">
+            <div className="w-full xl:max-w-[47%] 2xl:max-w-[47%] 4xl:max-w-[47%] 6xl:max-w-[45%] pl-0 sm:pl-2 md:pl-5 xl:pl-0 text-center sm:text-left">
               <StatsInfo />
             </div>
-            <div className="w-full md:w-[45%]">
+            <div className="w-full xl:max-w-[49%] 2xl:max-w-[49%] 4xl:max-w-[49%] 6xl:max-w-[45%]">
               <StatsBoxes/>
             </div>
         </div>
