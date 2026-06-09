@@ -111,6 +111,9 @@ body {
   .ct-arrow {
     @apply bg-no-repeat bg-[position:top_50px_center] md:bg-size-[151px,67px] lg:bg-size-[170px,77px] xl:bg-size-[303px,87px] md:bg-[url('/images/book-slider-elem.webp')];
   }
+  .right-dash::before {
+    @apply content-[''] inline-flex w-[40px] h-px bg-white;
+  }
 
 }
 @layer utilities {}

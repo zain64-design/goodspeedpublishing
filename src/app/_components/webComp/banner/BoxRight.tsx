@@ -17,7 +17,6 @@ export default function BoxRight({}: Props) {
     <div className="bg-secondary-lt content-end rounded-[30px] lg:rounded-[48px] bg-no-repeat bg-[position:top_left,top_right,left_bottom] bg-[size:160px_91px,60px_56px,280px_73px] sm:bg-[size:160px_91px,60px_56px,280px_73px] md:bg-[size:220px_125px,60px_56px,340px_88px] lg:bg-[size:280px_160px,80px_74px,440px_114px] xl:bg-[size:320px_182px,120px_112px,520px_135px] 2xl:bg-[size:380px_217px,140px_130px,640px_166px] 4xl:bg-[size:472px_269px,172px_160px,774px_201px] overflow-hidden" style={{
         backgroundImage: `${getBackgroundImage(srcSet1)}, ${getBackgroundImage(srcSet2)}, ${getBackgroundImage(srcSet3)}`
       }}>
-        {/* <ImageComp src={RightBoxThumb} width={612} height={719} preload={true} className="max-w-full md:max-h-100 lg:max-h-100 xl:max-h-120 2xl:max-h-160 4xl:max-h-180 mx-auto block object-contain" alt="customer" /> */}
         <ImageArt
     desktopSrc={RightBoxThumb}
     mobileSrc={RightBoxThumbMobile}

@@ -55,7 +55,7 @@ export default function StorySlider({ }: Props) {
         </button>
       </div> */}
       <div className="relative">
-        <div className="lg:max-w-200 xl:max-w-220 2xl:max-w-260 4xl:max-w-310 6xl:max-w-350 mx-auto">
+        <div className="lg:max-w-200 xl:max-w-220 2xl:max-w-260 4xl:max-w-310 6xl:max-w-345 mx-auto">
           <Swiper
           className="ct-arrow"
           modules={[Navigation]}
