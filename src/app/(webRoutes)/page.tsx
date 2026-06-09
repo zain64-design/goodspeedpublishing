@@ -5,12 +5,14 @@ import FAQ from "@/app/_components/webComp/faq/FAQ";
 import Banner from "@/app/_components/webComp/banner/Banner";
 import Announcement from "@/app/_components/webComp/banner/Announcement";
 import Stats from "@/app/_components/webComp/stats/Stats";
+import Author from "@/app/_components/webComp/author/Author";
 
 export default function Home() {
     return (
         <>
             <Banner />
             <Announcement />
+            <Author/>
             <Stats/>
             <Story />
             <Brands />
