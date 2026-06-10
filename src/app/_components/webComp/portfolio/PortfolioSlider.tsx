@@ -39,7 +39,7 @@ export default function PortfolioSlider({ }: Props) {
                 spaceBetween={40}
                 grabCursor={true}
                 loop={true}
-                // autoplay={{ delay: 1500, disableOnInteraction: false, pauseOnMouseEnter: true }}
+                autoplay={{ delay: 1500, disableOnInteraction: false, pauseOnMouseEnter: true }}
                 speed={1000}
                 slidesPerView={5}
                 centeredSlides={true}
