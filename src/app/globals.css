@@ -116,7 +116,8 @@ body {
   .right-dash::before {
     @apply content-[''] inline-flex w-[40px] h-px bg-white;
   }
-    .books-slider .swiper-slide {
+  
+      .books-slider .swiper-slide {
     @apply transition-all duration-200 ease-in-out;
   }
   .books-slider .swiper-slide .item-main {
@@ -127,7 +128,7 @@ body {
     @apply  bg-cream -translate-y-8 w-full;
   }
   .books-slider .swiper-slide .item-main .bg-ct::before {
-    @apply content-[''] absolute inset-0 shadow-[inset_-5px_4px_8px_0_rgba(0,0,0,0.24)] rotate-20 -translate-x-5.5 block z-1;
+    @apply content-[''] absolute inset-0 shadow-[inset_-5px_4px_8px_0_rgba(0,0,0,0.24)] rotate-20 block z-1 w-full;
   }
 
   .books-slider .swiper-slide .item-main {
@@ -153,6 +154,7 @@ body {
   .books-slider .swiper-slide.swiper-slide-active .item-main .bg-ct::before {
     @apply shadow-[inset_-7.5px_6px_12px_0_rgba(0,0,0,0.24)];
   }
+
 
 }
 @layer utilities {}
