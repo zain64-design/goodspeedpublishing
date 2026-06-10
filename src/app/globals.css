@@ -77,6 +77,7 @@ body {
     @apply transition duration-500 ease-in-out; 
   }
   .text-trim {text-spacing-trim: space-all;}
+  /* accordion custom start */
    .accord-ct .p-accordion-tab {
   @apply border border-white-50 rounded-[14px] md:rounded-[18px] lg:rounded-[22px] overflow-hidden mb-[15px];
  }
@@ -98,7 +99,6 @@ body {
   .accord-ct .p-accordion-tab.p-accordion-tab-active .p-accordion-header-link, .accord-ct .p-accordion-tab.p-accordion-tab-active .accord-ct-content {
     @apply bg-white;
   }
-
   .accord-ct .accord-ct-content .p-accordion-content { @apply border-white-50 pt-0! px-4.5 pb-3 md:px-5.5 md:pb-4 lg:px-7.5 lg:pb-6 text-grey-text-300 text-xs sm:text-sm md:text-base lg:text-lg font-normal;}
     .accord-ct .p-accordion-tab .accord-ct-icon .icon-rounded {
     @apply inline-flex items-center justify-center rounded-full transition text-[14px] md:text-[20px] min-w-5 h-5 md:min-w-9 md:h-9 duration-300 ease-in-out text-mid-50 bg-primary-50;
@@ -106,14 +106,48 @@ body {
   .accord-ct .p-accordion-tab.p-accordion-tab-active .accord-ct-icon .icon-rounded {
     @apply bg-secondary text-white rotate-180;
   }
+  /* accordion custom end */
 
   /* slider arrow-bg */
   .ct-arrow {
     @apply bg-no-repeat bg-[position:top_50px_center] md:bg-size-[151px,67px] lg:bg-size-[170px,77px] xl:bg-size-[303px,87px] md:bg-[url('/images/book-slider-elem.webp')];
   }
+  /* author element */
   .right-dash::before {
     @apply content-[''] inline-flex w-[40px] h-px bg-white;
   }
+    .books-slider .swiper-slide {
+      @apply transition-all duration-200 ease-in-out mx-10;
+    }
+  .books-slider .swiper-slide .item-main {
+    @apply overflow-hidden;
+  }
+     .books-slider .swiper-slide .item-main .bg-ct {
+    @apply  bg-cream -translate-y-10;
+  }
+
+   .books-slider .swiper-slide .item-main {
+      @apply -translate-y-10;
+   }
+  .books-slider .swiper-slide:nth-child(5n+2) .item-main,
+  .books-slider .swiper-slide:nth-child(5n+4) .item-main {
+    @apply translate-y-10!;
+  }
+
+.books-slider .swiper-slide:nth-child(5n+2) .item-main .bg-ct,
+.books-slider .swiper-slide:nth-child(5n+4) .item-main .bg-ct {
+  @apply bg-purple;
+}
+.books-slider .swiper-slide.swiper-slide-active {
+  @apply mx-10;
+}
+  .books-slider .swiper-slide.swiper-slide-active .item-main {
+    @apply !scale-[1] translate-y-0!;
+  }
+  .books-slider .swiper-slide.swiper-slide-active .item-main .bg-ct {
+    @apply bg-peach;
+  }
+
 
 }
 @layer utilities {}
@@ -138,6 +172,7 @@ body {
   --color-primary: #C2F15E;
   --color-primary-50: #C5E84A;
   --color-primary-100: #BFE867;
+  --color-primary-200: #C0f676;
   --color-secondary: #8340EE;
   --color-secondary-lt: #e5daf5;
   --color-mid: #232323;
@@ -145,6 +180,10 @@ body {
   --color-mid-100: #2e2e2e;
   --color-white-50: #f7f7f7;
   --color-white-100: #FEFCFD;
+
+  --color-peach: #EC8767;
+  --color-cream: #EDC26E;
+  --color-purple: #9500E3;
 
   /* specific border color start */
   --color-grey: rgba(255, 255, 255, 0.50);
