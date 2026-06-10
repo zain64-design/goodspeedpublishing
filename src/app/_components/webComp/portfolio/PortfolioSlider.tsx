@@ -46,16 +46,17 @@ export default function PortfolioSlider({ }: Props) {
                 slidesPerGroupSkip={0}
                 breakpoints={{
                     0: {
-                        slidesPerView: 1,
+                        slidesPerView: 2.5,
+                        spaceBetween: 15,
                     },
                     576: {
-                        slidesPerView: 2,
+                        slidesPerView: 2.8,
                     },
                     768: {
-                        slidesPerView: 2,
+                        slidesPerView: 3,
                     },
                     992: {
-                        slidesPerView: 3,
+                        slidesPerView: 4,
                     },
                     1200: {
                         slidesPerView: 5,
@@ -73,11 +74,13 @@ export default function PortfolioSlider({ }: Props) {
             >
                 {portfolioBooks.map(({ id, title, img }) => (
                     <SwiperSlide key={id}>
-                        <div className="transition-all duration-200 ease-in-out item-main scale-[.7] pt-22">
-                            <div className={twMerge(`bg-ct transition-all duration-200 ease-in-out shadow-[inset_-7px_-1.5px_14.1px_0_rgba(0,0,0,0.15)] rounded-[63px] mb-[40px]`)}>
-                            <ImageComp src={img} width={665} height={430} alt="Before" className="w-full max-h-166.25 rotate-25 h-auto mx-auto object-contain object-center" />
+                        <div className="transition-all duration-200 ease-in-out item-main scale-[.7] pt-12 sm:pt-22">
+                            <div className={twMerge(`bg-ct transition-all duration-200 ease-in-out shadow-[inset_-7px_-1.5px_14.1px_0_rgba(0,0,0,0.15)] rounded-[15px] sm:rounded-[30px] md:rounded-[40px] xl:rounded-[46px] 2xl:rounded-[50px] 4xl:rounded-[58px] 6xl:rounded-[63px] mb-0 sm:mb-7.5 xl:mb-10`)}>
+                            <div className="overlay-shadow relative rotate-20 -translate-x-5.5">
+                                <ImageComp src={img} width={370} height={585} alt="Before" className="max-w-auto max-h-110 lg:max-h-146.25 mx-auto object-contain object-center drop-shadow-[5px_8px_5px_rgba(0,0,0,0.30)]" />
+                            </div>
                         </div>
-                        <Text as="span" className="inline-flex text-black-text-100 capitalize justify-center items-center font-semibold p-2 content-center text-[24px] rounded-full w-full max-w-66.75 min-h-18.25 bg-primary-200">{title}</Text>
+                        <Text as="span" className="inline-flex text-black-text-100 capitalize justify-center items-center font-semibold p-2 content-center text-xs sm:text-base md:text-xl 2xl:text-2xl rounded-full w-full min-h-10 max-w-40 sm:min-h-12 sm:max-w-55 md:max-w-66.75 md:min-h-18.25 bg-primary-200">{title}</Text>
                         </div>
                     </SwiperSlide>
                 ))}
