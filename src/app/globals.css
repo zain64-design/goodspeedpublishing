@@ -117,7 +117,7 @@ body {
     @apply content-[''] inline-flex w-[40px] h-px bg-white;
   }
     .books-slider .swiper-slide {
-      @apply transition-all duration-200 ease-in-out mx-10;
+      @apply transition-all duration-200 ease-in-out;
     }
   .books-slider .swiper-slide .item-main {
     @apply overflow-hidden;
@@ -138,9 +138,9 @@ body {
 .books-slider .swiper-slide:nth-child(5n+4) .item-main .bg-ct {
   @apply bg-purple;
 }
-.books-slider .swiper-slide.swiper-slide-active {
-  @apply mx-10;
-}
+/* .books-slider .swiper-slide.swiper-slide-active {
+  @apply mr-10;
+} */
   .books-slider .swiper-slide.swiper-slide-active .item-main {
     @apply !scale-[1] translate-y-0!;
   }

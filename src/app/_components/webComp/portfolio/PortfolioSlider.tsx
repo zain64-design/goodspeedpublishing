@@ -36,7 +36,7 @@ export default function PortfolioSlider({ }: Props) {
                     prevEl: '.swiper-button-prev',
                     nextEl: '.swiper-button-next',
                 }}
-                spaceBetween={0}
+                spaceBetween={40}
                 grabCursor={true}
                 loop={true}
                 // autoplay={{ delay: 1500, disableOnInteraction: false, pauseOnMouseEnter: true }}
