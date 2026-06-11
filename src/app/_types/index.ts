@@ -17,6 +17,7 @@ export type CustomBtnProps = {
     type?: "button" | "submit" | "reset";
     onClick?: () => void;
     disabled?: boolean;
+    ariaLabel?: string,
     label?: string;
     icon?: React.ElementType | React.ReactElement;
     isLoading?: boolean;

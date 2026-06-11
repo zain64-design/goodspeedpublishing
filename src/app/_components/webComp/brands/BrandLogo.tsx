@@ -46,16 +46,15 @@ export default function BrandLogo({ logos }: Props) {
             }}
             centeredSlides={true}
             autoplay={{ delay: 0, disableOnInteraction: false, pauseOnMouseEnter: false }}
-
             speed={3500}
             loop
             allowTouchMove={false}
             className=' overflow-hidden
-    [mask-image:linear-gradient(to_right,transparent_0%,#000_10%,#000_90%,transparent_100%)]
+    mask-[linear-gradient(to_right,transparent_0%,#000_10%,#000_90%,transparent_100%)]
     [-webkit-mask-image:linear-gradient(to_right,transparent_0%,#000_10%,#000_90%,transparent_100%)]'
         >
             {logos.map(({id, name, src}) => (
-                <SwiperSlide key={id} className="!flex items-center justify-center bg-white rounded-xl sm:rounded-2xl md:rounded-3xl px-6 py-4 sm:px-4 sm:py-8 md:px-6 md:py-11">
+                <SwiperSlide key={id} className="flex! items-center justify-center bg-white rounded-xl sm:rounded-2xl md:rounded-3xl px-6 py-4 sm:px-4 sm:py-8 md:px-6 md:py-11">
                     <ImageComp src={src} width={192} height={40} alt={name} className="max-w-20 h-6 sm:max-w-30 sm:h-8 lg:max-w-48 lg:h-9 w-auto object-contain" />
                 </SwiperSlide>
             ))}

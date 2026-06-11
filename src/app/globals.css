@@ -141,7 +141,7 @@ body {
 
   .books-slider .swiper-slide:nth-child(5n+2) .item-main .bg-ct,
   .books-slider .swiper-slide:nth-child(5n+4) .item-main .bg-ct {
-    @apply bg-purple;
+    @apply bg-secondary-50;
   }
 
   .books-slider .swiper-slide.swiper-slide-active .item-main {
@@ -155,6 +155,17 @@ body {
     @apply shadow-[inset_-7.5px_6px_12px_0_rgba(0,0,0,0.24)];
   }
 
+  .illustration-slider .swiper-pagination {
+    @apply relative! inset-auto!;
+  }
+
+    .illustration-slider .swiper-pagination .swiper-pagination-bullet {
+    @apply bg-white! opacity-100! h-4! w-4! rounded-[50px]!;
+  }
+
+  .illustration-slider .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    @apply bg-white! w-[45px]!;
+  }
 
 }
 @layer utilities {}
@@ -181,6 +192,7 @@ body {
   --color-primary-100: #BFE867;
   --color-primary-200: #C0f676;
   --color-secondary: #8340EE;
+  --color-secondary-50: #9500E3;
   --color-secondary-lt: #e5daf5;
   --color-mid: #232323;
   --color-mid-50: #0B0B0E;
@@ -190,7 +202,7 @@ body {
 
   --color-peach: #EC8767;
   --color-cream: #EDC26E;
-  --color-purple: #9500E3;
+
 
   /* specific border color start */
   --color-grey: rgba(255, 255, 255, 0.50);

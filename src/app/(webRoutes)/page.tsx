@@ -7,6 +7,7 @@ import Announcement from "@/app/_components/webComp/banner/Announcement";
 import Stats from "@/app/_components/webComp/stats/Stats";
 import Author from "@/app/_components/webComp/author/Author";
 import Portfolio from "@/app/_components/webComp/portfolio/Portfolio";
+import Illustration from "@/app/_components/webComp/illustration/Illustration";
 
 export default function Home() {
     return (
@@ -17,6 +18,7 @@ export default function Home() {
             <Stats/>
             <Story />
             <Portfolio/>
+            <Illustration/>
             <Brands />
             <FAQ />
             <Contact />

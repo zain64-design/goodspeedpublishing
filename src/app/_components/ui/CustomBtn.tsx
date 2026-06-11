@@ -8,6 +8,7 @@ export default function CustomBtn({
     type = 'button',
     onClick,
     disabled = false,
+    ariaLabel,
     label,
     icon,
     buttonClass = '',
@@ -25,6 +26,7 @@ export default function CustomBtn({
             type={type}
             onClick={onClick}
             disabled={disabled || isLoading}
+            aria-label= {ariaLabel}
             className={twMerge(buttonClass)}
             size={size === 'normal' ? undefined : size}
             label={label}
