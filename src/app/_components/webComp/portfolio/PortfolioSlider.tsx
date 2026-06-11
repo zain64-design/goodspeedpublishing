@@ -1,6 +1,6 @@
 'use client'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation, A11y, Autoplay } from 'swiper/modules'
+import { A11y, Autoplay } from 'swiper/modules'
 import 'swiper/css'
 import ImageComp from '@/app/_components/ui/Image'
 import Text from '@/app/_components/ui/Text'
@@ -30,16 +30,12 @@ export default function PortfolioSlider({ }: Props) {
     return (
          <Swiper
                 className="books-slider"
-                modules={[Navigation, A11y, Autoplay]}
-                navigation={{
-                    prevEl: '.swiper-button-prev',
-                    nextEl: '.swiper-button-next',
-                }}
+                modules={[A11y, Autoplay]}
                 spaceBetween={40}
                 grabCursor={true}
                 loop={true}
-                autoplay={{ delay: 2000, disableOnInteraction: false, pauseOnMouseEnter: true }}
-                speed={2500}
+                autoplay={{ delay: 1500, disableOnInteraction: false, pauseOnMouseEnter: true }}
+                speed={500}
                 slidesPerView={5}
                 centeredSlides={true}
                 slidesPerGroupSkip={0}
