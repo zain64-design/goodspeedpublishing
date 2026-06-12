@@ -54,7 +54,7 @@ export default function PackageBox({ packages }: Props) {
             </Text>
             <Text as='h4' className={twMerge('font-bold text-[70px] leading-15 flex items-end mt-9 mb-3', styles.text)}>
               {`$${newPrice.toLocaleString()}`}
-              <Text as='small' className='leading-7.25! line-through text-[20px] font-normal opacity-60'>
+              <Text as='small' className='leading-7.25! line-through text-[20px] font-normal'>
                 {`$${oldPrice}`}
               </Text>
             </Text>
@@ -87,12 +87,12 @@ export default function PackageBox({ packages }: Props) {
               need more info
             </Text>
             <div className="flex items-center justify-center gap-9 mt-3">
-              <Link href="" className={twMerge('font-semibold text-[15px] flex flex-col justify-center items-center', styles.text)}>
-                <Text as='small' className='capitalize text-grey-text-100 text-[14px] font-medium'>talk to us</Text>
+              <Link href="tel:+16463892410" className={twMerge('font-semibold text-[15px] flex flex-col justify-center items-center', styles.text)}>
+                <Text as='small' className={twMerge('capitalize text-mid text-[14px] font-medium',styles.text)}>talk to us</Text>
                 +1(646)-389-2410
               </Link>
               <button type='button' className={twMerge('font-semibold text-[15px] capitalize flex flex-col justify-center items-center', styles.text)}>
-                <Text as='small' className='capitalize text-grey-text-100 text-[14px] font-medium'>for more detail</Text>
+                <Text as='small' className={twMerge('capitalize text-mid text-[14px] font-medium',styles.text)}>for more detail</Text>
                 Chat With us
               </button>
             </div>
