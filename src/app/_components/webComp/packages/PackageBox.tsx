@@ -53,7 +53,6 @@ import Badge from '../../ui/Badge'
 
 type Props = {
   packages?: PricePackages[],
-  features: string[] | PricePackages[];
 }
 
 // variant → styles map
