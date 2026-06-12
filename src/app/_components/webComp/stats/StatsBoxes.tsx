@@ -1,4 +1,3 @@
-import React from 'react'
 import Text from '@/app/_components/ui/Text'
 
 type Props = {}
