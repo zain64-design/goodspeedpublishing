@@ -1,4 +1,6 @@
-export const packagesData = [
+import type { PricePackages } from "@/app/_types";
+
+export const packagesData: PricePackages[] = [
     {
         id: 1,
         variant: "default",

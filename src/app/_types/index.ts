@@ -121,7 +121,7 @@ export type PackageFeature = {
 }
 
 export type PricePackages = {
-  id: string;
+  id: number;
   title: string;
   description: string;
   newPrice: number;
