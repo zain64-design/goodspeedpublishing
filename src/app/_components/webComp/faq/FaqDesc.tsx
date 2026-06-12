@@ -1,5 +1,5 @@
-import Text from "../../ui/Text"
-import BookACall from "./BookACall"
+import Text from "@/app/_components/ui/Text"
+import BookACall from "@/app/_components/webComp/faq/BookACall"
 
 
 type Props = {}

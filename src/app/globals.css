@@ -236,6 +236,7 @@ body {
   --color-grey-text-500:rgba(255, 255, 255, 0.60);
 
   --color-grey-border-50: rgba(255, 255, 255, 0.10);
+  --color-grey-border-100: rgba(11, 11, 11, 0.10);
 
   --color-black-text-50: rgba(11, 11, 14, 0.75);
   --color-black-text-100: #0B0B0E;
