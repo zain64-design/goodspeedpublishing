@@ -90,13 +90,13 @@ export default function PackageBox({ packages }: Props) {
               <Badge className='justify-center font-semibold uppercase text-base tracking-[1.63px] gap-2 rounded-full shadow-[0_14.794px_22.192px_-4.438px_rgba(0,0,0,0.10),0_5.918px_8.877px_-5.918px_rgba(0,0,0,0.10)] mx-auto absolute -top-5 left-0 right-0 w-full max-w-46.75 min-h-10.5' label={badge} leftIcon={<LuCrown/>}/>
             )}
 
-            <Text as='h4' className={twMerge('font-bold text-[35px] capitalize mb-2.25', styles.text)}>
+            <Text as='h3' className={twMerge('font-bold text-[35px] capitalize mb-2.25', styles.text)}>
               {title}
             </Text>
             <Text as='span' className={twMerge('text-[20px] leading-7.25', styles.text)}>
               {description}
             </Text>
-            <Text as='h5' className={twMerge('font-bold text-[70px] leading-15 flex items-end mt-9 mb-3', styles.text)}>
+            <Text as='h4' className={twMerge('font-bold text-[70px] leading-15 flex items-end mt-9 mb-3', styles.text)}>
               {`$${newPrice.toLocaleString()}`}
               <Text as='small' className='leading-7.25! line-through text-[20px] font-normal opacity-60'>
                 {`$${oldPrice}`}
@@ -127,7 +127,7 @@ export default function PackageBox({ packages }: Props) {
               buttonClass={twMerge('font-medium text-[23px] rounded-full h-[76px] items-center justify-center', styles.btn)}
             />
 
-            <Text as='h6' className={twMerge('uppercase font-bold text-[14px] tracking-[1.47px] text-center mt-[38px]', styles.text)}>
+            <Text as='h5' className={twMerge('uppercase font-bold text-[14px] tracking-[1.47px] text-center mt-[38px]', styles.text)}>
               need more info
             </Text>
             <div className="flex items-center justify-center gap-9 mt-3">
