@@ -91,7 +91,7 @@ export default function IllustrationSlider({ }: Props) {
             >
                 {portfolioBooks.map(({ id, img }) => (
                     <SwiperSlide className='w-auto!' key={id}>
-                        <ImageComp src={img} width={390} height={490} alt="illustration" className={twMerge(`ct-w w-auto rounded-2xl h-[490px] object-center object-fill`)} />                        
+                        <ImageComp src={img} width={152} height={490} alt="illustration" className={twMerge(`ct-w w-auto rounded-2xl h-[490px] object-center object-fill`)} />                        
                     </SwiperSlide>
                 ))}
             </Swiper>
