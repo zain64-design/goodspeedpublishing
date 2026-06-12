@@ -16,12 +16,12 @@ export default function Home() {
             <Banner />
             <Announcement />
             <Author/>
-            <Stats/>
             <Story />
             <Portfolio/>
             <Illustration/>
             <Brands />
             <Packages/>
+            <Stats/>
             <FAQ />
             <Contact />
         </>
