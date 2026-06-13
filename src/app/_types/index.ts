@@ -104,17 +104,6 @@ export type IconProps = {
     color?: string
 }
 
-// export type PricePackages = {
-//   id: number;
-//   title: string;
-//   description: string;
-//   newPrice: number;
-//   oldPrice: number;
-//   period: string;
-//   badge?: string | null;
-//   features: string[];
-// }
-
 export type PackageFeature = {
   label: string;
   included: boolean;
