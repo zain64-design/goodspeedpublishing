@@ -34,7 +34,7 @@ export default function PackageBox({ packages }: Props) {
   const data = packages ?? []
 
   return (
-    <div className='grid md:grid-cols-2 xl:grid-cols-3 gap-y-8 md:gap-x-6 4xl:gap-x-9.25 md:[&>:last-child:nth-child(odd)]:col-span-2 md:[&>:last-child:nth-child(odd)]:mx-auto md:[&>:last-child:nth-child(odd)]:w-1/2'>
+    <div className='grid md:grid-cols-2 xl:grid-cols-3 gap-y-8 md:gap-x-6 4xl:gap-x-9.25'>
       {data.map((value) => {
         const { id, title, description, newPrice, oldPrice, period, badge, features, variant } = value
         const styles = variantStyles[variant]
