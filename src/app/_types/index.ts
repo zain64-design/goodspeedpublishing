@@ -121,3 +121,12 @@ export type PricePackages = {
 features: PackageFeature[];
 }
 
+
+export type GenreItem = {
+    id: number
+    title: string
+    category: string
+    info: string
+    thumbnail?: string | StaticImageData
+}
+

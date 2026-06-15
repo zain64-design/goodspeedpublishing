@@ -25,6 +25,13 @@ body {
   } */
 }
 @layer components {
+  .reflect-below {
+        -webkit-box-reflect: below -40px linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0) 70%,
+            rgba(0, 0, 0, 0.2) 100%
+        );
+    }
   .btn-primary {
     @apply overflow-hidden bg-primary-btn w-full font-medium text-primary-btn-text capitalize rounded-xl xl:rounded-2xl border-2 border-primary-btn transition duration-500 ease-in-out p-2 [&>span]:contents;
     transform: perspective(1px) translateZ(0);
@@ -178,6 +185,27 @@ body {
     @apply bg-white! w-[25px]! sm:w-[45px]!;
   }
 
+  /* .ct-tabs .p-tabview-nav-container {
+    @apply mb-18.75 max-w-[1400px] mx-auto; 
+  }
+.ct-tabs .p-tabview-nav-container .p-tabview-nav-content .p-tabview-nav {
+  @apply flex items-center justify-center gap-4;
+}
+.ct-tabs .p-tabview-nav-container .p-tabview-nav-content .p-tabview-nav .p-unselectable-text {
+  @apply h-13 w-auto px-6 py-2.5 border border-grey-border-200 rounded-full content-center capitalize text-xl font-medium text-grey-text-200 cursor-pointer transition-all duration-200 ease-in-out;
+      &:hover, &:focus, &:active {
+    @apply text-mid-50 font-semibold bg-primary border-primary;
+  }
+}
+  .ct-tabs .p-tabview-nav-container .p-tabview-nav-content .p-tabview-nav .p-unselectable-text.p-tabview-selected {
+    @apply text-mid-50 font-semibold bg-primary border-primary;
+  } */
+
+  .ct-tabs .p-tabview-nav .p-highlight .p-tabview-nav-link,
+.ct-tabs .p-tabview-nav .p-tabview-nav-link:hover {
+  @apply text-mid-50 font-semibold bg-primary border-primary;
+}
+
 }
 @layer utilities {}
 
@@ -237,6 +265,7 @@ body {
 
   --color-grey-border-50: rgba(255, 255, 255, 0.10);
   --color-grey-border-100: rgba(11, 11, 11, 0.10);
+    --color-grey-border-200: #87929D;
 
   --color-black-text-50: rgba(11, 11, 14, 0.75);
   --color-black-text-100: #0B0B0E;

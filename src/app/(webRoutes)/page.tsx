@@ -9,6 +9,7 @@ import Author from "@/app/_components/webComp/author/Author";
 import Portfolio from "@/app/_components/webComp/portfolio/Portfolio";
 import Illustration from "@/app/_components/webComp/illustration/Illustration";
 import Packages from "@/app/_components/webComp/packages/Packages";
+import Genres from "@/app/_components/webComp/genres/Genres";
 
 export default function Home() {
     return (
@@ -16,6 +17,7 @@ export default function Home() {
             <Banner />
             <Announcement />
             <Author/>
+            <Genres/>
             <Story />
             <Portfolio/>
             <Illustration/>
