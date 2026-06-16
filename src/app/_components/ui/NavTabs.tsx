@@ -27,7 +27,7 @@ export default function NavTabs({ genres }: Props) {
             onTabChange={(e) => setActiveIndex(e.index)}
             pt={{
                 root: { className: 'ct-tabs' },
-                navContainer: { className: 'mb-18.75 max-w-[1400px] mx-auto relative overflow-hidden px-3' },
+                navContainer: { className: 'mb-12 lg:mb-14 xl:mb-16 2xl:mb-18.75 w-full 2xl:max-w-[1400px] mx-auto relative overflow-hidden px-3' },
                 navContent: {
                     className: 'overflow-x-auto overflow-y-hidden scroll-smooth overscroll-[contain_auto] relative [&::-webkit-scrollbar]:hidden',
                     style: { scrollbarWidth: 'none' }
@@ -51,9 +51,9 @@ export default function NavTabs({ genres }: Props) {
                         // actual clickable anchor/button
                         headerAction: {
                             className: [
-                                'px-6 py-2.5 h-[52px] inline-block',
+                                'px-3 py-1 sm:px-4 sm:py-1.5 md:px-5 md:py-2 2xl:px-6 2xl:py-2.5 h-[35px] sm:h-[40px] md:h-[46px] 2xl:h-[48px] 4xl:h-[52px] inline-block',
                                 'border border-grey-border-200 rounded-full',
-                                'content-center capitalize text-xl font-medium text-grey-text-200',
+                                'content-center capitalize text-xs sm:text-sm md:text-base 2xl:text-lg 4xl:text-xl font-medium text-grey-text-200',
                                 'cursor-pointer transition-all duration-300 ease-in-out',
                                 'hover:text-mid-50 hover:bg-primary hover:border-primary',
                                 // active state — p-highlight class aa jaati hai li pe, isiliye parent selector
@@ -66,9 +66,9 @@ export default function NavTabs({ genres }: Props) {
                         content: { className: 'p-0' },
                     }}
                 >
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                         <div className="text-left">
-                            <Text as='h3' className='text-mid-50 font-bold capitalize md:tracking-[-2px] lg:text-[40px] lg:leading-12 xl:text-[56px] xl:leading-14.75 lg:mb-5 xl:mb-7.25'>{title}</Text>
+                            <Text as='h3' className='text-mid-50 font-bold capitalize md:tracking-[-2px] sm:text-[30px] sm:leading-9 md:text-[36px] md:leading-10 lg:text-[40px] lg:leading-12 xl:text-[56px] xl:leading-14.75 md:mb-4.5 lg:mb-5 xl:mb-7.25'>{title}</Text>
                             <Text className='text-grey-text-300 text-xs sm:text-sm md:text-base leading-5 md:leading-7 xl:text-lg lg:leading-7 2xl:text-xl 2xl:leading-8 4xl:text-[22px] 4xl:leading-9!'>{info}</Text>
                             <div className="flex flex-row justify-center sm:justify-start flex-wrap gap-4 flex-1 w-full mt-6 md:mt-10 2xl:mt-12.75">
                                 <CustomBtn label="book free consultation" buttonClass="btn-primary inline-flex items-center h-[50px] xl:h-[60px] 2xl:h-[71px] xs:max-w-[200px] sm:max-w-[230px] md:max-w-[240px] xl:max-w-[270px] 2xl:max-w-[292px] flex-row-reverse justify-center gap-[11px] text-xs xl:text-base 2xl:text-lg" icon={<FiArrowRight className="text-sm xl:text-base 2xl:text-xl" />} />
