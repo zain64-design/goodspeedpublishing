@@ -4,16 +4,12 @@ import { TabView, TabPanel } from 'primereact/tabview';
 import type { GenreItem } from '@/app/_types'
 import Text from '@/app/_components/ui/Text'
 import CustomBtn from '@/app/_components/ui/CustomBtn'
-import { FiArrowRight, FiChevronLeft, FiChevronRight } from "react-icons/fi";
-import ImageComp from './Image';
+import { FiArrowRight } from "react-icons/fi";
+import ImageComp from '@/app/_components/ui/Image';
 
 type Props = {
     genres?: GenreItem[]
 }
-
-// Scroll button icon — pt mein pass hoga
-const PrevIcon = () => <FiChevronLeft className="text-base text-mid-50" />
-const NextIcon = () => <FiChevronRight className="text-base text-mid-50" />
 
 export default function NavTabs({ genres }: Props) {
 
@@ -46,9 +42,7 @@ export default function NavTabs({ genres }: Props) {
                     header={category}
                     key={id}
                     pt={{
-                        // li element
                         header: { className: 'shrink-0' },
-                        // actual clickable anchor/button
                         headerAction: {
                             className: [
                                 'px-3 py-1 sm:px-4 sm:py-1.5 md:px-5 md:py-2 2xl:px-6 2xl:py-2.5 h-[35px] sm:h-[40px] md:h-[46px] 2xl:h-[48px] 4xl:h-[52px] inline-block',
@@ -56,7 +50,7 @@ export default function NavTabs({ genres }: Props) {
                                 'content-center capitalize text-xs sm:text-sm md:text-base 2xl:text-lg 4xl:text-xl font-medium text-grey-text-200',
                                 'cursor-pointer transition-all duration-300 ease-in-out',
                                 'hover:text-mid-50 hover:bg-primary hover:border-primary',
-                                // active state — p-highlight class aa jaati hai li pe, isiliye parent selector
+
                                 activeIndex === data.findIndex(g => g.id === id)
                                     ? 'text-mid-50 bg-primary border-primary'
                                     : '',

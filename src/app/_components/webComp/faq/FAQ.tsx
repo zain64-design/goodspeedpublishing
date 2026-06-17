@@ -1,9 +1,10 @@
 import FaqDesc from '@/app/_components/webComp/faq/FaqDesc'
 import Accordion from '@/app/_components/ui/CustomAccordion'
+import { FAQData } from '@/app/_components/webComp/faq/FAQData'
 
 type Props = {}
 
-export default function FAQ({ }: Props) {
+export default function FAQ({}: Props) {
   return (
     <section className="py-6.25 md:py-12.5">
       <div className="md:container mx-auto px-4">
@@ -12,7 +13,7 @@ export default function FAQ({ }: Props) {
             <FaqDesc />
           </div>
           <div className="w-full md:flex-1 xl:max-w-[55%] 2xl:max-w-1/2">
-            <Accordion />
+            <Accordion faq={FAQData} />
           </div>
         </div>
       </div>

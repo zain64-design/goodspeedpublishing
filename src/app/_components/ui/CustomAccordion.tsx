@@ -1,12 +1,15 @@
 'use client'
 import { Accordion, AccordionTab } from 'primereact/accordion'
 import { LuPlus, LuMinus } from "react-icons/lu";
+import type {FaqItem} from '@/app/_types'
 import Text from './Text';
 
+type Props = {
+    faq?: FaqItem[]
+}
 
-type Props = {}
-
-export default function CustomAccordion({}: Props) {
+export default function CustomAccordion({faq}: Props) {
+    const data = faq ?? []
   return (
     <>
             <Accordion
@@ -15,31 +18,11 @@ export default function CustomAccordion({}: Props) {
             expandIcon={<Text as="span" className="icon-rounded icon-plus"><LuPlus /></Text>}
             collapseIcon={<Text as="span" className="icon-rounded icon-minus"><LuMinus /></Text>}
         >
-            <AccordionTab header="Lorem ipsum dolor sit amet" contentClassName='accord-ct-content' headerClassName='accord-ct-icon'>
-                <p className="m-0">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
+            {data.map(({id,title,desc})=> (
+                <AccordionTab header={title} contentClassName='accord-ct-content' headerClassName='accord-ct-icon' key={id}>
+                <p className="m-0">{desc}</p>
             </AccordionTab>
-            <AccordionTab header="Lorem ipsum dolor sit amet" contentClassName='accord-ct-content' headerClassName='accord-ct-icon'>
-                <p className="m-0">
-                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
-                </p>
-            </AccordionTab>
-            <AccordionTab header="Lorem ipsum dolor sit amet" contentClassName='accord-ct-content' headerClassName='accord-ct-icon'>
-                <p className="m-0">
-                    At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum.
-                </p>
-            </AccordionTab>
-            <AccordionTab header="Lorem ipsum dolor sit amet" contentClassName='accord-ct-content' headerClassName='accord-ct-icon'>
-                <p className="m-0">
-                    At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum.
-                </p>
-            </AccordionTab>
-            <AccordionTab header="Lorem ipsum dolor sit amet" contentClassName='accord-ct-content' headerClassName='accord-ct-icon'>
-                <p className="m-0">
-                    At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum.
-                </p>
-            </AccordionTab>
+            ))}
         </Accordion>
     </>
   )

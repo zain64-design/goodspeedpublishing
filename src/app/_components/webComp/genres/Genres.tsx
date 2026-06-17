@@ -1,5 +1,3 @@
-// import React, { useState } from 'react';
-// import { TabView, TabPanel } from 'primereact/tabview';
 import Text from "@/app/_components/ui/Text"
 import { CurveLine } from "@/app/_components/ui/Icons"
 import NavTabs from "../../ui/NavTabs"

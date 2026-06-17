@@ -116,9 +116,9 @@ export type PricePackages = {
   newPrice: number;
   oldPrice: number;
   period: string;
-  badge: string | null;
-  variant: "default" | "primary" | "secondary";
-features: PackageFeature[];
+  badge?: string | null;
+  variant?: "default" | "primary" | "secondary";
+    features: PackageFeature[];
 }
 
 
@@ -128,5 +128,11 @@ export type GenreItem = {
     category: string
     info: string
     thumbnail?: string | StaticImageData
+}
+
+export type FaqItem = {
+    id: number
+    title: string
+    desc: string
 }
 
