@@ -69,7 +69,7 @@ export default function NavTabs({ genres }: Props) {
                                 <CustomBtn label="Chat For 35% OFF" buttonClass="btn-secondary inline-flex items-center h-[50px] xl:h-[60px] 2xl:h-[71px] xs:max-w-[200px] sm:max-w-[230px] md:max-w-[160px] xl:max-w-[200px] 2xl:max-w-[232px] flex-row-reverse justify-center gap-[11px] text-xs xl:text-base 2xl:text-lg" />
                             </div>
                         </div>
-                        {thumbnail && <ImageComp src={thumbnail} width={670} height={435} className='object-contain max-h-108.75 mx-auto max-w-full reflect-below' alt={`image-${category}`} />}
+                        {thumbnail && <ImageComp src={thumbnail} width={670} height={435} preload className='object-contain max-h-108.75 mx-auto max-w-full reflect-below' alt={`image-${category}`} />}
                     </div>
                 </TabPanel>
             ))}

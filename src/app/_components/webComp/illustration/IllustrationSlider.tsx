@@ -17,8 +17,6 @@ import illustration9 from '@public/images/illustration/illustration-9.webp'
 import { twMerge } from 'tailwind-merge'
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 
-type Props = {}
-
 const portfolioBooks = [
     { id: 1, img: illustration1 },
     { id: 2, img: illustration2 },
@@ -40,7 +38,7 @@ const portfolioBooks = [
     { id: 18, img: illustration9 },
 ]
 
-export default function IllustrationSlider({ }: Props) {
+export default function IllustrationSlider() {
     return (
         <div className="relative">
             <Swiper
@@ -54,15 +52,17 @@ export default function IllustrationSlider({ }: Props) {
                 }}
                 spaceBetween={20}
                 grabCursor={true}
-                speed={2200}
+                speed={1200}
                 slidesPerView={'auto'}
                 loop={true}
                 centeredSlides={true}
                 slidesPerGroupSkip={2}
             >
-                {portfolioBooks.map(({ id, img }) => (
+                {portfolioBooks.map(({ id, img },index) => (
                     <SwiperSlide className='w-auto!' key={id}>
-                        <ImageComp src={img} alt="illustration" className={twMerge(`ct-w w-auto rounded-2xl h-60 sm:h-80 xl:h-100 2xl:h-122.5 object-center object-fill`)} />
+                        <div className="ct-w h-60 sm:h-80 xl:h-100 2xl:h-122.5 relative">
+                            <ImageComp src={img} fill sizes="391px" alt="illustration" preload={index === 0}  className={twMerge(`rounded-2xl object-center object-fill`)} />
+                        </div>
                     </SwiperSlide>
                 ))}
             </Swiper>

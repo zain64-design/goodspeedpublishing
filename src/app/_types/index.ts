@@ -34,6 +34,8 @@ export type ImageProps = {
     sizes?: string,
     alt: string,
     className?: string,
+    style?: React.CSSProperties,
+    fill?: boolean,
     placeholder?: "blur" | "empty",
     blurDataURL?: string,
     loading?: "eager" | "lazy"

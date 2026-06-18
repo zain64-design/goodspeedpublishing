@@ -167,10 +167,10 @@ body {
     @apply shadow-[inset_-7.5px_6px_12px_0_rgba(0,0,0,0.24)];
   }
  .illustration-slider .swiper-slide {
-  @apply transition-all duration-900 ease-in;
+  @apply transition-all duration-1100 ease-in;
  }
  .illustration-slider .swiper-slide .ct-w {
-  @apply max-w-[391px] md:max-w-[152px] transition-all duration-900 ease-in;
+  @apply max-w-[391px] md:max-w-[152px] transition-all duration-1100 ease-in;
  }
   .illustration-slider .swiper-slide.swiper-slide-active .ct-w {
     @apply md:max-w-[391px];
