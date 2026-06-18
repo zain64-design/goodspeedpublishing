@@ -6,6 +6,7 @@ import type { CustomBtnProps } from '@/app/_types'
 
 export default function CustomBtn({
     type = 'button',
+    key,
     onClick,
     disabled = false,
     ariaLabel,
@@ -23,6 +24,7 @@ export default function CustomBtn({
 
     return (
         <Button
+            key={key}
             type={type}
             onClick={onClick}
             disabled={disabled || isLoading}

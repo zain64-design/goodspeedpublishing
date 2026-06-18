@@ -15,6 +15,7 @@ export type LogoItem = {
 
 export type CustomBtnProps = {
     type?: "button" | "submit" | "reset";
+    key?:number,
     onClick?: () => void;
     disabled?: boolean;
     ariaLabel?: string,

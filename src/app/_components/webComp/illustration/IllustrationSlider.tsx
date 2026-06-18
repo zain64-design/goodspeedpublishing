@@ -36,6 +36,15 @@ const portfolioBooks = [
     { id: 16, img: illustration7 },
     { id: 17, img: illustration8 },
     { id: 18, img: illustration9 },
+    { id: 19, img: illustration1 },
+    { id: 20, img: illustration2 },
+    { id: 21, img: illustration3 },
+    { id: 22, img: illustration4 },
+    { id: 23, img: illustration5 },
+    { id: 24, img: illustration6 },
+    { id: 25, img: illustration7 },
+    { id: 26, img: illustration8 },
+    { id: 27, img: illustration9 },
 ]
 
 export default function IllustrationSlider() {
@@ -60,8 +69,8 @@ export default function IllustrationSlider() {
             >
                 {portfolioBooks.map(({ id, img },index) => (
                     <SwiperSlide className='w-auto!' key={id}>
-                        <div className="ct-w h-60 sm:h-80 xl:h-100 2xl:h-122.5 relative">
-                            <ImageComp src={img} fill sizes="391px" alt="illustration" preload={index === 0}  className={twMerge(`rounded-2xl object-center object-fill`)} />
+                        <div className="ct-w relative">
+                            <ImageComp src={img} fill sizes="390px" alt="illustration" preload={index === 0} />
                         </div>
                     </SwiperSlide>
                 ))}

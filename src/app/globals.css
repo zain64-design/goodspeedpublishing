@@ -170,10 +170,10 @@ body {
   @apply transition-all duration-1100 ease-in;
  }
  .illustration-slider .swiper-slide .ct-w {
-  @apply max-w-[391px] md:max-w-[152px] transition-all duration-1100 ease-in;
+  @apply min-w-[200px] sm:min-w-[65px] min-w-[75px] lg:min-w-[85px] xl:min-w-[100px] 2xl:min-w-[130px] 4xl:min-w-[150px] h-[300px] sm:h-[300px] md:h-[400px] lg:h-[430px] xl:h-[450px] 2xl:h-[470px] 4xl:h-[490px] rounded-xl md:rounded-2xl transition-all duration-1100 ease-in overflow-hidden;
  }
   .illustration-slider .swiper-slide.swiper-slide-active .ct-w {
-    @apply md:max-w-[391px];
+    @apply sm:min-w-[200px] md:min-w-[300px] lg:min-w-[330px] xl:min-w-[350px] 2xl:min-w-[370px] 4xl:min-w-[390px];
   }
 
   .illustration-slider .swiper-pagination {
@@ -187,11 +187,6 @@ body {
   .illustration-slider .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
     @apply bg-white! w-[25px]! md:w-[35px]! lg:w-[45px]!;
   }
-
-  .ct-tabs .p-tabview-nav .p-highlight .p-tabview-nav-link,
-.ct-tabs .p-tabview-nav .p-tabview-nav-link:hover {
-  @apply text-mid-50 font-semibold bg-primary border-primary;
-}
 
 }
 @layer utilities {}

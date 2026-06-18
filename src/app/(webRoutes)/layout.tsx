@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Poppins, Playfair_Display } from "next/font/google";
 import "../globals.css";
-import 'primereact/resources/primereact.min.css';
 import Header from "@/app/_components/webComp/common/header/Header";
 import Footer from "@/app/_components/webComp/common/footer/Footer";
 
