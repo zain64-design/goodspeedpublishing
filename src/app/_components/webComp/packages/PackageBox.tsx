@@ -12,7 +12,9 @@ type Props = {
 }
 
 // variant → styles map
-const variantStyles = {
+type Variant = "default" | "primary" | "secondary"
+
+const variantStyles: Record<Variant, { card: string; text: string; btn: string }> = {
   default: {
     card: "bg-white",
     text: "text-mid",
@@ -28,7 +30,7 @@ const variantStyles = {
     text: "text-white",
     btn: "btn-primary",
   },
-} satisfies Record<PricePackages["variant"], { card: string; text: string; btn: string }>
+}
 
 export default function PackageBox({ packages }: Props) {
   const data = packages ?? []
