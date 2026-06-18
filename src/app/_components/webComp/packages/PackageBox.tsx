@@ -37,7 +37,7 @@ export default function PackageBox({ packages }: Props) {
     <div className='grid md:grid-cols-2 xl:grid-cols-3 gap-y-8 md:gap-x-6 4xl:gap-x-9.25'>
       {data.map((value) => {
         const { id, title, description, newPrice, oldPrice, period, badge, features, variant } = value
-        const styles = variantStyles[variant]
+        const styles = variantStyles[variant ?? "default"]
 
         return (
           <div className={twMerge('rounded-[30px] sm:rounded-[36px] lg:rounded-[42px] py-6 px-3 sm:p-5.5 lg:p-7 xl:p-7 2xl:p-9 4xl:p-12 relative', styles.card)} key={id}>
@@ -55,7 +55,7 @@ export default function PackageBox({ packages }: Props) {
             <Text as='h4' className={twMerge('font-bold text-[28px] leading-8 sm:text-[35px] sm:leading-9 2xl:text-[40px] 2xl:leading-10 4xl:text-[70px] 4xl:leading-15 flex items-end mt-6 xl:mt-7 4xl:mt-9 mb-3 gap-3.75', styles.text)}>
               {`$${newPrice.toLocaleString()}`}
               <Text as='small' className='leading-7.25! line-through text-base 2xl:text-lg 4xl:text-xl font-normal'>
-                {`$${oldPrice}`}
+                {`$${oldPrice.toLocaleString()}`}
               </Text>
             </Text>
             <Text as='span' className={twMerge('uppercase text-sm 2xl:text-base tracking-[1.63px]', styles.text)}>
