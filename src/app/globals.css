@@ -125,7 +125,7 @@ body {
   }
   /* author element */
   .right-dash::before {
-    @apply content-[''] inline-flex w-[40px] h-px bg-white;
+    @apply content-[''] inline-flex w-4 md:w-10 h-px bg-white;
   }
   
     .books-slider .swiper-slide {
@@ -166,41 +166,27 @@ body {
   .books-slider .swiper-slide.swiper-slide-active .item-main .bg-ct::before {
     @apply shadow-[inset_-7.5px_6px_12px_0_rgba(0,0,0,0.24)];
   }
-
+ .illustration-slider .swiper-slide {
+  @apply transition-all duration-900 ease-in;
+ }
  .illustration-slider .swiper-slide .ct-w {
-  @apply max-w-[152px] transition-all duration-400 ease-in-out;
+  @apply max-w-[391px] md:max-w-[152px] transition-all duration-900 ease-in;
  }
   .illustration-slider .swiper-slide.swiper-slide-active .ct-w {
-    @apply max-w-[391px];
+    @apply md:max-w-[391px];
   }
 
   .illustration-slider .swiper-pagination {
-    @apply relative! inset-auto! mt-10 md:mt-[74px]!;
+    @apply relative! inset-auto! mt-8 md:mt-14! lg:mt-18.5!;
   }
 
     .illustration-slider .swiper-pagination .swiper-pagination-bullet {
-    @apply bg-white! opacity-100! h-2.25! w-2.25! sm:h-4! sm:w-4! rounded-[50px]! transition-all duration-500 ease-in-out;
+    @apply bg-white! opacity-100! h-2! w-2! md:h-3! md:w-3! lg:h-4! lg:w-4! rounded-[50px]! transition-all duration-500 ease-in-out;
   }
 
   .illustration-slider .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
-    @apply bg-white! w-[25px]! sm:w-[45px]!;
+    @apply bg-white! w-[25px]! md:w-[35px]! lg:w-[45px]!;
   }
-
-  /* .ct-tabs .p-tabview-nav-container {
-    @apply mb-18.75 max-w-[1400px] mx-auto; 
-  }
-.ct-tabs .p-tabview-nav-container .p-tabview-nav-content .p-tabview-nav {
-  @apply flex items-center justify-center gap-4;
-}
-.ct-tabs .p-tabview-nav-container .p-tabview-nav-content .p-tabview-nav .p-unselectable-text {
-  @apply h-13 w-auto px-6 py-2.5 border border-grey-border-200 rounded-full content-center capitalize text-xl font-medium text-grey-text-200 cursor-pointer transition-all duration-200 ease-in-out;
-      &:hover, &:focus, &:active {
-    @apply text-mid-50 font-semibold bg-primary border-primary;
-  }
-}
-  .ct-tabs .p-tabview-nav-container .p-tabview-nav-content .p-tabview-nav .p-unselectable-text.p-tabview-selected {
-    @apply text-mid-50 font-semibold bg-primary border-primary;
-  } */
 
   .ct-tabs .p-tabview-nav .p-highlight .p-tabview-nav-link,
 .ct-tabs .p-tabview-nav .p-tabview-nav-link:hover {

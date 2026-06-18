@@ -1,6 +1,6 @@
 import Text from "@/app/_components/ui/Text"
 import { CurveLine } from "@/app/_components/ui/Icons"
-import NavTabs from "../../ui/NavTabs"
+import NavTabs from "@/app/_components/ui/NavTabs"
 import {GenresData} from './GenresData'
 
 type Props = {}

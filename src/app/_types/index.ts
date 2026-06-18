@@ -136,3 +136,10 @@ export type FaqItem = {
     desc: string
 }
 
+export type AuthorItem = {
+    id: number
+    desc: string
+    authorName: string
+    authorThumbnail?: string | StaticImageData
+}
+
