@@ -14,7 +14,6 @@ import illustration6 from '@public/images/illustration/illustration-6.webp'
 import illustration7 from '@public/images/illustration/illustration-7.webp'
 import illustration8 from '@public/images/illustration/illustration-8.webp'
 import illustration9 from '@public/images/illustration/illustration-9.webp'
-import { twMerge } from 'tailwind-merge'
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 
 const portfolioBooks = [
@@ -51,7 +50,7 @@ export default function IllustrationSlider() {
     return (
         <div className="relative">
             <Swiper
-                className="illustration-slider mt-10 md:mt-16.75 mask-[linear-gradient(to_right,transparent_0%,#000_10%,#000_90%,transparent_100%)]
+                className="illustration-slider mt-6 sm:mt-10 md:mt-16.75 mask-[linear-gradient(to_right,transparent_0%,#000_10%,#000_90%,transparent_100%)]
     [-webkit-mask-image:linear-gradient(to_right,transparent_0%,#000_10%,#000_90%,transparent_100%)]"
                 modules={[Navigation, A11y, Pagination]}
                 pagination={{ clickable: true }}
