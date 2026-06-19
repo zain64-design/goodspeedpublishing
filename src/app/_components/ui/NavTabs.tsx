@@ -39,7 +39,7 @@ export default function NavTabs({ genres }: Props) {
                                     'capitalize text-xs sm:text-sm md:text-base 2xl:text-lg 4xl:text-xl font-medium text-grey-text-200',
                                     'cursor-pointer transition-all duration-300 ease-in-out leading-none',
                                     'hover:text-mid-50 hover:bg-primary hover:border-primary',
-                                    activeIndex === index ? 'text-mid-50 bg-primary border-primary' : '',
+                                    activeIndex === index ? 'text-mid-50 font-semibold bg-primary border-primary' : '',
                                 ].join(' ')}
                             >
                                 {category}
