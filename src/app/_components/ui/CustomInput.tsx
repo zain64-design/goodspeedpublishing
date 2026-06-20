@@ -8,6 +8,7 @@ export default function CustomInput({
     name,
     value,
     onChange,
+    onBlur,
     defaultValue,
     autoComplete,
     placeholder = "",
@@ -32,6 +33,7 @@ export default function CustomInput({
                 value={value}
                 defaultValue={defaultValue}
                 onChange={onChange}
+                onBlur={onBlur}
                 placeholder={placeholder}
                 required={required}
                 className={twMerge('no-spinner', inputClassName)}

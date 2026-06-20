@@ -65,6 +65,7 @@ export type CustomTextareaProps = {
     name?: string
     value?: string
     onChange?: React.ChangeEventHandler<HTMLTextAreaElement>
+onBlur?: React.FocusEventHandler<HTMLTextAreaElement> 
     placeholder?: string
     required?: boolean
     rows?: number
@@ -79,6 +80,7 @@ export type CustomInputProps = {
     name?: string
     value?: string | number
     onChange?: React.ChangeEventHandler<HTMLInputElement>
+    onBlur?: React.FocusEventHandler<HTMLInputElement>
     defaultValue?: string | number
     autoComplete?: string
     placeholder?: string
@@ -167,5 +169,12 @@ export type CountUpProps = {
   duration?: number
   scrollStart?: string
   delay?: number
+}
+
+export type ContactFormValues = {
+    name: string
+    phone: string
+    email: string
+    about: string
 }
 

@@ -7,6 +7,7 @@ export default function CustomTextarea({
     name,
     value,
     onChange,
+    onBlur,
     placeholder = "",
     required = false,
     rows = 4,
@@ -26,6 +27,7 @@ export default function CustomTextarea({
                 name={name}
                 value={value}
                 onChange={onChange}
+                onBlur={onBlur}
                 placeholder={placeholder}
                 required={required}
                 rows={rows}
