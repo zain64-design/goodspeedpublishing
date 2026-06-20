@@ -172,14 +172,14 @@ export default function ContactForm() {
                     />
 
                     {submitStatus === 'success' && (
-                        <div className="flex items-center gap-2 text-green-600">
+                        <div className="flex items-center justify-center gap-2 text-green-600">
                             <FaCircleCheck size={18} />
                             <p className="text-sm">Your message has been sent successfully!</p>
                         </div>
                     )}
 
                     {submitStatus === 'error' && (
-                        <div className="flex items-center gap-2 text-red-500">
+                        <div className="flex items-center justify-center gap-2 text-red-500">
                             <FaCircleXmark size={18} />
                             <p className="text-sm">Something went wrong. Please try again.</p>
                         </div>
