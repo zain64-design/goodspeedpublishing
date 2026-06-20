@@ -17,7 +17,7 @@ export default function Links({ links, info, className, itemClassName, linkClass
     const data = links ?? info ?? []
     return (
         <Text as="ul" className={twMerge(className)}>
-            {data.map(({ id, title, href, brandInfo, icon }) => {
+            {data?.map(({ id, title, href, brandInfo, icon }) => {
                 return (
                     <Text as="li" key={id} className={twMerge(itemClassName)}>
                         <Link href={href} className={twMerge(linkClassName)}>

@@ -5,7 +5,7 @@ import logoDark from "@public/images/logo-dark.webp"
 
 export default function Header() {
   return (
-    <header className="md:sticky top-0 z-100">
+    <header className="w-full md:fixed top-0 left-0 right-0 z-100">
       <nav className="bg-white w-full py-2 md:py-4.5 2xl:py-5.75">
         <div className="md:container mx-auto px-6 flex flex-col md:flex-row items-center justify-between w-full">
           <ImageComp src={logoDark} width={410} height={52} className="logo transition duration-300 ease-in max-w-60 xl:max-w-70 2xl:max-w-102.5 w-full object-contain mb-4 md:mb-0" alt="logo"/>

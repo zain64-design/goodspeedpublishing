@@ -37,7 +37,7 @@ export default function PackageBox({ packages }: Props) {
 
   return (
     <div className='grid md:grid-cols-2 xl:grid-cols-3 gap-y-8 md:gap-x-6 4xl:gap-x-9.25'>
-      {data.map((value) => {
+      {data?.map((value) => {
         const { id, title, description, newPrice, oldPrice, period, badge, features, variant } = value
         const styles = variantStyles[variant ?? "default"]
 

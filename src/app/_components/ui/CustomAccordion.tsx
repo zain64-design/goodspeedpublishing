@@ -18,7 +18,7 @@ export default function CustomAccordion({faq}: Props) {
             expandIcon={<Text as="span" className="icon-rounded icon-plus"><LuPlus /></Text>}
             collapseIcon={<Text as="span" className="icon-rounded icon-minus"><LuMinus /></Text>}
         >
-            {data.map(({id,title,desc})=> (
+            {data?.map(({id,title,desc})=> (
                 <AccordionTab header={title} contentClassName='accord-ct-content' headerClassName='accord-ct-icon' key={id}>
                 <p className="m-0">{desc}</p>
             </AccordionTab>

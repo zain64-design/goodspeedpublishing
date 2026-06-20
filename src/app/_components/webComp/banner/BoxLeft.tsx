@@ -12,7 +12,7 @@ type Props = {}
 export default function BoxLeft({ }: Props) {
     const { props: { srcSet: srcSet1 } } = getImageProps({ alt: '', width: 345, height: 381, src: LeftBoxElem, quality: 50 })
     return (
-        <div className="bg-primary py-4 px-6 md:py-4 md:px-6 lg:py-5 lg:px-9 2xl:py-6 2xl:px-11 4xl:py-8 4xl:px-13 6xl:py-9.75 6xl:px-15 rounded-[30px] lg:rounded-[48px] bg-no-repeat bg-bottom-right bg-size-[140px_155px] md:bg-size-[160px_177px] 2xl:bg-size-[290px_320px] 4xl:bg-size-[345px_381px] overflow-hidden" style={{
+        <div className="banner-box bg-primary py-4 px-6 md:py-4 md:px-6 lg:py-5 lg:px-9 2xl:py-6 2xl:px-11 4xl:py-8 4xl:px-13 6xl:py-9.75 6xl:px-15 rounded-[30px] lg:rounded-[48px] bg-no-repeat bg-bottom-right bg-size-[140px_155px] md:bg-size-[160px_177px] 2xl:bg-size-[290px_320px] 4xl:bg-size-[345px_381px] overflow-hidden" style={{
             backgroundImage: `${getBackgroundImage(srcSet1)}`
         }}>
             <Text as="h1" className="text-mid tracking-[-1.639px] font-extrabold text-2xl leading-6.5 sm:text-3xl sm:leading-8 md:text-[40px] md:leading-10.5 xl:text-[56px] xl:leading-14.5 2xl:text-[66px] 2xl:leading-17 2xl:mb-7.25 4xl:text-[76px] 4xl:leading-19.5 4xl:mb-8.25 6xl:text-[96px] 6xl:leading-24.5 mb-3 lg:mb-5 xl:mb-7">

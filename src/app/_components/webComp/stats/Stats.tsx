@@ -1,10 +1,8 @@
 import StatsBoxes from "./StatsBoxes"
 import StatsInfo from "./StatsInfo"
+import {statsData} from "./StatsData"
 
-
-type Props = {}
-
-export default function Stats({}: Props) {
+export default function Stats() {
   return (
     <section className="py-6.25 md:py-12.5">
       <div className="md:container mx-auto px-4">
@@ -13,7 +11,7 @@ export default function Stats({}: Props) {
               <StatsInfo />
             </div>
             <div className="w-full xl:max-w-[49%] 2xl:max-w-[49%] 4xl:max-w-[49%] 6xl:max-w-[45%]">
-              <StatsBoxes/>
+              <StatsBoxes stats={statsData}/>
             </div>
         </div>
       </div>

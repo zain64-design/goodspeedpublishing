@@ -29,7 +29,7 @@ export default function NavTabs({ genres }: Props) {
                 </button>
                 <div ref={navRef} className="mb-8 md:mb-10 lg:mb-14 xl:mb-16 2xl:mb-18.75 w-full 2xl:max-w-[1400px] mx-auto scroll-smooth overscroll-[contain_auto] [&::-webkit-scrollbar]:hidden overflow-x-auto overflow-y-hidden md:overflow-x-visible md:overflow-y-visible px-6 md:px-0" style={{ scrollbarWidth: 'none' }}>
                     <div className="flex justify-center flex-wrap gap-2 md:gap-4 w-max md:w-auto">
-                        {data.map(({ id, category }, index) => (
+                        {data?.map(({ id, category }, index) => (
                             <button
                                 key={id}
                                 onClick={() => setActiveIndex(index)}
@@ -52,7 +52,7 @@ export default function NavTabs({ genres }: Props) {
                 </button>
             </div>
 
-            {data.map(({ id, title, info, thumbnail, category }, index) => (
+            {data?.map(({ id, title, info, thumbnail, category }, index) => (
                 <Activity key={id} mode={activeIndex === index ? 'visible' : 'hidden'}>
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                         <div className="text-left">

@@ -41,7 +41,7 @@ export default function AuthorSlider({ author }: Props) {
                 </Swiper>
             </div>
             <div className="w-full flex-1">
-                <Text as="h3" className="text-transparent [-webkit-text-stroke:1px_grey] [-webkit-text-fill-color:mid] uppercase tracking-[7.4px] font-black text-2xl leading-6.5 sm:text-3xl sm:leading-7.5 md:text-[48px] md:leading-13 xl:text-[56px] xl:leading-14 2xl:text-[62px] 2xl:leading-16 4xl:text-[80px] 4xl:leading-20.5 6xl:text-[94px] 6xl:leading-24">success spotlight</Text>
+                <Text as="h3" animate className="text-transparent [-webkit-text-stroke:1px_grey] [-webkit-text-fill-color:mid] uppercase tracking-[7.4px] font-black text-2xl leading-6.5 sm:text-3xl sm:leading-7.5 md:text-[48px] md:leading-13 xl:text-[56px] xl:leading-14 2xl:text-[62px] 2xl:leading-16 4xl:text-[80px] 4xl:leading-20.5 6xl:text-[94px] 6xl:leading-24">success spotlight</Text>
                 <div className="flex flex-wrap items-start justify-center md:justify-between gap-2 md:gap-0 pt-10 lg:pt-10 xl:pt-12 2xl:pt-16 4xl:pt-23.5 6xl:pt-26.25">
                     <div className="group relative w-full max-w-115 lg:max-w-90 xl:max-w-110 2xl:max-w-134.5 4xl:max-w-xl 6xl:max-w-2xl mx-auto">
                         <CommaBefore className='absolute h-7 lg:h-9 xl:h-11 2xl:h-14 4xl:h-18 6xl:h-20.5 -top-13 lg:-top-13 xl:-top-16 2xl:-top-21 4xl:-top-30 6xl:-top-32.5 bottom-auto left-0' />

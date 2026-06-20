@@ -25,6 +25,9 @@ body {
   } */
 }
 @layer components {
+  .split-target .split-word {
+    @apply inline-block opacity-0;
+}
   
   .reflect-below {
         -webkit-box-reflect: below -60px linear-gradient(

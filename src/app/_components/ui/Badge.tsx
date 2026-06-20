@@ -19,7 +19,7 @@ export default function Badge({
   return (
     <span
       className={twMerge(
-        'inline-flex items-center leading-none whitespace-nowrap select-none px-[9.6px] py-[6.5px] rounded-[13px]',
+        'inline-flex items-center leading-none select-none px-[9.6px] py-[6.5px] rounded-[13px]',
         variantMap[variant],
         className,
       )}

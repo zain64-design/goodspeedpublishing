@@ -146,3 +146,26 @@ export type AuthorItem = {
     authorThumbnail?: string | StaticImageData
 }
 
+export type FadeInOptions = {
+    y?: number
+    duration?: number
+    delay?: number
+    start?: string
+    stagger?: number | gsap.StaggerVars
+    selector?: string
+}
+
+export type StatsItem = {
+    id: number
+    value: string
+    label: string
+    icon?: React.ElementType
+}
+
+export type CountUpProps = {
+  value: string
+  duration?: number
+  scrollStart?: string
+  delay?: number
+}
+
