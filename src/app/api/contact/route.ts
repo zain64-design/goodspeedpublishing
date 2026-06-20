@@ -60,7 +60,6 @@ export async function POST(request: Request) {
     try {
         const body = await request.formData()
 
-        // IP data server side par fetch karo
         let ip = '', city = '', country = '', zip_code = ''
         try {
             const ipRes = await fetch('https://api.ipapi.is/', {
@@ -79,7 +78,7 @@ export async function POST(request: Request) {
                 zip_code = ipData.location?.zip || ''
             }
         } catch {
-            // IP fetch fail ho toh form submit rukna nahi chahiye
+            
             console.log('IP fetch failed — continuing without IP data')
         }
 

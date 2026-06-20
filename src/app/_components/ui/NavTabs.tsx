@@ -6,6 +6,7 @@ import CustomBtn from '@/app/_components/ui/CustomBtn'
 import { FiArrowRight } from "react-icons/fi";
 import ImageComp from '@/app/_components/ui/Image';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa6';
+import { gsap, useGSAP } from '@/app/_libs/gsap'
 
 type Props = {
     genres?: GenreItem[]
@@ -14,12 +15,20 @@ type Props = {
 export default function NavTabs({ genres }: Props) {
     const [activeIndex, setActiveIndex] = useState(0);
     const navRef = useRef<HTMLDivElement>(null);
+    const contentRefs = useRef<(HTMLDivElement | null)[]>([]);
     const scroll = (direction: 'left' | 'right') => {
         const nav = navRef.current;
         if (!nav) return;
         nav.scrollBy({ left: direction === 'left' ? -200 : 200, behavior: 'smooth' });
     };
     const data = genres ?? [];
+    useGSAP(() => {
+        const activeEl = contentRefs.current[activeIndex]
+        if (!activeEl) return
+
+        gsap.set(activeEl, { opacity: 0 })
+        gsap.to(activeEl, { opacity: 1, duration: 1, ease: 'power1.out' })
+    }, [activeIndex])
 
     return (
         <>
@@ -54,7 +63,7 @@ export default function NavTabs({ genres }: Props) {
 
             {data?.map(({ id, title, info, thumbnail, category }, index) => (
                 <Activity key={id} mode={activeIndex === index ? 'visible' : 'hidden'}>
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <div ref={(el) => { contentRefs.current[index] = el }} className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                         <div className="text-left">
                             <Text as='h3' className='text-mid-50 font-bold capitalize md:tracking-[-2px] sm:text-[30px] sm:leading-9 md:text-[36px] md:leading-10 lg:text-[40px] lg:leading-12 xl:text-[56px] xl:leading-14.75 md:mb-4.5 lg:mb-5 xl:mb-7.25'>{title}</Text>
                             <Text className='text-grey-text-300 text-xs sm:text-sm md:text-base leading-5 md:leading-7 xl:text-lg lg:leading-7 2xl:text-xl 2xl:leading-8 4xl:text-[22px] 4xl:leading-9!'>{info}</Text>
