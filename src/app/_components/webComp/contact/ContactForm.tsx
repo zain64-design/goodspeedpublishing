@@ -1,4 +1,5 @@
 'use client'
+import { useState } from 'react'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import IntlTelInput from '@intl-tel-input/react'
@@ -7,157 +8,185 @@ import CustomInput from '@/app/_components/ui/CustomInput'
 import CustomTextarea from '@/app/_components/ui/CustomTextarea'
 import CustomBtn from '@/app/_components/ui/CustomBtn'
 import type { ContactFormValues } from '@/app/_types'
+import { FaCircleCheck, FaCircleXmark } from "react-icons/fa6";
 
 const validationSchema = Yup.object({
-  name: Yup.string()
-    .trim()
-    .min(2, 'Name must be at least 2 characters')
-    .required('Name is required'),
-  phone: Yup.string()
-    .trim()
-    .required('Phone number is required'),
-  email: Yup.string()
-    .trim()
-    .email('Invalid email address')
-    .required('Email is required'),
-  about: Yup.string()
-    .trim()
-    .min(10, 'Please provide more details (minimum 10 char)')
-    .required('Please tell us about your book'),
+    name: Yup.string()
+        .trim()
+        .min(2, 'Name must be at least 2 characters')
+        .required('Name is required'),
+    phone: Yup.string()
+        .trim()
+        .required('Phone number is required'),
+    email: Yup.string()
+        .trim()
+        .email('Invalid email address')
+        .required('Email is required'),
+    about: Yup.string()
+        .trim()
+        .min(10, 'Please provide more details (minimum 10 char)')
+        .required('Please tell us about your book'),
 })
 
 export default function ContactForm() {
-  const formik = useFormik<ContactFormValues>({
-    initialValues: {
-      name: '',
-      phone: '',
-      email: '',
-      about: '',
-    },
-    validationSchema,
-    onSubmit: async (values, { setSubmitting, resetForm }) => {
-      try {
-        const formData = new FormData()
-        // PHP dev k name attrs k mutabiq
-        formData.append('name', values.name.trim())
-        formData.append('phone', values.phone.trim())
-        formData.append('email', values.email.trim())
-        formData.append('message', values.about.trim())
+    const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
 
-        const res = await fetch('/api/contact', {
-          method: 'POST',
-          body: formData,
-        })
+    const formik = useFormik<ContactFormValues>({
+        initialValues: {
+            name: '',
+            phone: '',
+            email: '',
+            about: '',
+        },
+        validationSchema,
+        onSubmit: async (values, { setSubmitting, resetForm }) => {
+            setSubmitStatus('idle')
+            try {
+                const formData = new FormData()
+                formData.append('name', values.name.trim())
+                formData.append('phone', values.phone.trim())
+                formData.append('email', values.email.trim())
+                formData.append('message', values.about.trim())
 
-        if (res.ok) {
-          resetForm()
-        } else {
-        }
-      } catch (err) {
-        console.error(err)
-      } finally {
-        setSubmitting(false)
-      }
-    },
-  })
+                const res = await fetch('/api/contact', {
+                    method: 'POST',
+                    body: formData,
+                })
 
-  const inputLabelClass = "font-medium text-xs sm:text-base md:text-lg text-grey-text-200 tracking-[1.6px] mb-2 uppercase"
-  const inputClass = "h-[35px] sm:h-[45px] md:h-[64px] w-full p-[10px] sm:p-[15px] bg-white rounded-0 text-base text-black-text-100 tracking-normal focus:outline-none focus:shadow-none border-b-1 border-grey-100 placeholder:text-(--text-white) placeholder:capitalize"
-  const errorClass = "text-red-500 text-xs mt-1"
+                if (res.ok) {
+                    resetForm()
+                    setSubmitStatus('success')
+                } else {
+                    setSubmitStatus('error')
+                }
+            } catch {
+                setSubmitStatus('error')
+            } finally {
+                setSubmitting(false)
+            }
+        },
+    })
 
-  return (
-    <form
-      onSubmit={formik.handleSubmit}
-      noValidate
-      className="w-full bg-white p-4 sm:p-6 md:p-8 lg:p-10 xl:pt-12 xl:pb-5 xl:px-10 2xl:pt-17 2xl:pb-7.5 2xl:px-14.5 rounded-[25px] md:rounded-[42px] shadow-light-shadow"
-    >
-      <div className="flex flex-row flex-wrap gap-x-7.25 gap-y-2 sm:gap-y-6 md:gap-y-10">
-        <div className="w-full md:flex-1">
-          <CustomInput
-            label="Name"
-            type="text"
-            name="name"
-            autoComplete="name"
-            value={formik.values.name}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            labelClassName={inputLabelClass}
-            inputClassName={inputClass}
-          />
-          {formik.touched.name && formik.errors.name && (
-            <p className={errorClass}>{formik.errors.name}</p>
-          )}
-        </div>
+    const inputLabelClass = "font-medium text-xs sm:text-base md:text-lg text-grey-text-200 tracking-[1.6px] mb-2 uppercase"
+    const inputClass = "h-[35px] sm:h-[45px] md:h-[64px] w-full p-[10px] sm:p-[15px] bg-white rounded-0 text-base text-black-text-100 tracking-normal focus:outline-none focus:shadow-none border-b-1 border-grey-100 placeholder:text-(--text-white) placeholder:capitalize"
+    const errorClass = "text-red-500 text-xs mt-1"
 
-        <div className="w-full md:flex-1 flex flex-col">
-          <label className={inputLabelClass}>Phone</label>
-          <input type="hidden" name="phone" value={formik.values.phone} />
-          <IntlTelInput
-            initialCountry="us"
-            loadUtils={() => import('intl-tel-input/utils')}
-            onChangeValidity={(isValid) => {
-              if (!isValid && formik.values.phone) {
-                formik.setFieldError('phone', 'Valid phone number daalo')
-              }
-            }}
-            onChangeNumber={(num) => {
-              formik.setFieldValue('phone', num)
-              formik.setFieldTouched('phone', true, false)
-            }}
-            inputProps={{
-              name: 'phone',
-              id: 'phone',
-              className: inputClass,
-              onBlur: () => formik.setFieldTouched('phone', true),
-            }}
-          />
-          {formik.touched.phone && formik.errors.phone && (
-            <p className={errorClass}>{formik.errors.phone}</p>
-          )}
-        </div>
+    return (
+        <form
+            onSubmit={formik.handleSubmit}
+            noValidate
+            className="w-full bg-white p-4 sm:p-6 md:p-8 lg:p-10 xl:pt-12 xl:pb-5 xl:px-10 2xl:pt-17 2xl:pb-7.5 2xl:px-14.5 rounded-[25px] md:rounded-[42px] shadow-light-shadow"
+        >
+            <div className="flex flex-row flex-wrap gap-x-7.25 gap-y-2 sm:gap-y-6 md:gap-y-10">
 
-        <div className="w-full">
-          <CustomInput
-            label="Email"
-            type="email"
-            name="email"
-            autoComplete="email"
-            value={formik.values.email}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            labelClassName={inputLabelClass}
-            inputClassName={inputClass}
-          />
-          {formik.touched.email && formik.errors.email && (
-            <p className={errorClass}>{formik.errors.email}</p>
-          )}
-        </div>
+                {/* Name */}
+                <div className="w-full md:flex-1">
+                    <CustomInput
+                        label="Name"
+                        type="text"
+                        name="name"
+                        autoComplete="name"
+                        value={formik.values.name}
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        labelClassName={inputLabelClass}
+                        inputClassName={inputClass}
+                    />
+                    {formik.touched.name && formik.errors.name && (
+                        <p className={errorClass}>{formik.errors.name}</p>
+                    )}
+                </div>
 
-        <div className="w-full">
-          <CustomTextarea
-            label="Tell us about your book"
-            name="about"
-            rows={4}
-            value={formik.values.about}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            wrapperClassName="w-full"
-            labelClassName={inputLabelClass}
-            textareaClassName="w-full p-[10px] sm:p-[15px] bg-white rounded-0 text-base text-black-text-100 tracking-normal focus:outline-none focus:shadow-none border-b-1 border-grey-100 placeholder:text-(--text-white) placeholder:capitalize"
-          />
-          {formik.touched.about && formik.errors.about && (
-            <p className={errorClass}>{formik.errors.about}</p>
-          )}
-        </div>
+                {/* Phone */}
+                <div className="w-full md:flex-1 flex flex-col">
+                    <label className={inputLabelClass}>Phone</label>
+                    <input type="hidden" name="phone" value={formik.values.phone} />
+                    <IntlTelInput
+                        initialCountry="us"
+                        loadUtils={() => import('intl-tel-input/utils')}
+                        onChangeValidity={(isValid) => {
+                            if (!isValid && formik.values.phone) {
+                                formik.setFieldError('phone', 'Enter a valid phone number')
+                            }
+                        }}
+                        onChangeNumber={(num) => {
+                            formik.setFieldValue('phone', num)
+                            formik.setFieldTouched('phone', true, false)
+                        }}
+                        inputProps={{
+                            name: 'phone',
+                            id: 'phone',
+                            className: inputClass,
+                            onBlur: () => formik.setFieldTouched('phone', true),
+                        }}
+                    />
+                    {formik.touched.phone && formik.errors.phone && (
+                        <p className={errorClass}>{formik.errors.phone}</p>
+                    )}
+                </div>
 
-        <CustomBtn
-          type="submit"
-          isLoading={formik.isSubmitting}
-          disabled={formik.isSubmitting}
-          buttonClass="btn-mid mt-4! md:mt-0! xl:rounded-[24px] inline-flex items-center h-[50px] xl:h-[70px] 2xl:h-[93px] max-w-full flex-row-reverse justify-center gap-[11px] text-base md:text-lg 2xl:text-[23px]"
-          label="Send Message"
-        />
-      </div>
-    </form>
-  )
+                {/* Email */}
+                <div className="w-full">
+                    <CustomInput
+                        label="Email"
+                        type="email"
+                        name="email"
+                        autoComplete="email"
+                        value={formik.values.email}
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        labelClassName={inputLabelClass}
+                        inputClassName={inputClass}
+                    />
+                    {formik.touched.email && formik.errors.email && (
+                        <p className={errorClass}>{formik.errors.email}</p>
+                    )}
+                </div>
+
+                {/* About */}
+                <div className="w-full">
+                    <CustomTextarea
+                        label="Tell us about your book"
+                        name="about"
+                        rows={4}
+                        value={formik.values.about}
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        wrapperClassName="w-full"
+                        labelClassName={inputLabelClass}
+                        textareaClassName="w-full p-[10px] sm:p-[15px] bg-white rounded-0 text-base text-black-text-100 tracking-normal focus:outline-none focus:shadow-none border-b-1 border-grey-100 placeholder:text-(--text-white) placeholder:capitalize"
+                    />
+                    {formik.touched.about && formik.errors.about && (
+                        <p className={errorClass}>{formik.errors.about}</p>
+                    )}
+                </div>
+
+                {/* Button + Status Message */}
+                <div className="w-full flex flex-col gap-3">
+                    <CustomBtn
+                        type="submit"
+                        isLoading={formik.isSubmitting}
+                        disabled={formik.isSubmitting}
+                        buttonClass="btn-mid mt-4! md:mt-0! xl:rounded-[24px] inline-flex items-center h-[50px] xl:h-[70px] 2xl:h-[93px] max-w-full flex-row-reverse justify-center gap-[11px] text-base md:text-lg 2xl:text-[23px]"
+                        label="Send Message"
+                    />
+
+                    {submitStatus === 'success' && (
+                        <div className="flex items-center gap-2 text-green-600">
+                            <FaCircleCheck size={18} />
+                            <p className="text-sm">Your message has been sent successfully!</p>
+                        </div>
+                    )}
+
+                    {submitStatus === 'error' && (
+                        <div className="flex items-center gap-2 text-red-500">
+                            <FaCircleXmark size={18} />
+                            <p className="text-sm">Something went wrong. Please try again.</p>
+                        </div>
+                    )}
+                </div>
+
+            </div>
+        </form>
+    )
 }
