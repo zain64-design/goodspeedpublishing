@@ -6,13 +6,14 @@ import { gsap, useGSAP, SplitText } from "@/app/_libs/gsap"
 type TextProps<T extends keyof JSX.IntrinsicElements = "p"> = {
   as?: T
   className?: string
-  children: React.ReactNode
+  children: React.ReactNode,
   animate?: boolean
   trigger?: "load" | "scroll"
   scrollStart?: string
   delay?: number
   stagger?: number
   duration?: number
+  ariaLabel?: string
 } & Omit<JSX.IntrinsicElements[T], "children" | "className">
 
 const Text = <T extends keyof JSX.IntrinsicElements = "p">({
@@ -25,6 +26,7 @@ const Text = <T extends keyof JSX.IntrinsicElements = "p">({
   delay = 0,
   stagger = 0.08,
   duration = 0.7,
+  ariaLabel,
   ...props
 }: TextProps<T>) => {
   const Component = Tag as React.ElementType
@@ -69,7 +71,6 @@ const Text = <T extends keyof JSX.IntrinsicElements = "p">({
         })
       }
 
-      // Cleanup jab breakpoint change ho (desktop -> mobile)
       return () => {
         split.revert()
       }
@@ -79,13 +80,19 @@ const Text = <T extends keyof JSX.IntrinsicElements = "p">({
   }, { scope: ref, dependencies: [children, animate] })
 
   return (
-    <Component
+    <>
+       {ariaLabel && (
+      <span className="sr-only">{ariaLabel}</span>
+    )}
+        <Component
       {...props}
       ref={animate ? ref : undefined}
       className={twMerge(className, animate && "split-target")}
+      aria-hidden={ariaLabel ? true : undefined}
     >
       {children}
     </Component>
+    </>
   )
 }
 

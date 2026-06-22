@@ -56,7 +56,12 @@ export default function ContactForm() {
                 console.error('Geo fetch failed:', err);
             }
         }
+    if (document.readyState === 'complete') {
         fetchGeo()
+    } else {
+        window.addEventListener('load', fetchGeo, { once: true })
+        return () => window.removeEventListener('load', fetchGeo)
+    }
     }, [])
 
     const formik = useFormik<ContactFormValues>({
