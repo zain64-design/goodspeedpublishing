@@ -25,7 +25,7 @@ export async function POST(request: Request) {
             country,
             zip_code,
             brand_name: 'goodspeedpublishing.com',
-            lead_area: 'https://goodspeedpublishing.com/',
+            lead_area: 'https://goodspeedpublishing.vercel.app/',
         })
 
         const controller = new AbortController()

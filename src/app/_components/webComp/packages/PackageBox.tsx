@@ -14,7 +14,7 @@ type Props = {
 // variant → styles map
 type Variant = "default" | "primary" | "secondary"
 
-const variantStyles: Record<Variant, { card: string; text: string; btn: string }> = {
+const variantStyles: Record<Variant, { card: string; text: string; btn: string, border?: string }> = {
   default: {
     card: "bg-white",
     text: "text-mid",
@@ -27,6 +27,7 @@ const variantStyles: Record<Variant, { card: string; text: string; btn: string }
   },
   secondary: {
     card: "bg-secondary",
+    border: "border-grey-border-300",
     text: "text-white",
     btn: "btn-primary",
   },
@@ -64,7 +65,7 @@ export default function PackageBox({ packages }: Props) {
               {period}
             </Text>
 
-            <hr className='border-t border-grey-border-100 mx-auto my-4 2xl:my-6' />
+            <hr className={twMerge(`border-t border-grey-border-100 mx-auto my-4 2xl:my-6`, styles.border)} />
 
             <Text as='ul' className='[&>:not(:last-child)]:mb-3 2xl:[&>:not(:last-child)]:mb-3.5'>
               {features.map((feature, index) => (
@@ -78,7 +79,7 @@ export default function PackageBox({ packages }: Props) {
               ))}
             </Text>
 
-            <hr className='border-t border-grey-border-100 mx-auto my-7 2xl:my-9' />
+            <hr className={twMerge(`border-t border-grey-border-100 mx-auto my-7 2xl:my-9`, styles.border)} />
 
             <CustomBtn
               label='Order Now'
