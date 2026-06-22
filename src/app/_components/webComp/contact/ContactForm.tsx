@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
@@ -8,7 +8,7 @@ import 'intl-tel-input/styles'
 import CustomInput from '@/app/_components/ui/CustomInput'
 import CustomTextarea from '@/app/_components/ui/CustomTextarea'
 import CustomBtn from '@/app/_components/ui/CustomBtn'
-import type { ContactFormValues } from '@/app/_types'
+import type { ContactFormValues, GeoData } from '@/app/_types'
 import { FaCircleCheck, FaCircleXmark } from "react-icons/fa6";
 
 const validationSchema = Yup.object({
@@ -32,6 +32,26 @@ const validationSchema = Yup.object({
 export default function ContactForm() {
     const router = useRouter()
     const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+    const [geoData, setGeoData] = useState<GeoData>({ ip: '', city: '', country: '', zip_code: '' })
+
+        useEffect(() => {
+        fetch('https://api.ipapi.is/', {
+            headers: {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+                'Accept': 'application/json',
+                'Referer': 'https://ipapi.is/',
+                'Origin': 'https://ipapi.is'
+            }
+        })
+        .then(r => r.json())
+        .then(d => setGeoData({
+            ip: d.ip || '',
+            city: d.location?.city || '',
+            country: d.location?.country || '',
+            zip_code: d.location?.zip || '',
+        }))
+        .catch(() => {})
+    }, [])
 
     const formik = useFormik<ContactFormValues>({
         initialValues: {
@@ -49,6 +69,10 @@ export default function ContactForm() {
                 formData.append('phone', values.phone.trim())
                 formData.append('email', values.email.trim())
                 formData.append('message', values.about.trim())
+                formData.append('ip', geoData.ip)
+                formData.append('city', geoData.city)
+                formData.append('country', geoData.country)
+                formData.append('zip_code', geoData.zip_code)
 
                 const res = await fetch('/api/contact', {
                     method: 'POST',
@@ -58,7 +82,7 @@ export default function ContactForm() {
                 if (res.ok) {
                     resetForm()
                     setSubmitStatus('success')
-                    setTimeout(() => router.push('/thank-you'), 1500)
+                    setTimeout(() => router.push('/thank-you'), 500)
                 } else {
                     setSubmitStatus('error')
                 }

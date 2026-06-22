@@ -8,6 +8,13 @@ export type StatusPageProps = {
   linkHref?: string
 }
 
+export type GeoData = {
+    ip: string
+    city: string
+    country: string
+    zip_code: string
+}
+
 export type LinkItem = {
     id: number,
     title?: string,
