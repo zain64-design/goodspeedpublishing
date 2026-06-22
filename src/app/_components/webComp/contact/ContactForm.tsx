@@ -34,23 +34,29 @@ export default function ContactForm() {
     const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
     const [geoData, setGeoData] = useState<GeoData>({ ip: '', city: '', country: '', zip_code: '' })
 
-        useEffect(() => {
-        fetch('https://api.ipapi.is/', {
-            headers: {
-                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
-                'Accept': 'application/json',
-                'Referer': 'https://ipapi.is/',
-                'Origin': 'https://ipapi.is'
+    useEffect(() => {
+        const fetchGeo = async () => {
+            try {
+                const r = await fetch('https://api.ipapi.is/', {
+                    headers: {
+                        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+                        'Accept': 'application/json',
+                        'Referer': 'https://ipapi.is/',
+                        'Origin': 'https://ipapi.is'
+                    }
+                })
+                const d = await r.json()
+                setGeoData({
+                    ip: d.ip || '',
+                    city: d.location?.city || '',
+                    country: d.location?.country || '',
+                    zip_code: d.location?.zip || '',
+                })
+            } catch (err) {
+                console.error('Geo fetch failed:', err);
             }
-        })
-        .then(r => r.json())
-        .then(d => setGeoData({
-            ip: d.ip || '',
-            city: d.location?.city || '',
-            country: d.location?.country || '',
-            zip_code: d.location?.zip || '',
-        }))
-        .catch(() => {})
+        }
+        fetchGeo()
     }, [])
 
     const formik = useFormik<ContactFormValues>({
@@ -184,7 +190,6 @@ export default function ContactForm() {
                     )}
                 </div>
 
-                {/* Button + Status Message */}
                 <div className="w-full flex flex-col gap-3">
                     <CustomBtn
                         type="submit"

@@ -8,6 +8,7 @@ import mysteryImg from '@public/images/genres/mystery.webp'
 import adultImg from '@public/images/genres/adult.webp'
 import thrillerImg from '@public/images/genres/thriller.webp'
 import comicsImg from '@public/images/genres/comics.webp'
+import christianImg from '@public/images/genres/christian.webp'
 import horrorImg from '@public/images/genres/horror.webp'
 import actionImg from '@public/images/genres/action.webp'
 import nonFictionImg from '@public/images/genres/non-fiction.webp'
@@ -19,7 +20,7 @@ export const GenresData: GenreItem[] = [
         title: "Business Books",
         category: "business-books",
         info: "For insights that drive results and lead industries, we provide a strategic, data-backed space to sharpen your professional authority. We help you balance actionable expertise with a narrative that commands attention, ensuring your strategies are clear, authoritative, and exactly what the modern marketplace is looking for. From disruptive startup guides to seasoned leadership blueprints, we help you turn your expertise into a benchmark for success.",
-        thumbnail: fictionImg,
+        thumbnail: businessImg,
     },
     {
         id: 2,
@@ -82,7 +83,7 @@ export const GenresData: GenreItem[] = [
         title: "Christian Books",
         category: "christian-books",
         info: "For stories that nourish the soul and uplift the spirit, we provide a grace-filled, intentional space to refine your faith based message. From quiet moments of reflection to epic journeys of faith, we are here to help your light shine through every page. We help you balance powerful testimony with compelling storytelling, ensuring your message is impactful, biblically sound, and resonates deeply with your readers.",
-                thumbnail: fictionImg,
+                thumbnail: christianImg,
     },
     {
         id: 11,
