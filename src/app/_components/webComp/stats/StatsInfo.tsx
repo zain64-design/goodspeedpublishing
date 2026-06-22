@@ -1,3 +1,4 @@
+'use client'
 import Text from '@/app/_components/ui/Text'
 import CustomBtn from '@/app/_components/ui/CustomBtn'
 import { FiArrowRight } from "react-icons/fi";

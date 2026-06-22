@@ -17,25 +17,23 @@ export default function CustomBtn({
     size = 'normal'
 }: CustomBtnProps) {
 
-    const resolvedIcon = !icon
-        ? undefined
-        : React.isValidElement(icon)
-            ? icon
-            : React.createElement(icon as React.ElementType)
+    const renderIcon = () =>
+        !icon ? undefined
+        : React.isValidElement(icon) ? icon
+        : React.createElement(icon as React.ElementType)
 
     return (
         <Button
-            type={type}
             key={key}
+            type={type}
             onClick={onClick}
             disabled={disabled || isLoading}
-            aria-label={ariaLabel}
+            aria-label= {ariaLabel}
             className={twMerge(buttonClass)}
             size={size === 'normal' ? undefined : size}
+            label={label}
+            icon={renderIcon()}
             loading={isLoading}
-        >
-            {resolvedIcon}
-            {label && <span>{label}</span>}
-        </Button>
+        />
     )
 }

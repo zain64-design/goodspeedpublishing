@@ -1,6 +1,13 @@
 import { StaticImageData } from "next/image"
 import React from "react"
 
+export type StatusPageProps = {
+  heading: string
+  subheading: string
+  linkLabel?: string
+  linkHref?: string
+}
+
 export type LinkItem = {
     id: number,
     title?: string,

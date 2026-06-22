@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import IntlTelInput from '@intl-tel-input/react'
@@ -29,6 +30,7 @@ const validationSchema = Yup.object({
 })
 
 export default function ContactForm() {
+    const router = useRouter()
     const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
 
     const formik = useFormik<ContactFormValues>({
@@ -56,6 +58,7 @@ export default function ContactForm() {
                 if (res.ok) {
                     resetForm()
                     setSubmitStatus('success')
+                    setTimeout(() => router.push('/thank-you'), 1500)
                 } else {
                     setSubmitStatus('error')
                 }
@@ -79,7 +82,6 @@ export default function ContactForm() {
         >
             <div className="flex flex-row flex-wrap gap-x-7.25 gap-y-2 sm:gap-y-6 md:gap-y-10">
 
-                {/* Name */}
                 <div className="w-full md:flex-1">
                     <CustomInput
                         label="Name"
@@ -97,7 +99,6 @@ export default function ContactForm() {
                     )}
                 </div>
 
-                {/* Phone */}
                 <div className="w-full md:flex-1 flex flex-col">
                     <label className={inputLabelClass}>Phone</label>
                     <input type="hidden" name="phone" value={formik.values.phone} />
@@ -125,7 +126,6 @@ export default function ContactForm() {
                     )}
                 </div>
 
-                {/* Email */}
                 <div className="w-full">
                     <CustomInput
                         label="Email"
@@ -143,7 +143,6 @@ export default function ContactForm() {
                     )}
                 </div>
 
-                {/* About */}
                 <div className="w-full">
                     <CustomTextarea
                         label="Tell us about your book"
