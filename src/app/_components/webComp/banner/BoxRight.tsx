@@ -1,11 +1,10 @@
 import { getImageProps } from 'next/image'
-import ImageArt from '@/app/_components/ui/ImageArt'
 import RightBoxThumb from "@public/images/right-box-thumb.webp"
-import RightBoxThumbMobile from "@public/images/right-box-thumb-mobile.webp"
 import BrEl1 from "@public/images/br-el-1.webp"
 import BrEl2 from "@public/images/br-el-2.webp"
 import BrEl3 from "@public/images/br-el-3.webp"
 import { getBackgroundImage } from '@/app/_utils/getBackgroundImage'
+import ImageComp from '@/app/_components/ui/Image'
 
 type Props = {}
 
@@ -17,20 +16,15 @@ export default function BoxRight({}: Props) {
     <div className="banner-box bg-secondary-lt content-end rounded-[30px] lg:rounded-[48px] bg-no-repeat bg-[position:top_left,top_right,left_bottom] bg-[size:160px_91px,60px_56px,280px_73px] sm:bg-[size:160px_91px,60px_56px,280px_73px] md:bg-[size:220px_125px,60px_56px,340px_88px] lg:bg-[size:280px_160px,80px_74px,440px_114px] xl:bg-[size:320px_182px,120px_112px,520px_135px] 2xl:bg-[size:380px_217px,140px_130px,640px_166px] 4xl:bg-[size:472px_269px,172px_160px,774px_201px] overflow-hidden" style={{
         backgroundImage: `${getBackgroundImage(srcSet1)}, ${getBackgroundImage(srcSet2)}, ${getBackgroundImage(srcSet3)}`
       }}>
-        <ImageArt
-    desktopSrc={RightBoxThumb}
-    mobileSrc={RightBoxThumbMobile}
+<ImageComp
+    src={RightBoxThumb}
+    width={409}
+    height={480}
+    sizes="(max-width: 575px) 100vw, (max-width: 767px) 50vw, 409px"
     alt="hero"
-    desktopWidth={612}
-    desktopHeight={719}
-    mobileWidth={334}
-    mobileHeight={451}
     fetchPriority="high"
-    loading="eager"
-        breakpoint={768}
-desktopSizes="409px"
-mobileSizes="(max-width: 575px) 100vw, 50vw"
-    className="max-w-full max-h-80 sm:max-h-85 md:max-h-100 lg:max-h-100 xl:max-h-120 2xl:max-h-160 4xl:max-h-180 mx-auto block object-contain"
+    preload
+    className="max-w-full max-h-80 sm:max-h-85 md:max-h-100 lg:max-h-100 xl:max-h-120 2xl:max-h-160 4xl:max-h-180 mx-auto block object-contain xl:scale-[1.05] 4xl:scale-[1.2]"
 />
     </div>
   )
