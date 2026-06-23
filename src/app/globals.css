@@ -87,7 +87,6 @@ body {
   .bs-transition {
     @apply transition duration-500 ease-in-out; 
   }
-  .text-trim {text-spacing-trim: space-all;}
   /* accordion custom start */
    .accord-ct .p-accordion-tab {
   @apply border border-white-50 rounded-[14px] md:rounded-[18px] lg:rounded-[22px] overflow-hidden mb-[15px];
@@ -175,9 +174,6 @@ body {
   /* .illustration-slider .swiper-slide.swiper-slide-active .ct-w {
     @apply sm:min-w-[200px] md:min-w-[300px] lg:min-w-[330px] xl:min-w-[350px] 2xl:min-w-[370px] 4xl:min-w-[390px];
   } */
-     .illustration-slider .swiper-slide.swiper-slide-active .ct-w {
-
-  }
     .illustration-slider .swiper-pagination {
     @apply relative! inset-auto! mt-8 md:mt-14! lg:mt-18.5! hidden sm:block;
   }
