@@ -166,7 +166,7 @@ body {
 
 
  .illustration-slider .swiper-slide .ct-w {
-  @apply min-w-[200px] sm:min-w-[65px] min-w-[75px] lg:min-w-[85px] xl:min-w-[100px] 2xl:min-w-[130px] 4xl:min-w-[150px] h-[300px] sm:h-[300px] md:h-[400px] lg:h-[430px] xl:h-[450px] 2xl:h-[470px] 4xl:h-[490px] rounded-xl md:rounded-2xl transition-[min-width] duration-500 ease-in overflow-hidden;
+  @apply aspect-200/300 sm:aspect-auto w-[240px] min-w-auto sm:min-w-[65px] min-w-[75px] lg:min-w-[85px] xl:min-w-[100px] 2xl:min-w-[130px] 4xl:min-w-[150px] h-[300px] sm:h-[300px] md:h-[400px] lg:h-[430px] xl:h-[450px] 2xl:h-[470px] 4xl:h-[490px] rounded-xl md:rounded-2xl transition-[min-width] duration-500 ease-in overflow-hidden;
   &:hover {
     @apply sm:min-w-[200px] md:min-w-[300px] lg:min-w-[330px] xl:min-w-[350px] 2xl:min-w-[370px] 4xl:min-w-[390px];
   }

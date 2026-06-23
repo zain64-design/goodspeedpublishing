@@ -69,7 +69,7 @@ export default function IllustrationSlider() {
                 {portfolioBooks.map(({ id, img },index) => (
                     <SwiperSlide className='w-auto!' key={id}>
                         <div className="ct-w relative cursor-pointer">
-                            <ImageComp src={img} fill sizes="(max-width: 991px) 33vw, 20vw" className='object-fill' alt="illustration" preload={index === 0} />
+                            <ImageComp src={img} fill sizes="(max-width: 991px) 33vw, 20vw" className='sm:object-fill' alt="illustration" preload={index === 0} />
                         </div>
                     </SwiperSlide>
                 ))}
