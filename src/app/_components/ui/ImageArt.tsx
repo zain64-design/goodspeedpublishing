@@ -36,9 +36,9 @@ export default function ImageArt({
 
     return (
         <picture>
-            <source media={`(min-width: ${breakpoint}px)`} srcSet={desktop} />
-            <source media={`(max-width: ${breakpoint - 1}px)`} srcSet={mobile} />
-            <img {...rest} className={className} fetchPriority={fetchPriority} loading={loading} />
+            <source media={`(min-width: ${breakpoint}px)`} srcSet={desktop} sizes={desktopSizes} />
+            <source media={`(max-width: ${breakpoint - 1}px)`} srcSet={mobile} sizes={mobileSizes} />
+            <img {...rest} sizes={desktopSizes} className={className} fetchPriority={fetchPriority} loading={loading} />
         </picture>
     )
 }
