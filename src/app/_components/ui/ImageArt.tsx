@@ -22,7 +22,7 @@ export default function ImageArt({
         height: desktopHeight,
         alt,
         sizes: desktopSizes,
-        quality: 80,
+        quality: 70,
     })
 
     const { props: { srcSet: mobile } } = getImageProps({
@@ -38,7 +38,7 @@ export default function ImageArt({
         <picture>
             <source media={`(min-width: ${breakpoint}px)`} srcSet={desktop} sizes={desktopSizes} />
             <source media={`(max-width: ${breakpoint - 1}px)`} srcSet={mobile} sizes={mobileSizes} />
-            <img {...rest} sizes={desktopSizes} className={className} fetchPriority={fetchPriority} loading={loading} />
+            <img {...rest} className={className} fetchPriority={fetchPriority} loading={loading} />
         </picture>
     )
 }

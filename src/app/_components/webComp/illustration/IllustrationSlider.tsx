@@ -68,8 +68,8 @@ export default function IllustrationSlider() {
             >
                 {portfolioBooks.map(({ id, img },index) => (
                     <SwiperSlide className='w-auto!' key={id}>
-                        <div className="ct-w relative">
-                            <ImageComp src={img} fill sizes='390' alt="illustration" preload={index === 0} />
+                        <div className="ct-w relative cursor-pointer">
+                            <ImageComp src={img} fill sizes='200' alt="illustration" preload={index === 0} />
                         </div>
                     </SwiperSlide>
                 ))}
