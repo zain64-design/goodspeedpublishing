@@ -28,7 +28,7 @@ export default function BoxRight({}: Props) {
     fetchPriority="high"
     loading="eager"
         breakpoint={768}
-    desktopSizes="50vw"
+desktopSizes="409px"
 mobileSizes="(max-width: 575px) 100vw, 50vw"
     className="max-w-full max-h-80 sm:max-h-85 md:max-h-100 lg:max-h-100 xl:max-h-120 2xl:max-h-160 4xl:max-h-180 mx-auto block object-contain"
 />
