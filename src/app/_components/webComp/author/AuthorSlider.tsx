@@ -35,7 +35,7 @@ export default function AuthorSlider({ author }: Props) {
                 >
                     {data?.map(({ id, authorThumbnail }) => (
                         <SwiperSlide key={id}>
-                            {authorThumbnail && <ImageComp width={577} height={504} src={authorThumbnail} preload className='max-w-full max-h-126 object-contain block mx-auto' alt='author' />}
+                            {authorThumbnail && <ImageComp width={577} height={504} sizes="(max-width: 576px) 50vw, (max-width: 991px) 50vw, 360px" src={authorThumbnail} preload className='max-w-full max-h-126 object-contain block mx-auto' alt='author' />}
                         </SwiperSlide>
                     ))}
                 </Swiper>
