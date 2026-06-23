@@ -126,7 +126,6 @@ body {
     .swiper-wrapper,.swiper-wrapper .swiper-slide {
     @apply h-auto!;
   }
-  /* author element */
   .right-dash::before {
     @apply content-[''] inline-flex w-4 md:w-10 h-px bg-white;
   }
