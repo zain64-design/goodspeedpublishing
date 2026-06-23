@@ -72,6 +72,8 @@ export type ArtDirectionProps = {
     breakpoint?: number
     fetchPriority?: "high" | "low" | "auto"
     loading?: "eager" | "lazy"
+    desktopSizes?: string,
+    mobileSizes?: string,
 }
 
 export type CustomTextareaProps = {

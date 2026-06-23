@@ -12,14 +12,16 @@ export default function ImageArt({
     className,
     breakpoint = 768,
     loading = "lazy",
-    fetchPriority = "auto"
+    fetchPriority = "auto",
+    desktopSizes = '100vw',
+    mobileSizes = '100vw',
 }: ArtDirectionProps) {
     const { props: { srcSet: desktop, ...rest } } = getImageProps({
         src: desktopSrc,
         width: desktopWidth,
         height: desktopHeight,
         alt,
-        sizes: '100vw',
+        sizes: desktopSizes,
         quality: 80,
     })
 
@@ -28,7 +30,7 @@ export default function ImageArt({
         width: mobileWidth,
         height: mobileHeight,
         alt,
-        sizes: '100vw',
+        sizes: mobileSizes,
         quality: 70,
     })
 

@@ -69,8 +69,8 @@ export default function PortfolioSlider({ }: Props) {
             >
                 {portfolioBooks.map(({ id, title, img }) => (
                     <SwiperSlide key={id}>
-                        <div className="transition-all duration-200 ease-in-out item-main scale-[.7] pt-12 sm:pt-22">
-                            <div className={twMerge(`bg-ct transition-all duration-200 ease-in-out shadow-[inset_-7px_-1.5px_14.1px_0_rgba(0,0,0,0.15)] rounded-[15px] sm:rounded-[30px] md:rounded-[40px] xl:rounded-[46px] 2xl:rounded-[50px] 4xl:rounded-[58px] 6xl:rounded-[63px] mb-0 sm:mb-7.5 xl:mb-10`)}>
+                        <div className="transition-transform duration-500 ease-in-out item-main scale-[.7] pt-12 sm:pt-22">
+                            <div className={twMerge(`bg-ct shadow-[inset_-7px_-1.5px_14.1px_0_rgba(0,0,0,0.15)] rounded-[15px] sm:rounded-[30px] md:rounded-[40px] xl:rounded-[46px] 2xl:rounded-[50px] 4xl:rounded-[58px] 6xl:rounded-[63px] mb-0 sm:mb-7.5 xl:mb-10`)}>
                             <div className="overlay-shadow relative rotate-20">
                                 <ImageComp src={img} width={370} height={585} alt="portfolio book" className="max-w-auto max-h-110 lg:max-h-146.25 mx-auto object-contain object-center drop-shadow-[5px_8px_5px_rgba(0,0,0,0.30)]" />
                             </div>

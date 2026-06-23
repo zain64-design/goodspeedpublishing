@@ -60,7 +60,7 @@ export default function IllustrationSlider() {
                 }}
                 spaceBetween={20}
                 grabCursor={true}
-                speed={1200}
+                speed={500}
                 slidesPerView={'auto'}
                 loop={true}
                 centeredSlides={true}
