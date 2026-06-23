@@ -33,7 +33,7 @@ export default function NavTabs({ genres }: Props) {
     return (
         <>
             <div className="relative">
-                <button onClick={() => scroll('left')} className="h-full w-4 bg-white absolute -left-1 top-1/2 -translate-y-1/2 z-10 md:hidden">
+                <button aria-label="Previous slide" onClick={() => scroll('left')} className="h-full w-4 bg-white absolute -left-1 top-1/2 -translate-y-1/2 z-10 md:hidden">
                     <FaChevronLeft />
                 </button>
                 <div ref={navRef} className="mb-8 md:mb-10 lg:mb-14 xl:mb-16 2xl:mb-18.75 w-full 2xl:max-w-[1400px] mx-auto scroll-smooth overscroll-[contain_auto] [&::-webkit-scrollbar]:hidden overflow-x-auto overflow-y-hidden md:overflow-x-visible md:overflow-y-visible px-6 md:px-0" style={{ scrollbarWidth: 'none' }}>
@@ -56,7 +56,7 @@ export default function NavTabs({ genres }: Props) {
                         ))}
                     </div>
                 </div>
-                <button onClick={() => scroll('right')} className="h-full w-4 bg-white absolute -right-1 top-1/2 -translate-y-1/2 z-10 md:hidden">
+                <button aria-label="Next slide" onClick={() => scroll('right')} className="h-full w-4 bg-white absolute -right-1 top-1/2 -translate-y-1/2 z-10 md:hidden">
                     <FaChevronRight />
                 </button>
             </div>

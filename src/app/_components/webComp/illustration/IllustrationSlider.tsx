@@ -1,6 +1,6 @@
 'use client'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation, A11y, Pagination } from 'swiper/modules'
+import { Navigation, Pagination } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination';
 import 'swiper/css/thumbs';
@@ -52,14 +52,14 @@ export default function IllustrationSlider() {
             <Swiper
                 className="illustration-slider mt-6 sm:mt-10 md:mt-16.75 mask-[linear-gradient(to_right,transparent_0%,#000_10%,#000_90%,transparent_100%)]
     [-webkit-mask-image:linear-gradient(to_right,transparent_0%,#000_10%,#000_90%,transparent_100%)]"
-                modules={[Navigation, A11y, Pagination]}
+                modules={[Navigation, Pagination]}
                 pagination={{ clickable: true }}
                 navigation={{
                     prevEl: '.illustration-button-prev',
                     nextEl: '.illustration-button-next',
                 }}
                 spaceBetween={20}
-                grabCursor={true}
+                allowTouchMove={false}
                 speed={500}
                 slidesPerView={'auto'}
                 loop={true}
@@ -69,7 +69,7 @@ export default function IllustrationSlider() {
                 {portfolioBooks.map(({ id, img },index) => (
                     <SwiperSlide className='w-auto!' key={id}>
                         <div className="ct-w relative">
-                            <ImageComp src={img} fill sizes="390px" alt="illustration" preload={index === 0} />
+                            <ImageComp src={img} fill sizes='390' alt="illustration" preload={index === 0} />
                         </div>
                     </SwiperSlide>
                 ))}
