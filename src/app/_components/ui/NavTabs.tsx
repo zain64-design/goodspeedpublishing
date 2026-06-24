@@ -73,7 +73,7 @@ export default function NavTabs({ genres }: Props) {
                             </div>
                         </div>
                         {thumbnail && (
-                            <ImageComp src={thumbnail} width={670} height={435} preload className='object-contain max-h-108.75 mx-auto max-w-full reflect-below' alt={`image-${category}`} />
+                            <ImageComp src={thumbnail} width={670} height={435} className='object-contain max-h-108.75 mx-auto max-w-full reflect-below' alt={`image-${category}`} />
                         )}
                     </div>
                 </Activity>

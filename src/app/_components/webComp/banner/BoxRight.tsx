@@ -1,3 +1,5 @@
+'use client'
+import ReactDOM from 'react-dom'
 import { getImageProps } from 'next/image'
 import RightBoxThumb from "@public/images/right-box-thumb.webp"
 import BrEl1 from "@public/images/br-el-1.webp"
@@ -12,11 +14,26 @@ export default function BoxRight({}: Props) {
   const { props: { srcSet: srcSet1 } } = getImageProps({ alt: '', width: 472, height: 269, src: BrEl1 })
   const { props: { srcSet: srcSet2 } } = getImageProps({ alt: '', width: 172, height: 160, src: BrEl2 })
   const { props: { srcSet: srcSet3 } } = getImageProps({ alt: '', width: 774, height: 201, src: BrEl3 })
+    const { props: { srcSet: heroSrcSet, src: heroSrc, ...heroRest } } = getImageProps({
+    src: RightBoxThumb,
+    width: 613,
+    height: 903,
+    alt: 'hero',
+    sizes: "(max-width: 575px) 320px, (max-width: 767px) 45vw, 326px",
+    quality: 75,
+  })
+  ReactDOM.preload(heroSrc, {
+    as: 'image',
+    imageSrcSet: heroSrcSet,
+    imageSizes: "(max-width: 575px) 320px, (max-width: 767px) 45vw, 326px",
+    fetchPriority: 'high',
+  })
   return (
+    <>
     <div className="banner-box bg-secondary-lt content-end rounded-[30px] lg:rounded-[48px] bg-no-repeat bg-[position:top_left,top_right,left_bottom] bg-[size:160px_91px,60px_56px,280px_73px] sm:bg-[size:160px_91px,60px_56px,280px_73px] md:bg-[size:220px_125px,60px_56px,340px_88px] lg:bg-[size:280px_160px,80px_74px,440px_114px] xl:bg-[size:320px_182px,120px_112px,520px_135px] 2xl:bg-[size:380px_217px,140px_130px,640px_166px] 4xl:bg-[size:472px_269px,172px_160px,774px_201px] overflow-hidden" style={{
         backgroundImage: `${getBackgroundImage(srcSet1)}, ${getBackgroundImage(srcSet2)}, ${getBackgroundImage(srcSet3)}`
       }}>
-<ImageComp
+{/* <ImageComp
     src={RightBoxThumb}
     width={613}
     height={903}
@@ -24,7 +41,18 @@ export default function BoxRight({}: Props) {
     alt="hero"
     preload
     className="max-w-auto sm:max-w-full max-h-80 sm:max-h-85 md:max-h-100 lg:max-h-100 xl:max-h-120 2xl:max-h-160 4xl:max-h-180 mx-auto block object-contain xl:scale-[1.05]"
-/>
+/> */}
+        <picture>
+          <source srcSet={heroSrcSet} sizes="(max-width: 575px) 320px, (max-width: 767px) 45vw, 326px" />
+          <img
+            {...heroRest}
+            src={heroSrc}
+            fetchPriority="high"
+            loading="eager"
+            className="max-w-auto sm:max-w-full max-h-80 sm:max-h-85 md:max-h-100 lg:max-h-100 xl:max-h-120 2xl:max-h-160 4xl:max-h-180 mx-auto block object-contain xl:scale-[1.05]"
+          />
+        </picture>
     </div>
+    </>
   )
 }

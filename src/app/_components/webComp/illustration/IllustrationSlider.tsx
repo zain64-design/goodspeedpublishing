@@ -101,7 +101,7 @@ export default function IllustrationSlider() {
                     <SwiperSlide className='' key={id}>
                         <div className="ct-w relative">
                             {/* <ImageComp src={img} fill sizes="(max-width: 991px) 33vw, 20vw" className='sm:object-fill' alt="illustration" preload={index === 0} /> */}
-                            <ImageComp src={img} width={390} height={490} sizes="(max-width: 767px) 100vw, 390px" className='object-fill object-center w-full max-h-[490px] rounded-xl md:rounded-2xl' alt="illustration" preload={index === 0} />
+                            <ImageComp src={img} width={390} height={490} sizes="(max-width: 767px) 100vw, 390px" className='object-fill object-center w-full max-h-[490px] rounded-xl md:rounded-2xl' alt="illustration" />
                         </div>
                     </SwiperSlide>
                 ))}
