@@ -34,9 +34,6 @@ export default function ImageArt({
         quality: 70,
     })
 
-    // console.log('desktop srcSet:', desktop)
-// console.log('rest:', rest)
-
     return (
         <picture>
             <source media={`(min-width: ${breakpoint}px)`} srcSet={desktop} sizes={desktopSizes} />
