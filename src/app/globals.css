@@ -2,7 +2,6 @@
 @import 'swiper/css';
 @import 'swiper/css/pagination';
 @import 'swiper/css/thumbs';
-@import 'intl-tel-input/styles';
 
 :root {
   --background: #ebebeb;
