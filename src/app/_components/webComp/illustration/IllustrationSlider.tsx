@@ -1,6 +1,6 @@
 'use client'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation, Pagination } from 'swiper/modules'
+import { Navigation, Pagination, A11y } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination';
 import 'swiper/css/thumbs';
@@ -52,24 +52,56 @@ export default function IllustrationSlider() {
             <Swiper
                 className="illustration-slider mt-6 sm:mt-10 md:mt-16.75 mask-[linear-gradient(to_right,transparent_0%,#000_10%,#000_90%,transparent_100%)]
     [-webkit-mask-image:linear-gradient(to_right,transparent_0%,#000_10%,#000_90%,transparent_100%)]"
-                modules={[Navigation, Pagination]}
+                modules={[Navigation, Pagination, A11y]}
                 pagination={{ clickable: true }}
                 navigation={{
                     prevEl: '.illustration-button-prev',
                     nextEl: '.illustration-button-next',
                 }}
                 spaceBetween={20}
-                allowTouchMove={false}
+                grabCursor={true}
+                // allowTouchMove={false}
                 speed={500}
-                slidesPerView={'auto'}
+                // slidesPerView={'auto'}
+                slidesPerView={4.8}
                 loop={true}
                 centeredSlides={true}
                 slidesPerGroupSkip={2}
+            breakpoints={{
+                0: {
+                    slidesPerView: 2.2,
+                },
+                420: {
+                    slidesPerView: 2.6,
+                },
+                576: {
+                    slidesPerView: 2.8,
+                },
+                768: {
+                    slidesPerView: 3.2,
+                },
+                992: {
+                    slidesPerView: 3.6,
+                },
+                1200: {
+                    slidesPerView: 3.8,
+                },
+                1400: {
+                    slidesPerView: 4.2,
+                },
+                1600: {
+                    slidesPerView: 4.6,
+                },
+                1820: {
+                    slidesPerView: 4.8,
+                },
+            }}
             >
                 {portfolioBooks.map(({ id, img },index) => (
-                    <SwiperSlide className='w-auto!' key={id}>
-                        <div className="ct-w relative cursor-pointer">
-                            <ImageComp src={img} fill sizes="(max-width: 991px) 33vw, 20vw" className='sm:object-fill' alt="illustration" preload={index === 0} />
+                    <SwiperSlide className='' key={id}>
+                        <div className="ct-w relative">
+                            {/* <ImageComp src={img} fill sizes="(max-width: 991px) 33vw, 20vw" className='sm:object-fill' alt="illustration" preload={index === 0} /> */}
+                            <ImageComp src={img} width={390} height={490} sizes="(max-width: 767px) 100vw, 390px" className='object-fill object-center w-full max-h-[490px] rounded-xl md:rounded-2xl' alt="illustration" preload={index === 0} />
                         </div>
                     </SwiperSlide>
                 ))}
