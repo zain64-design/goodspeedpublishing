@@ -1,7 +1,6 @@
 @import "tailwindcss";
 @import 'swiper/css';
 @import 'swiper/css/pagination';
-@import 'swiper/css/thumbs';
 
 :root {
   --background: #ebebeb;

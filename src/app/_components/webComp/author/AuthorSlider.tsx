@@ -1,7 +1,7 @@
 'use client'
 import type { AuthorItem } from '@/app/_types'
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Thumbs, A11y, Controller } from 'swiper/modules';
+import { Navigation, A11y, Controller } from 'swiper/modules';
 import ImageComp from '@/app/_components/ui/Image'
 import Text from '@/app/_components/ui/Text'
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
@@ -18,7 +18,7 @@ export default function AuthorSlider({ author }: Props) {
         <>
             <div className="w-[85%] sm:max-w-70 md:max-w-70 lg:max-w-70 xl:max-w-90 2xl:max-w-110 4xl:max-w-130 6xl:max-w-144.25">
                 <Swiper
-                    modules={[Navigation, A11y, Thumbs, Controller]}
+                    modules={[Navigation, A11y, Controller]}
                     autoHeight={true}
                     slidesPerView={1}
                     touchRatio={0}
@@ -45,7 +45,7 @@ export default function AuthorSlider({ author }: Props) {
                     <div className="group relative w-full max-w-115 lg:max-w-90 xl:max-w-110 2xl:max-w-134.5 4xl:max-w-xl 6xl:max-w-2xl mx-auto">
                         <CommaBefore className='absolute h-7 lg:h-9 xl:h-11 2xl:h-14 4xl:h-18 6xl:h-20.5 -top-13 lg:-top-13 xl:-top-16 2xl:-top-21 4xl:-top-30 6xl:-top-32.5 bottom-auto left-0' />
                         <Swiper
-                            modules={[Navigation, A11y, Thumbs, Controller]}
+                            modules={[Navigation, A11y, Controller]}
                             slidesPerView={1}
                             touchRatio={0}
                             spaceBetween={10}
