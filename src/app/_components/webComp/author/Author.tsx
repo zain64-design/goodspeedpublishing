@@ -1,7 +1,8 @@
+import dynamic from 'next/dynamic'
+const AuthorSlider = dynamic(() => import('@/app/_components/webComp/author/AuthorSlider'))
 import Text from '@/app/_components/ui/Text'
 import Badge from '@/app/_components/ui/Badge'
-import AuthorSlider from '@/app/_components/webComp/author/AuthorSlider'
-import { AuthorData } from './AuthorData'
+import { AuthorData } from '@/app/_components/webComp/author/AuthorData'
 
 export default function Author() {
     return (

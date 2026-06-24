@@ -14,6 +14,15 @@ export type GeoData = {
     country: string
     zip_code: string
 }
+export type SkeletonTypeCustomize = "thumbnail" | "heading" | "line" | "button" | "box";
+export type SkeletonTypeProps = {
+    type: SkeletonTypeCustomize
+    headingCount: number
+    lineCount: number
+    className: string
+    wrapper: boolean
+    wrapperClass: string
+}
 
 export type LinkItem = {
     id: number,
@@ -32,7 +41,7 @@ export type CustomBtnProps = {
     key?:number,
     onClick?: () => void;
     disabled?: boolean;
-    ariaLabel?: string,
+    ariaLabel?: string;
     label?: string;
     icon?: React.ElementType | React.ReactElement;
     isLoading?: boolean;

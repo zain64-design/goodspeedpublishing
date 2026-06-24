@@ -1,5 +1,6 @@
+import dynamic from 'next/dynamic'
 import Text from "@/app/_components/ui/Text"
-import IllustrationSlider from "@/app/_components/webComp/illustration/IllustrationSlider"
+const IllustrationSlider = dynamic(() => import('@/app/_components/webComp/illustration/IllustrationSlider'))
 
 export default function Illustration() {
   return (

@@ -1,5 +1,7 @@
-import StorySlider from "@/app/_components/webComp/story/StorySlider"
+import dynamic from 'next/dynamic'
 import Text from "@/app/_components/ui/Text"
+const StorySlider = dynamic(() => import('@/app/_components/webComp/story/StorySlider'))
+
 
 export default function Story() {
   return (

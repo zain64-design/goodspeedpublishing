@@ -1,5 +1,6 @@
+import dynamic from 'next/dynamic'
+const Accordion = dynamic(() => import('@/app/_components/ui/CustomAccordion'))
 import FaqDesc from '@/app/_components/webComp/faq/FaqDesc'
-import Accordion from '@/app/_components/ui/CustomAccordion'
 import { FAQData } from '@/app/_components/webComp/faq/FAQData'
 
 type Props = {}

@@ -1,4 +1,5 @@
-import BrandLogo from '@/app/_components/webComp/brands/BrandLogo';
+import dynamic from 'next/dynamic'
+const BrandLogo = dynamic(() => import('@/app/_components/webComp/brands/BrandLogo'))
 import logo1 from "@public/images/brands/brand1.webp"
 import logo2 from "@public/images/brands/brand2.webp"
 import logo3 from "@public/images/brands/brand3.webp"

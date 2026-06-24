@@ -1,7 +1,8 @@
+import dynamic from 'next/dynamic'
+const NavTabs = dynamic(() => import('@/app/_components/ui/NavTabs'))
 import Text from "@/app/_components/ui/Text"
 import { CurveLine } from "@/app/_components/ui/Icons"
-import NavTabs from "@/app/_components/ui/NavTabs"
-import {GenresData} from './GenresData'
+import {GenresData} from '@/app/_components/webComp/genres/GenresData'
 
 export default function Genres() {
     return (

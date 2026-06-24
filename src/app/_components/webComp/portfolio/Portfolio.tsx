@@ -1,6 +1,7 @@
+import dynamic from 'next/dynamic'
 import Text from "@/app/_components/ui/Text"
 import { CurveLine } from "@/app/_components/ui/Icons"
-import PortfolioSlider from "@/app/_components/webComp/portfolio/PortfolioSlider"
+const PortfolioSlider = dynamic(() => import('@/app/_components/webComp/portfolio/PortfolioSlider'))
 
 export default function Portfolio() {
   return (
