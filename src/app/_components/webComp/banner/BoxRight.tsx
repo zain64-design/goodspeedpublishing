@@ -20,10 +20,10 @@ export default function BoxRight({}: Props) {
     src={RightBoxThumb}
     width={613}
     height={903}
-    quality={75}
     sizes="(max-width: 575px) 320px, (max-width: 767px) 45vw, 326px"
     alt="hero"
-    preload
+    loading="eager"
+    fetchPriority="high"
     className="max-w-auto sm:max-w-full max-h-80 sm:max-h-85 md:max-h-100 lg:max-h-100 xl:max-h-120 2xl:max-h-160 4xl:max-h-180 mx-auto block object-contain xl:scale-[1.05]"
 />
     </div>
