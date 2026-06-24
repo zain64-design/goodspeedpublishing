@@ -4,7 +4,6 @@ import BrEl1 from "@public/images/br-el-1.webp"
 import BrEl2 from "@public/images/br-el-2.webp"
 import BrEl3 from "@public/images/br-el-3.webp"
 import { getBackgroundImage } from '@/app/_utils/getBackgroundImage'
-import ImageComp from '@/app/_components/ui/Image'
 
 type Props = {}
 
@@ -22,13 +21,6 @@ export default function BoxRight({}: Props) {
   })
   return (
     <>
-          <link
-        rel="preload"
-        as="image"
-        imageSrcSet={heroSrcSet}
-        imageSizes="(max-width: 575px) 380px, (max-width: 767px) 45vw, 326px"
-        fetchPriority="high"
-      />
     <div className="banner-box bg-secondary-lt content-end rounded-[30px] lg:rounded-[48px] bg-no-repeat bg-[position:top_left,top_right,left_bottom] bg-[size:160px_91px,60px_56px,280px_73px] sm:bg-[size:160px_91px,60px_56px,280px_73px] md:bg-[size:220px_125px,60px_56px,340px_88px] lg:bg-[size:280px_160px,80px_74px,440px_114px] xl:bg-[size:320px_182px,120px_112px,520px_135px] 2xl:bg-[size:380px_217px,140px_130px,640px_166px] 4xl:bg-[size:472px_269px,172px_160px,774px_201px] overflow-hidden" style={{
         backgroundImage: `${getBackgroundImage(srcSet1)}, ${getBackgroundImage(srcSet2)}, ${getBackgroundImage(srcSet3)}`
       }}>
