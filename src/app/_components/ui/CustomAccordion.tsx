@@ -14,6 +14,16 @@ export default function CustomAccordion({faq}: Props) {
     <>
             <Accordion
             activeIndex={0}
+            pt={{
+                root:{className:'test-root'},
+                header:{className:'header-class'},
+                // headerAction:{className:'headerAction-class'},
+                // headerIcon:{className:'headerIcon-class'},
+                // headerTitle:{className:'headerTitle-class'},
+                // toggleableContent:{className:'toggleAble-class'},
+                content:{className:'content-class'},
+                transition:{className:'transition-class'}
+            }}
             className="accord-ct"
             expandIcon={<Text as="span" className="icon-rounded icon-plus"><LuPlus /></Text>}
             collapseIcon={<Text as="span" className="icon-rounded icon-minus"><LuMinus /></Text>}
