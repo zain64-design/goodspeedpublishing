@@ -1,9 +1,6 @@
 'use client'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination, A11y } from 'swiper/modules'
-import 'swiper/css'
-import 'swiper/css/pagination';
-import 'swiper/css/thumbs';
 import ImageComp from '@/app/_components/ui/Image'
 import illustration1 from '@public/images/illustration/illustration-1.webp'
 import illustration2 from '@public/images/illustration/illustration-2.webp'
