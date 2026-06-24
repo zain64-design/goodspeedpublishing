@@ -1,7 +1,6 @@
 'use client'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, A11y } from 'swiper/modules'
-import 'swiper/css'
 import ImageComp from '@/app/_components/ui/Image'
 import Text from '@/app/_components/ui/Text'
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";

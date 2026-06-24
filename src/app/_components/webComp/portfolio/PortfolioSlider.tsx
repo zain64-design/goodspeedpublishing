@@ -1,7 +1,6 @@
 'use client'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { A11y, Autoplay } from 'swiper/modules'
-import 'swiper/css'
 import ImageComp from '@/app/_components/ui/Image'
 import Text from '@/app/_components/ui/Text'
 import portfolio1 from '@public/images/portfolio/portfolio-1.webp'

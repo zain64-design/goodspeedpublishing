@@ -2,7 +2,6 @@
 import type { AuthorItem } from '@/app/_types'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Thumbs, A11y, Controller } from 'swiper/modules';
-import 'swiper/css';
 import ImageComp from '@/app/_components/ui/Image'
 import Text from '@/app/_components/ui/Text'
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";

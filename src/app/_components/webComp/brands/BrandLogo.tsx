@@ -1,7 +1,6 @@
 'use client'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay } from 'swiper/modules'
-import 'swiper/css'
 import ImageComp from '@/app/_components/ui/Image'
 import { LogoItem } from '@/app/_types'
 
