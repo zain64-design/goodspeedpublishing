@@ -1,11 +1,9 @@
-import dynamic from 'next/dynamic'
-const Accordion = dynamic(() => import('@/app/_components/ui/CustomAccordion'))
+
 import FaqDesc from '@/app/_components/webComp/faq/FaqDesc'
 import { FAQData } from '@/app/_components/webComp/faq/FAQData'
+import FAQAccordion from '@/app/_components/webComp/faq/FAQAccordion'
 
-type Props = {}
-
-export default function FAQ({}: Props) {
+export default function FAQ() {
   return (
     <section className="py-6.25 md:py-12.5">
       <div className="md:container mx-auto px-4">
@@ -14,7 +12,7 @@ export default function FAQ({}: Props) {
             <FaqDesc />
           </div>
           <div className="w-full md:flex-1 xl:max-w-[55%] 2xl:max-w-1/2">
-            <Accordion faq={FAQData} />
+            <FAQAccordion faq={FAQData}/>
           </div>
         </div>
       </div>

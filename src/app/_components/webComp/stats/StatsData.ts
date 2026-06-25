@@ -1,5 +1,4 @@
 import type { StatsItem } from "@/app/_types";
-import { IoStarSharp } from "react-icons/io5";
 
 export const statsData: StatsItem[] = [
   { 
@@ -31,6 +30,6 @@ export const statsData: StatsItem[] = [
     id: 6,
     value: "5.0",
     label: "trustpilot",
-    icon: IoStarSharp,
+    icon: true,
   },
 ];

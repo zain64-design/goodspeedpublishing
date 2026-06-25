@@ -1,5 +1,4 @@
-import dynamic from 'next/dynamic'
-const StatsBoxes = dynamic(() => import('@/app/_components/webComp/stats/StatsBoxes'))
+import StatsBoxes from '@/app/_components/webComp/stats/StatsBoxes'
 import StatsInfo from "@/app/_components/webComp/stats/StatsInfo"
 import {statsData} from "@/app/_components/webComp/stats/StatsData"
 

@@ -1,14 +1,14 @@
-'use client'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay } from 'swiper/modules'
 import ImageComp from '@/app/_components/ui/Image'
-import { LogoItem } from '@/app/_types'
+import { BrandLogoData } from '@/app/_types'
 
 type Props = {
-    logos: LogoItem[]
+    brand: BrandLogoData[]
 }
 
-export default function BrandLogo({ logos }: Props) {
+export default function BrandSliderInner({ brand }: Props) {
+    const data = brand ?? []
     return (
         <Swiper
             modules={[Autoplay]}
@@ -52,7 +52,7 @@ export default function BrandLogo({ logos }: Props) {
     mask-[linear-gradient(to_right,transparent_0%,#000_10%,#000_90%,transparent_100%)]
     [-webkit-mask-image:linear-gradient(to_right,transparent_0%,#000_10%,#000_90%,transparent_100%)]'
         >
-            {logos.map(({id, name, src}) => (
+            {data?.map(({ id, name, src }) => (
                 <SwiperSlide key={id} className="flex! items-center justify-center bg-white rounded-xl sm:rounded-2xl md:rounded-3xl px-6 py-4 sm:px-4 sm:py-8 md:px-6 md:py-11">
                     <ImageComp src={src} width={192} height={40} alt={name} className="max-w-20 h-6 sm:max-w-30 sm:h-8 lg:max-w-48 lg:h-9 w-auto object-contain" />
                 </SwiperSlide>

@@ -14,6 +14,29 @@ export type GeoData = {
     country: string
     zip_code: string
 }
+
+export type StoryBookData = {
+  id: number
+  img: string | StaticImageData
+  title: string
+}
+
+export type PortfolioBookData = {
+  id: number
+  img: string | StaticImageData
+  title: string
+}
+export type BrandLogoData = {
+  id: number
+  src: string | StaticImageData
+  name: string
+}
+
+export type IllustrationBookData = {
+  id: number
+  img: string | StaticImageData
+}
+
 export type SkeletonTypeCustomize = "thumbnail" | "heading" | "line" | "button" | "box";
 export type SkeletonTypeProps = {
     type: SkeletonTypeCustomize
@@ -30,10 +53,6 @@ export type LinkItem = {
     brandInfo?: string,
     href: string,
     icon?: React.ElementType
-}
-
-export type LogoItem = {
-    id: number, name: string, src: string | StaticImageData
 }
 
 export type CustomBtnProps = {
@@ -186,7 +205,7 @@ export type StatsItem = {
     id: number
     value: string
     label: string
-    icon?: React.ElementType
+    icon?: boolean
 }
 
 export type CountUpProps = {

@@ -1,5 +1,4 @@
-import dynamic from 'next/dynamic'
-const ContactForm = dynamic(() => import('@/app/_components/webComp/contact/ContactForm'))
+import ContactForm from '@/app/_components/webComp/contact/ContactForm'
 import ContactInfo from '@/app/_components/webComp/contact/ContactInfo'
 import { contactInfo } from "@/app/_components/webComp/common/footer/contactData"
 
