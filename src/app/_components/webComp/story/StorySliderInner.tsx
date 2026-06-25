@@ -44,7 +44,7 @@ export default function StorySliderInner({story}: Props) {
                 <div className="items-center md:pt-15 lg:pt-20 xl:pt-23.25">
                   <div className="text-center">
                     <Text as="p" className="text-black-text-100 capitalize font-playfair italic font-bold text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl 4xl:text-5xl mb-2 md:mb-6">{title}</Text>
-                    <ImageComp src={img} width={665} height={430} sizes="(max-width: 767px) 100vw, 380px" alt="story book" className="w-full max-h-166.25 h-auto mx-auto object-contain object-center" />
+                    <ImageComp src={img} width={665} height={430} sizes="(max-width: 767px) 100vw, 420px" alt="story book" className="w-full max-h-166.25 h-auto mx-auto object-contain object-center" />
                   </div>
                 </div>
               </SwiperSlide>
