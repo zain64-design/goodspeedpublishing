@@ -1,9 +1,10 @@
 'use client'
+import dynamic from 'next/dynamic'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
-import IntlTelInput from '@intl-tel-input/react'
+const IntlTelInput = dynamic(() => import('@intl-tel-input/react'), { ssr: false })
 import 'intl-tel-input/styles'
 import CustomInput from '@/app/_components/ui/CustomInput'
 import CustomTextarea from '@/app/_components/ui/CustomTextarea'
