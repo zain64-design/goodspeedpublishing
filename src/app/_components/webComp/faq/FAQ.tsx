@@ -1,6 +1,5 @@
 
 import FaqDesc from '@/app/_components/webComp/faq/FaqDesc'
-import { FAQData } from '@/app/_components/webComp/faq/FAQData'
 import FAQAccordion from '@/app/_components/webComp/faq/FAQAccordion'
 
 export default function FAQ() {
@@ -12,7 +11,7 @@ export default function FAQ() {
             <FaqDesc />
           </div>
           <div className="w-full md:flex-1 xl:max-w-[55%] 2xl:max-w-1/2">
-            <FAQAccordion faq={FAQData}/>
+            <FAQAccordion/>
           </div>
         </div>
       </div>

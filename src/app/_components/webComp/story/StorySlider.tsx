@@ -1,12 +1,8 @@
 'use client'
 import dynamic from 'next/dynamic'
-import type { StoryBookData } from '@/app/_types'
 const StorySliderInner = dynamic(() => import('@/app/_components/webComp/story/StorySliderInner'),{ ssr: false })
+import {storyData} from "@/app/_components/webComp/story/StoryData"
 
-type Props = {
-  story: StoryBookData[]
-}
-
-export default function StorySlider({story}: Props) {
-  return <StorySliderInner story={story} />
+export default function StorySlider() {
+  return <StorySliderInner story={storyData} />
 }

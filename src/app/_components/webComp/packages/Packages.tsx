@@ -1,6 +1,6 @@
 import Text from "@/app/_components/ui/Text"
-import PackageBox from "./PackageBox"
-import { packagesData } from "./packagesData"
+import PackageBox from "@/app/_components/webComp/packages/PackageBox"
+import { packagesData } from "@/app/_components/webComp/packages/packagesData"
 
 type Props = {}
 

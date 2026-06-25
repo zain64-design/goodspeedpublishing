@@ -1,12 +1,9 @@
 'use client'
 import dynamic from 'next/dynamic'
 const Accordion = dynamic(() => import('@/app/_components/ui/CustomAccordion'))
-import type {FaqItem} from '@/app/_types'
+import { FAQData } from '@/app/_components/webComp/faq/FAQData'
 
-type Props = {
-    faq?: FaqItem[]
-}
 
-export default function FAQAccordion({faq}: Props) {
-  return  <Accordion faq={faq} />
+export default function FAQAccordion() {
+  return  <Accordion faq={FAQData} />
 }

@@ -1,18 +1,15 @@
 'use client'
-import { Activity, useState, useRef } from 'react';
-import type { GenreItem } from '@/app/_types'
-import Text from '@/app/_components/ui/Text'
-import CustomBtn from '@/app/_components/ui/CustomBtn'
-import { FiArrowRight } from "react-icons/fi";
-import ImageComp from '@/app/_components/ui/Image';
+import { useState, useRef } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa6';
 import { gsap, useGSAP } from '@/app/_libs/gsap'
+import type { Tab } from '@/app/_types'
 
 type Props = {
-    genres?: GenreItem[]
+    tabs: Tab[]
+    children: (activeIndex: number, contentRefs: React.MutableRefObject<(HTMLDivElement | null)[]>) => React.ReactNode
 }
 
-export default function NavTabs({ genres }: Props) {
+export default function NavTabs({ tabs, children }: Props) {
     const [activeIndex, setActiveIndex] = useState(0);
     const navRef = useRef<HTMLDivElement>(null);
     const contentRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -21,7 +18,6 @@ export default function NavTabs({ genres }: Props) {
         if (!nav) return;
         nav.scrollBy({ left: direction === 'left' ? -200 : 200, behavior: 'smooth' });
     };
-    const data = genres ?? [];
     useGSAP(() => {
         const activeEl = contentRefs.current[activeIndex]
         if (!activeEl) return
@@ -38,7 +34,7 @@ export default function NavTabs({ genres }: Props) {
                 </button>
                 <div ref={navRef} className="mb-8 md:mb-10 lg:mb-14 xl:mb-16 2xl:mb-18.75 w-full 2xl:max-w-[1400px] mx-auto scroll-smooth overscroll-[contain_auto] [&::-webkit-scrollbar]:hidden overflow-x-auto overflow-y-hidden md:overflow-x-visible md:overflow-y-visible px-6 md:px-0" style={{ scrollbarWidth: 'none' }}>
                     <div className="flex justify-center flex-wrap gap-2 md:gap-4 w-max md:w-auto">
-                        {data?.map(({ id, category }, index) => (
+                        {tabs?.map(({ id, label }, index) => (
                             <button
                                 key={id}
                                 onClick={() => setActiveIndex(index)}
@@ -51,7 +47,7 @@ export default function NavTabs({ genres }: Props) {
                                     activeIndex === index ? 'text-mid-50 font-semibold bg-primary border-primary' : '',
                                 ].join(' ')}
                             >
-                                {category}
+                                {label}
                             </button>
                         ))}
                     </div>
@@ -61,23 +57,7 @@ export default function NavTabs({ genres }: Props) {
                 </button>
             </div>
 
-            {data?.map(({ id, title, info, thumbnail, category }, index) => (
-                <Activity key={id} mode={activeIndex === index ? 'visible' : 'hidden'}>
-                    <div ref={(el) => { contentRefs.current[index] = el }} className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                        <div className="text-left">
-                            <Text as='h3' className='text-mid-50 font-bold capitalize md:tracking-[-2px] sm:text-[30px] sm:leading-9 md:text-[36px] md:leading-10 lg:text-[40px] lg:leading-12 xl:text-[56px] xl:leading-14.75 md:mb-4.5 lg:mb-5 xl:mb-7.25'>{title}</Text>
-                            <Text className='text-grey-text-300 text-xs sm:text-sm md:text-base leading-5 md:leading-7 xl:text-lg lg:leading-7 2xl:text-xl 2xl:leading-8 4xl:text-[22px] 4xl:leading-9!'>{info}</Text>
-                            <div className="flex flex-row justify-center sm:justify-start flex-wrap gap-4 flex-1 w-full mt-6 md:mt-10 2xl:mt-12.75">
-                                <CustomBtn label="book free consultation" buttonClass="btn-primary inline-flex items-center h-[50px] xl:h-[60px] 2xl:h-[71px] xs:max-w-[200px] sm:max-w-[230px] md:max-w-[240px] xl:max-w-[270px] 2xl:max-w-[292px] flex-row-reverse justify-center gap-[11px] text-xs xl:text-base 2xl:text-lg" icon={<FiArrowRight className="text-sm xl:text-base 2xl:text-xl" />} />
-                                <CustomBtn label="Chat For 35% OFF" buttonClass="btn-secondary inline-flex items-center h-[50px] xl:h-[60px] 2xl:h-[71px] xs:max-w-[200px] sm:max-w-[230px] md:max-w-[160px] xl:max-w-[200px] 2xl:max-w-[232px] flex-row-reverse justify-center gap-[11px] text-xs xl:text-base 2xl:text-lg" />
-                            </div>
-                        </div>
-                        {thumbnail && (
-                            <ImageComp src={thumbnail} width={670} height={435} className='object-contain max-h-108.75 mx-auto max-w-full reflect-below' alt={`image-${category}`} />
-                        )}
-                    </div>
-                </Activity>
-            ))}
+            {children(activeIndex, contentRefs)}
 
         </>
     )

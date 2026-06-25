@@ -9,7 +9,6 @@ import type { StoryBookData } from '@/app/_types'
 type Props = {
   story: StoryBookData[]
 }
-
 export default function StorySliderInner({story}: Props) {
     const data = story ?? []
   return (

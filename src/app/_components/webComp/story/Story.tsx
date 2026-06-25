@@ -1,6 +1,5 @@
 import Text from "@/app/_components/ui/Text"
 import StorySlider from '@/app/_components/webComp/story/StorySlider'
-import {storyData} from "@/app/_components/webComp/story/StoryData"
 
 
 export default function Story() {
@@ -10,7 +9,7 @@ export default function Story() {
         <div className="overflow-hidden bg-primary-100 bg-no-repeat bg-[position:top_left,right_80px_bottom] bg-[size:160px_91px,280px_73px] sm:bg-[size:160px_91px,280px_73px] md:bg-[size:220px_125px,340px_88px] lg:bg-[size:280px_160px,440px_114px] xl:bg-[size:320px_182px,520px_135px] 2xl:bg-[size:380px_217px,640px_166px] 4xl:bg-[size:491px_280px,735px_189px] bg-[url('/images/contact-box-elem.webp'),url('/images/story-box-elem.webp')] rounded-[30px] md:rounded-[62px] p-3.5 sm:p-5 lg:p-8 xl:p-10 2xl:p-11 4xl:p-14">
           <Text as="h2" animate className="text-black text-center capitalize tracking-[-1.639px] font-extrabold leading-normal mb-2 text-2xl sm:text-4xl md:text-[54px] xl:text-[64px] 2xl:text-[74px] 4xl:text-[86px] 2xl:leading-21.5 2xl:mb-8.75">Perfect Your Story</Text>
           <Text as="p" animate className="text-black text-center text-xs sm:text-sm md:text-base xl:text-lg 2xl:text-[22px] 4xl:text-2xl leading-5 md:leading-7 2xl:leading-8.75 mb-4 sm:mb-6 md:mb-0">We help you sharpen every chapter with expert book editing, formatting & proofreading services.</Text>
-          <StorySlider story={storyData} />
+          <StorySlider />
         </div>
       </div>
     </section>

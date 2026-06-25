@@ -1,12 +1,8 @@
 'use client'
 import dynamic from 'next/dynamic'
-import type { PortfolioBookData } from '@/app/_types'
 const PortfolioSliderInner = dynamic(() => import('@/app/_components/webComp/portfolio/PortfolioSliderInner'),{ ssr: false })
+import {portfolioData} from "@/app/_components/webComp/portfolio/PortfolioData"
 
-type Props = {
-    portfolio: PortfolioBookData[]
-}
-
-export default function PortfolioSlider({portfolio}: Props) {
-    return <PortfolioSliderInner portfolio={portfolio} />
+export default function PortfolioSlider() {
+    return <PortfolioSliderInner portfolio={portfolioData} />
 }

@@ -1,11 +1,9 @@
 'use client'
 import dynamic from 'next/dynamic'
-import type { StatsItem } from "@/app/_types";
 const StatsBoxesInner = dynamic(() => import('@/app/_components/webComp/stats/StatsBoxesInner'),{ ssr: false })
-type Props = {
-  stats: StatsItem[]
-}
+import {statsData} from "@/app/_components/webComp/stats/StatsData"
 
-export default function StatsBoxes({stats}: Props) {
-  return <StatsBoxesInner stats={stats}/>
+
+export default function StatsBoxes() {
+  return <StatsBoxesInner stats={statsData}/>
 }

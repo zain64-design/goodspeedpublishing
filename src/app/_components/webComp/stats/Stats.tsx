@@ -1,6 +1,5 @@
 import StatsBoxes from '@/app/_components/webComp/stats/StatsBoxes'
 import StatsInfo from "@/app/_components/webComp/stats/StatsInfo"
-import {statsData} from "@/app/_components/webComp/stats/StatsData"
 
 export default function Stats() {
   return (
@@ -11,7 +10,7 @@ export default function Stats() {
               <StatsInfo />
             </div>
             <div className="w-full xl:max-w-[49%] 2xl:max-w-[49%] 4xl:max-w-[49%] 6xl:max-w-[45%]">
-              <StatsBoxes stats={statsData}/>
+              <StatsBoxes/>
             </div>
         </div>
       </div>

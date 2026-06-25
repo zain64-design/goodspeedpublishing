@@ -1,12 +1,8 @@
 'use client'
 import dynamic from 'next/dynamic'
-import type { IllustrationBookData } from '@/app/_types'
 const IllustrationSliderInner = dynamic(() => import('@/app/_components/webComp/illustration/IllustrationSliderInner'),{ ssr: false })
+import { IllustrationData } from "@/app/_components/webComp/illustration/IllustrationData"
 
-type Props = {
-  illustration: IllustrationBookData[]
-}
-
-export default function IllustrationSlider({illustration}: Props) {
-    return <IllustrationSliderInner illustration={illustration}/>
+export default function IllustrationSlider() {
+    return <IllustrationSliderInner illustration={IllustrationData}/>
 }

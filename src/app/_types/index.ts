@@ -52,8 +52,14 @@ export type LinkItem = {
     title?: string,
     brandInfo?: string,
     href: string,
-    icon?: React.ElementType
+    icon?: string
 }
+
+export type Tab = {
+  id: number | string
+  label: string
+}
+
 
 export type CustomBtnProps = {
     type?: "button" | "submit" | "reset";
