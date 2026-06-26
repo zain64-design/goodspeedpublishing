@@ -18,8 +18,8 @@ export default function BoxRight({}: Props) {
       }}>
 <ImageComp
     src={RightBoxThumb}
-    width={613}
-    height={903}
+    width={1222}
+    height={1803}
     sizes="(max-width: 575px) 380px, (max-width: 767px) 45vw, 326px"
     alt="hero"
     fetchPriority="high"
