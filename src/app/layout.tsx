@@ -11,9 +11,10 @@ const poppins = Poppins({
 
 const playfair = Playfair_Display({
   variable: "--font-playfair-sans",
-  weight: ['400', '500', '600', '700', '800'],
+  weight: ['800'],
   subsets: ["latin"],
   display: "swap",
+  preload: false,
 });
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
