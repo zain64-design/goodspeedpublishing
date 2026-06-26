@@ -10,15 +10,6 @@ const poppins = Poppins({
   display: "swap",
 });
 
-const poppinsBoldItalic = localFont({
-  src: '../../public/fonts/Poppins-BoldItalic.woff2',
-  variable: "--font-poppins-bold-italic",
-  weight: '700',
-  style: 'italic',
-  display: 'swap',
-  preload: false,
-});
-
 const playfair = Playfair_Display({
   variable: "--font-playfair-sans",
   weight: ['800'],
@@ -29,7 +20,7 @@ const playfair = Playfair_Display({
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${poppins.variable} ${playfair.variable} ${poppinsBoldItalic.variable} h-full antialiased`}>
+    <html lang="en" className={`${poppins.variable} ${playfair.variable} h-full antialiased`}>
       <body className="">
         {children}
       </body>

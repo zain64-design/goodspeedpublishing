@@ -14,6 +14,7 @@ export default function SmoothLayout({ children }: { children: React.ReactNode }
             content: contentRef.current,
             smooth: 0.5,
             effects: true,
+            ignoreMobileResize: true
         })
 
         const refresh = () => ScrollTrigger.refresh()

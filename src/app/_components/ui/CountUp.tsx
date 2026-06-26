@@ -36,6 +36,7 @@ export default function CountUp({
           trigger: ref.current,
           start: scrollStart,
           once: true,
+          refreshPriority: -1,
         },
         onUpdate: () => {
           if (!ref.current) return
