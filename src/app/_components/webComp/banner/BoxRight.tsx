@@ -22,7 +22,8 @@ export default function BoxRight({}: Props) {
     height={903}
     sizes="(max-width: 575px) 380px, (max-width: 767px) 45vw, 326px"
     alt="hero"
-    preload
+    fetchPriority="high"
+    loading="eager"
     className="max-w-auto sm:max-w-full max-h-80 sm:max-h-85 md:max-h-100 lg:max-h-100 xl:max-h-120 2xl:max-h-160 4xl:max-h-180 mx-auto block object-contain xl:scale-[1.05]"
 />
     </div>
