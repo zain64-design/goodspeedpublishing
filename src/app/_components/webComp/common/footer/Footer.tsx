@@ -20,11 +20,11 @@ export default function Footer() {
           <hr className="h-77.5 w-px bg-grey-50 self-center text-grey-bg-50 hidden lg:block"></hr>
           <div className="w-full lg:w-44 xl:w-43">
             <Text as="h5" className="text-2xl md:text-[24px] xl:text-[28px] capitalize font-bold mb-4 lg:mb-9">Useful Links</Text>
-            <Links links={navigation} className="flex flex-col gap-3.5" linkClassName="font-light font-light text-sm md:text-base xl:text-lg capitalize text-(--text-grey-50) bs-transition hover:text-primary" />
+            <Links links={navigation} className="flex flex-col gap-3.5" linkClassName="font-normal text-sm md:text-base xl:text-lg capitalize text-(--text-grey-50) bs-transition hover:text-primary" />
           </div>
           <div className="w-full lg:w-90 xl:w-95">
             <Text as="h5" className="text-2xl md:text-[24px] xl:text-[28px] capitalize font-bold mb-4 lg:mb-9">contact info</Text>
-            <Links info={contactInfo} className="flex flex-col gap-4.5" itemClassName="group"  linkClassName="flex items-center flex-wrap gap-2 lg:gap-[17px] font-light text-sm md:text-base xl:text-lg bs-transition group-hover:text-primary" iconClassName="bg-white text-black w-8 h-8 xl:w-13 xl:h-13 flex items-center justify-center rounded-full text-lg xl:text-2xl bs-transition group-hover:bg-secondary group-hover:text-white"/>
+            <Links info={contactInfo} className="flex flex-col gap-4.5" itemClassName="group"  linkClassName="flex items-center flex-wrap gap-2 lg:gap-[17px] font-normal text-sm md:text-base xl:text-lg bs-transition group-hover:text-primary" iconClassName="bg-white text-black w-8 h-8 xl:w-13 xl:h-13 flex items-center justify-center rounded-full text-lg xl:text-2xl bs-transition group-hover:bg-secondary group-hover:text-white"/>
           </div>
         </div>
         <Text as='p' className="text-center text-sm md:text-base text-grey-text-100 capitalize">© 2026 Goodspeed Publishing. All Rights Reserved</Text>

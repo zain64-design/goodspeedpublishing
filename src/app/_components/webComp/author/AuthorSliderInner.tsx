@@ -58,7 +58,7 @@ export default function AuthorSliderInner({ author }: Props) {
                             {data?.map(({ id, desc, authorName }) => (
                                 <SwiperSlide key={id}>
                                     <Text as="p" className="text-white font-bold text-lg leading-6 sm:text-[22px] sm:leading-8 md:text-[24px] md:leading-8.5 lg:text-[28px] lg:leading-9.5 xl:text-[32px] xl:leading-10.5 2xl:text-[38px] 2xl:leading-12 4xl:text-[42px] 4xl:leading-13.5 6xl:text-[48px] 6xl:leading-15 tracking-[-1px] md:tracking-[-1.4px]">{desc}</Text>
-                                    <Text as="span" className='mt-5.5 inline-flex items-center gap-3 text-white text-xs md:text-sm lg:text-base 2xl:text-lg font-light uppercase tracking-[1.4px] leading-5 right-dash'>{authorName}</Text>
+                                    <Text as="span" className='mt-5.5 inline-flex items-center gap-3 text-white text-xs md:text-sm lg:text-base 2xl:text-lg font-normal uppercase tracking-[1.4px] leading-5 right-dash'>{authorName}</Text>
                                 </SwiperSlide>
                             ))}
                         </Swiper>

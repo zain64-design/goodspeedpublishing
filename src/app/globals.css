@@ -212,6 +212,7 @@ body {
   --color-foreground: var(--foreground);
 
   --font-poppins: var(--font-poppins-sans), Arial, Helvetica, sans-serif;
+  --font-poppins-bold-italic: var(--font-poppins-bold-italic), Arial, Helvetica, sans-serif;
   --font-playfair: var(--font-playfair-sans), Arial, Helvetica, sans-serif;
 
   /* global color start */
