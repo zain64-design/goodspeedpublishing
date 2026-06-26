@@ -94,22 +94,6 @@ export type ImageProps = {
 
 }
 
-export type ArtDirectionProps = {
-    mobileSrc: string | StaticImageData
-    desktopSrc: string | StaticImageData
-    alt: string
-    mobileWidth: number
-    mobileHeight: number
-    desktopWidth: number
-    desktopHeight: number
-    className?: string
-    breakpoint?: number
-    fetchPriority?: "high" | "low" | "auto"
-    loading?: "eager" | "lazy"
-    desktopSizes?: string,
-    mobileSizes?: string,
-}
-
 export type CustomTextareaProps = {
     label?: string
     name?: string
