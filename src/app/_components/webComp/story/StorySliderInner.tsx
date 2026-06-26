@@ -42,9 +42,9 @@ export default function StorySliderInner({story}: Props) {
             {data?.map(({ id, title, img }) => (
               <SwiperSlide key={id}>
                 <div className="items-center md:pt-15 lg:pt-20 xl:pt-23.25">
-                  <div className="text-center">
+                  <div className="text-center p-4">
                     <Text as="p" className="text-black-text-100 capitalize font-playfair italic font-bold text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl 4xl:text-5xl mb-2 md:mb-6">{title}</Text>
-                    <ImageComp src={img} width={640} height={414} quality={100} sizes="(max-width: 767px) 100vw, 520px" alt="story book" className="w-full max-h-166.25 h-auto mx-auto object-contain object-center" />
+                    <ImageComp src={img} width={477} height={311} sizes="(max-width: 767px) 100vw, 477px" alt="story book" className="w-full max-h-166.25 h-auto mx-auto object-contain object-center drop-shadow-[-5px_3px_9px_rgba(0,0,0,0.80)]" />
                   </div>
                 </div>
               </SwiperSlide>
