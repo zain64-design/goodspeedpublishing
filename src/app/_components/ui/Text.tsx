@@ -66,6 +66,7 @@ const Text = <T extends keyof JSX.IntrinsicElements = "p">({
             trigger: ref.current,
             start: scrollStart,
             once: true,
+            refreshPriority: -1,
           },
         })
       }
