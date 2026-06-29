@@ -44,13 +44,7 @@ export default function StorySliderInner({ story }: Props) {
               <div className="items-center md:pt-10 lg:pt-20 xl:pt-23.25">
                 <div className="text-center p-4">
                   <Text as="p" className="text-black-text-100 capitalize font-playfair italic font-bold text-lg sm:text-2xl md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl 4xl:text-5xl mb-2 md:mb-6">{title}</Text>
-                  <ImageComp
-                    src={img}
-                    width={665}
-                    height={430}
-sizes="(max-width: 575px) 320px, (max-width: 767px) calc(100vw - 104px), (max-width: 991px) 320px, (max-width: 1199px) 340px, (max-width: 1399px) 380px, (max-width: 1599px) 460px, (max-width: 1799px) 560px, 640px"
-                    alt="story book"
-                    className="max-w-[665px] w-full h-auto mx-auto drop-shadow-[-5px_5px_5px_rgba(0,0,0,0.70)]"
+                  <ImageComp src={img} width={665} height={430} sizes="(max-width: 575px) 290px, (max-width: 767px) calc(100vw - 104px), (max-width: 991px) 290px, (max-width: 1199px) 340px, (max-width: 1399px) 380px, (max-width: 1599px) 460px, (max-width: 1799px) 560px, 640px" alt="story book" className="max-w-[665px] w-full h-auto mx-auto drop-shadow-[-5px_5px_5px_rgba(0,0,0,0.70)]"
                   />
                 </div>
               </div>
