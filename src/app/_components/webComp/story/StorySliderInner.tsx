@@ -48,7 +48,7 @@ export default function StorySliderInner({ story }: Props) {
                     src={img}
                     width={665}
                     height={430}
-                    sizes="(max-width: 575px) calc(100vw - 92px), (max-width: 767px) calc(100vw - 104px), (max-width: 991px) 320px, (max-width: 1199px) 340px, (max-width: 1399px) 380px, (max-width: 1599px) 460px, (max-width: 1799px) 560px, 640px"
+sizes="(max-width: 575px) 483px, (max-width: 767px) calc(100vw - 104px), (max-width: 991px) 320px, (max-width: 1199px) 340px, (max-width: 1399px) 380px, (max-width: 1599px) 460px, (max-width: 1799px) 560px, 640px"
                     alt="story book"
                     className="max-w-[665px] w-full h-auto mx-auto drop-shadow-[-5px_5px_5px_rgba(0,0,0,0.70)]"
                   />
