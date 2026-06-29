@@ -23,7 +23,7 @@ export default function NavTabs({ tabs, children }: Props) {
         if (!activeEl) return
 
         gsap.set(activeEl, { opacity: 0 })
-        gsap.to(activeEl, { opacity: 1, duration: 1, ease: 'power1.out' })
+        gsap.to(activeEl, { opacity: 1, duration: 0.5, ease: 'power1.out' })
     }, [activeIndex])
 
     return (

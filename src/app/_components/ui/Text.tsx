@@ -24,7 +24,7 @@ const Text = <T extends keyof JSX.IntrinsicElements = "p">({
   scrollStart = "top 85%",
   delay = 0,
   stagger = 0.08,
-  duration = 0.7,
+  duration = 0.5,
   ...props
 }: TextProps<T>) => {
   const Component = Tag as React.ElementType
