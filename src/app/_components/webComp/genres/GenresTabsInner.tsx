@@ -31,7 +31,7 @@ export default function GenresTabsInner({ genres }: Props) {
                                     </div>
                                 </div>
                                 {thumbnail && (
-                                    <ImageComp src={thumbnail} width={670} height={435} className='object-contain max-h-108.75 mx-auto max-w-full reflect-below' alt={`image-${category}`} />
+                                    <ImageComp src={thumbnail} width={670} height={435} className='object-contain max-h-108.75 mx-auto w-auto reflect-below' alt={`image-${category}`} />
                                 )}
                             </div>
                         </Activity>
