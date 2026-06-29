@@ -21,7 +21,7 @@ export default function GenresTabsInner({ genres }: Props) {
                 <>
                     {GenresData?.map(({ id, title, info, thumbnail, category }, index) => (
                         <Activity key={id} mode={activeIndex === index ? 'visible' : 'hidden'}>
-                            <div ref={(el) => { contentRefs.current[index] = el }} className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                            <div ref={(el) => { contentRefs.current[index] = el }} className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
                                 <div className="text-left">
                                     <Text as='h3' className='text-mid-50 font-bold capitalize md:tracking-[-2px] sm:text-[30px] sm:leading-9 md:text-[36px] md:leading-10 lg:text-[40px] lg:leading-12 xl:text-[56px] xl:leading-14.75 md:mb-4.5 lg:mb-5 xl:mb-7.25'>{title}</Text>
                                     <Text className='text-grey-text-300 text-xs sm:text-sm md:text-base leading-5 md:leading-7 xl:text-lg lg:leading-7 2xl:text-xl 2xl:leading-8 4xl:text-[22px] 4xl:leading-9!'>{info}</Text>
