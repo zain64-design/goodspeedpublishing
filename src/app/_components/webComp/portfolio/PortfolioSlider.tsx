@@ -1,4 +1,3 @@
-'use client'
 import dynamic from 'next/dynamic'
 const PortfolioSliderInner = dynamic(() => import('@/app/_components/webComp/portfolio/PortfolioSliderInner'))
 import {portfolioData} from "@/app/_components/webComp/portfolio/PortfolioData"

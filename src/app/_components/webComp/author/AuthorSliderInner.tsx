@@ -1,3 +1,4 @@
+'use client'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, A11y, Controller } from 'swiper/modules';
 import ImageComp from '@/app/_components/ui/Image'
