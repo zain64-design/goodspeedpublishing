@@ -1,7 +1,7 @@
 'use client'
 import { Activity } from 'react'
 import dynamic from 'next/dynamic'
-const NavTabs = dynamic(() => import('@/app/_components/ui/NavTabs'),{ ssr: false })
+const NavTabs = dynamic(() => import('@/app/_components/ui/NavTabs'))
 import type { GenreItem } from '@/app/_types'
 import Text from '@/app/_components/ui/Text'
 import CustomBtn from '@/app/_components/ui/CustomBtn'
