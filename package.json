@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "eslint"
   },
-  "browserslist": [
+"browserslist": [
   "baseline widely available with downstream"
 ],
   "dependencies": {
