@@ -8,9 +8,9 @@
     "start": "next start",
     "lint": "eslint"
   },
-"browserslist": [
-  "baseline widely available with downstream"
-],
+  "browserslist": [
+    "baseline widely available with downstream"
+  ],
   "dependencies": {
     "@gsap/react": "^2.1.2",
     "@intl-tel-input/react": "^29.1.0",
