@@ -1,7 +1,7 @@
 'use client'
 import { twMerge } from "tailwind-merge"
 import { useRef, type JSX } from "react"
-import { gsap, useGSAP, SplitText } from "@/app/_libs/gsap"
+import { gsap, useGSAP, SplitText, ScrollTrigger } from "@/app/_libs/gsap"
 
 type TextProps<T extends keyof JSX.IntrinsicElements = "p"> = {
   as?: T
@@ -21,10 +21,10 @@ const Text = <T extends keyof JSX.IntrinsicElements = "p">({
   children,
   animate = false,
   trigger = "scroll",
-  scrollStart = "top 85%",
+  scrollStart = "top 100%",
   delay = 0,
-  stagger = 0.08,
-  duration = 0.5,
+  stagger = 0.1,
+  duration = 0.9,
   ...props
 }: TextProps<T>) => {
   const Component = Tag as React.ElementType
@@ -36,44 +36,43 @@ const Text = <T extends keyof JSX.IntrinsicElements = "p">({
     const mm = gsap.matchMedia()
 
     mm.add("(min-width: 1200px)", () => {
-      const split = new SplitText(ref.current, {
-        type: "words",
-        wordsClass: "split-word",
-        reduceWhiteSpace: false,
-        aria: "none",
-      })
+      let split: SplitText | undefined
 
-      gsap.set(split.words, {
-        opacity: 0,
-        y: 30,
-      })
+      const createSplitAndAnimate = () => {
+        if (!ref.current || split) return
 
-      const animationConfig = {
-        opacity: 1,
-        y: 0,
-        duration,
-        delay,
-        stagger,
-        ease: "power2.out",
-      }
+        split = new SplitText(ref.current, {
+          type: "words",
+          wordsClass: "split-word",
+          reduceWhiteSpace: false,
+          aria: "none",
+        })
 
-      if (trigger === "load") {
-        gsap.to(split.words, animationConfig)
-      } else {
+        gsap.set(split.words, { opacity: 0, y: 30 })
+
         gsap.to(split.words, {
-          ...animationConfig,
-          scrollTrigger: {
-            trigger: ref.current,
-            start: scrollStart,
-            once: true,
-            refreshPriority: -1,
-          },
+          opacity: 1,
+          y: 0,
+          duration,
+          delay,
+          stagger,
+          ease: "power2.out",
         })
       }
 
-      return () => {
-        split.revert()
+      if (trigger === "load") {
+        requestAnimationFrame(createSplitAndAnimate)
+      } else {
+        ScrollTrigger.create({
+          trigger: ref.current,
+          start: scrollStart,
+          once: true,
+          refreshPriority: -1,
+          onEnter: createSplitAndAnimate, // ← SplitText sirf tab banega jab scroll mein aaye
+        })
       }
+
+      return () => split?.revert()
     })
 
     return () => mm.revert()

@@ -28,7 +28,7 @@ body {
 }
 @layer components {
   .split-target .split-word {
-    @apply inline-block opacity-0;
+    @apply inline-block opacity-0 will-change-[opacity,transform];
 }
   
   .reflect-below {

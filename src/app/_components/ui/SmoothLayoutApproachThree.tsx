@@ -32,36 +32,17 @@ export default function SmoothLayout({ children }: { children: React.ReactNode }
                 : new Promise<void>(resolve => window.addEventListener('load', () => resolve(), { once: true }))
         ]).then(refresh)
 
-        // Leading + trailing debounced resize refresh.
-        // First resize in a burst refreshes immediately (leading edge),
-        // subsequent ones are debounced, and a trailing refresh fires
-        // after the burst settles to catch the final layout state.
+        // Debounced resize-triggered refresh (separate from initial refresh)
         let frame: number
         let timeout: ReturnType<typeof setTimeout>
-        let isThrottled = false
-        const DEBOUNCE_MS = 150
-
-        const runRefresh = () => {
-            frame = requestAnimationFrame(() => {
-                ScrollTrigger.refresh()
-            })
-        }
-
         const ro = new ResizeObserver(() => {
+            cancelAnimationFrame(frame)
             clearTimeout(timeout)
-
-            if (!isThrottled) {
-                // Leading edge: respond to the first event in the burst immediately
-                isThrottled = true
-                runRefresh()
-            }
-
-            // Trailing edge: always schedule a final refresh once events settle,
-            // so the last resize state is never missed
             timeout = setTimeout(() => {
-                isThrottled = false
-                runRefresh()
-            }, DEBOUNCE_MS)
+                frame = requestAnimationFrame(() => {
+                    ScrollTrigger.refresh()
+                })
+            }, 150)
         })
         ro.observe(contentRef.current)
 
