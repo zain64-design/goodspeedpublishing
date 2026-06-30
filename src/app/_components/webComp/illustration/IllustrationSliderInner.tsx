@@ -25,7 +25,7 @@ export default function IllustrationSliderInner({illustration}: Props) {
                 spaceBetween={20}
                 grabCursor={true}
                 // allowTouchMove={false}
-                speed={500}
+                speed={200}
                 // slidesPerView={'auto'}
                 slidesPerView={4.8}
                 loop={true}
