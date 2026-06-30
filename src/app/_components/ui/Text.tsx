@@ -22,9 +22,9 @@ const Text = <T extends keyof JSX.IntrinsicElements = "p">({
   animate = false,
   trigger = "scroll",
   scrollStart = "top 100%",
-  delay = 0,
-  stagger = 0.1,
-  duration = 0.9,
+  delay = 0.4,
+  stagger = 0.05,
+  duration = 0.5,
   ...props
 }: TextProps<T>) => {
   const Component = Tag as React.ElementType
@@ -68,7 +68,7 @@ const Text = <T extends keyof JSX.IntrinsicElements = "p">({
           start: scrollStart,
           once: true,
           refreshPriority: -1,
-          onEnter: createSplitAndAnimate, // ← SplitText sirf tab banega jab scroll mein aaye
+          onEnter: createSplitAndAnimate, // ← SplitText is create once come in scroll view
         })
       }
 
