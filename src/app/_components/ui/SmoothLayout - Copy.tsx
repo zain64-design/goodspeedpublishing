@@ -17,38 +17,26 @@ export default function SmoothLayout({ children }: { children: React.ReactNode }
             ignoreMobileResize: true
         })
 
-        let initialRefreshDone = false
-        const refresh = () => {
-            if (initialRefreshDone) return
-            initialRefreshDone = true
-            ScrollTrigger.refresh()
+        const refresh = () => ScrollTrigger.refresh()
+
+        document.fonts?.ready?.then(refresh)
+
+        if (document.readyState === 'complete') {
+            refresh()
+        } else {
+            window.addEventListener('load', refresh)
         }
 
-        // Combine all "ready" conditions into a single refresh call
-        Promise.all([
-            document.fonts?.ready ?? Promise.resolve(),
-            document.readyState === 'complete'
-                ? Promise.resolve()
-                : new Promise<void>(resolve => window.addEventListener('load', () => resolve(), { once: true }))
-        ]).then(refresh)
-
-        // Debounced resize-triggered refresh (separate from initial refresh)
         let frame: number
-        let timeout: ReturnType<typeof setTimeout>
         const ro = new ResizeObserver(() => {
             cancelAnimationFrame(frame)
-            clearTimeout(timeout)
-            timeout = setTimeout(() => {
-                frame = requestAnimationFrame(() => {
-                    ScrollTrigger.refresh()
-                })
-            }, 150)
+            frame = requestAnimationFrame(refresh)
         })
         ro.observe(contentRef.current)
 
         return () => {
+            window.removeEventListener('load', refresh)
             cancelAnimationFrame(frame)
-            clearTimeout(timeout)
             ro.disconnect()
             smoother.kill()
             ScrollTrigger.getAll().forEach(t => t.kill())
