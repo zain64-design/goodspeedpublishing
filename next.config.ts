@@ -3,6 +3,12 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
      experimental: {
     inlineCss: true,
+        optimizePackageImports: [
+      'react-icons',
+      'gsap',
+      'primereact',
+      'swiper',
+    ],
   },
     transpilePackages: ['@intl-tel-input/react', 'intl-tel-input'],
   images: {
