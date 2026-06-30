@@ -33,3 +33,10 @@ export const CommaAfter = ({ className = '', color = '#fff' }: IconProps) => (
   </defs>
 </svg>
 )
+
+export const ArrowRight = ({ className = '', color = '#0B0B0E' }: IconProps) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" className={className}>
+  <path d="M4.92188 11.8096H18.6999" stroke={color} strokeWidth="1.96829" strokeLinecap="round" strokeLinejoin="round"/>
+  <path d="M11.8086 4.9209L18.6976 11.8099L11.8086 18.6989" stroke={color} strokeWidth="1.96829" strokeLinecap="round" strokeLinejoin="round"/>
+</svg>
+)
