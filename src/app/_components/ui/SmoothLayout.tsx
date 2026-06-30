@@ -12,8 +12,8 @@ export default function SmoothLayout({ children }: { children: React.ReactNode }
         const smoother = ScrollSmoother.create({
             wrapper: wrapperRef.current,
             content: contentRef.current,
-            smooth: 0.5,
-            effects: true,
+            smooth: 1,
+            effects: false,
             ignoreMobileResize: true
         })
 
