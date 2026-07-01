@@ -20,7 +20,7 @@ export default function BoxRight({}: Props) {
     src={RightBoxThumb}
     width={487}
     height={719}
-    quality={75}
+    quality={65}
     sizes="(max-width: 575px) 124px, (max-width: 767px) 45vw, (max-width: 1399px) 326px, 719px"
     alt="hero"
     fetchPriority="high"
