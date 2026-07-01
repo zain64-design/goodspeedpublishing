@@ -1,7 +1,7 @@
 import type { StatsItem } from "@/app/_types";
 
 export const statsData: StatsItem[] = [
-  { 
+  {
     id: 1,
     value: "1K+",
     label: "bestsellers",

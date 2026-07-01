@@ -14,7 +14,7 @@ const Text = <T extends keyof JSX.IntrinsicElements = "p">({
   ...props
 }: TextProps<T>) => {
   const Component = Tag as React.ElementType;
-  
+
   return (
     <Component {...props} className={twMerge(className)}>
       {children}

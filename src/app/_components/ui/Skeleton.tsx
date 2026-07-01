@@ -1,34 +1,33 @@
-'use client'
+"use client";
 import { twMerge } from "tailwind-merge";
 import { BiImage } from "react-icons/bi";
-import type { SkeletonTypeProps,SkeletonTypeCustomize } from "@/app/_types";
+import type { SkeletonTypeProps, SkeletonTypeCustomize } from "@/app/_types";
 
 const skeletonClasses: Record<string, string> = {
   thumbnail: "skl-bg w-20 h-20 rounded flex items-center justify-center",
-  heading:   "skl-bg h-6 rounded",
-  line:      "skl-bg h-4 rounded",
-  button:    "skl-bg h-12 rounded-full",
-  box:       "skl-bg w-full h-48 rounded",
+  heading: "skl-bg h-6 rounded",
+  line: "skl-bg h-4 rounded",
+  button: "skl-bg h-12 rounded-full",
+  box: "skl-bg w-full h-48 rounded",
 };
 
 function renderRepeatedSkeleton(
   count: number,
   baseClass: string,
-  className?: string
+  className?: string,
 ): React.ReactElement[] {
   return Array.from({ length: count }).map((_, i) => (
     <div key={i} className={twMerge(baseClass, className)} />
   ));
 }
 export default function Skeleton({
-    type,
+  type,
   headingCount = 1,
   lineCount = 3,
   className,
   wrapper = false,
   wrapperClass = "",
 }: SkeletonTypeProps) {
-
   if (type === "thumbnail") {
     return (
       <div className={twMerge(skeletonClasses.thumbnail, className)}>
@@ -42,7 +41,10 @@ export default function Skeleton({
   }
 
   if (type === "heading") {
-    const skeletons = renderRepeatedSkeleton(headingCount, skeletonClasses.heading);
+    const skeletons = renderRepeatedSkeleton(
+      headingCount,
+      skeletonClasses.heading,
+    );
     return wrapper ? (
       <div className={twMerge(wrapperClass)}>{skeletons}</div>
     ) : (
@@ -59,10 +61,8 @@ export default function Skeleton({
     );
   }
 
-if (type === "box") {
-    return (
-      <div className={twMerge(skeletonClasses.box, className)}/>
-    );
+  if (type === "box") {
+    return <div className={twMerge(skeletonClasses.box, className)} />;
   }
 
   return null;

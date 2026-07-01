@@ -1,10 +1,10 @@
-export function getBackgroundImage(srcSet = '') {
+export function getBackgroundImage(srcSet = "") {
   const imageSet = srcSet
-    .split(', ')
+    .split(", ")
     .map((str) => {
-      const [url, dpi] = str.split(' ')
-      return `url("${url}") ${dpi}`
+      const [url, dpi] = str.split(" ");
+      return `url("${url}") ${dpi}`;
     })
-    .join(', ')
-  return `image-set(${imageSet})`
+    .join(", ");
+  return `image-set(${imageSet})`;
 }

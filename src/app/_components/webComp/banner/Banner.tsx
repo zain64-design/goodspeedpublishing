@@ -1,16 +1,15 @@
-import BoxRight from '@/app/_components/webComp/banner/BoxRight'
-import BoxLeft from '@/app/_components/webComp/banner/BoxLeft'
+import BoxRight from "@/app/_components/webComp/banner/BoxRight";
+import BoxLeft from "@/app/_components/webComp/banner/BoxLeft";
 
 export default function Banner() {
-
   return (
-    <section className="pb-6.25 md:pb-12.5 pt-8.25">
-      <div className="md:container mx-auto px-4">
-        <div className="grid gap-6.75 grid-cols-1 sm:grid-cols-2">
+    <section className="pt-8.25 pb-6.25 md:pb-12.5">
+      <div className="mx-auto px-4 md:container">
+        <div className="grid grid-cols-1 gap-6.75 sm:grid-cols-2">
           <BoxLeft />
           <BoxRight />
         </div>
       </div>
     </section>
-  )
+  );
 }

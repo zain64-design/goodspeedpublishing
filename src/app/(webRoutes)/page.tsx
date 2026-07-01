@@ -11,20 +11,20 @@ import Illustration from "@/app/_components/webComp/illustration/Illustration";
 import Packages from "@/app/_components/webComp/packages/Packages";
 import Genres from "@/app/_components/webComp/genres/Genres";
 export default function Home() {
-    return (
-        <>
-            <Banner />
-            <Announcement />
-            <Author />
-            <Genres />
-            <Story />
-            <Portfolio />
-            <Illustration />
-            <Brands />
-            <Packages />
-            <Stats />
-            <FAQ />
-            <Contact />
-        </>
-    )
+  return (
+    <>
+      <Banner />
+      <Announcement />
+      <Author />
+      <Genres />
+      <Story />
+      <Portfolio />
+      <Illustration />
+      <Brands />
+      <Packages />
+      <Stats />
+      <FAQ />
+      <Contact />
+    </>
+  );
 }

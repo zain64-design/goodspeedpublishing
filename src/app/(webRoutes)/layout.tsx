@@ -8,7 +8,9 @@ export const metadata: Metadata = {
   description: "Home Web Page for GoodSpeed Publishing",
 };
 
-export default function WebLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function WebLayout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <>
       <Header />
