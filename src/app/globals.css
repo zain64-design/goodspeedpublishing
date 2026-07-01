@@ -26,10 +26,6 @@ body {
   h6 {
     @apply text-balance;
   }
-  /* @supports (container-type:scroll-state) {
-    header {container-type: scroll-state}
-  @container scroll-state(stuck: top) { .logo {}}
-  } */
 }
 @layer components {
   .split-target .split-word {
