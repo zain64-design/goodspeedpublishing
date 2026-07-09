@@ -41,11 +41,11 @@ export type SkeletonTypeCustomize =
   "thumbnail" | "heading" | "line" | "button" | "box";
 export type SkeletonTypeProps = {
   type: SkeletonTypeCustomize;
-  headingCount: number;
-  lineCount: number;
-  className: string;
-  wrapper: boolean;
-  wrapperClass: string;
+  headingCount?: number;
+  lineCount?: number;
+  className?: string;
+  wrapper?: boolean;
+  wrapperClass?: string;
 };
 
 export type LinkItem = {

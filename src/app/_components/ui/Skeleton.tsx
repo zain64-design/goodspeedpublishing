@@ -1,14 +1,14 @@
 "use client";
 import { twMerge } from "tailwind-merge";
 import { BiImage } from "react-icons/bi";
-import type { SkeletonTypeProps, SkeletonTypeCustomize } from "@/app/_types";
+import type { SkeletonTypeProps } from "@/app/_types";
 
 const skeletonClasses: Record<string, string> = {
-  thumbnail: "skl-bg w-20 h-20 rounded flex items-center justify-center",
-  heading: "skl-bg h-6 rounded",
-  line: "skl-bg h-4 rounded",
-  button: "skl-bg h-12 rounded-full",
-  box: "skl-bg w-full h-48 rounded",
+  thumbnail: "w-20 h-20 rounded flex items-center justify-center animate-pulse bg-gray-300",
+  heading: "h-6 rounded animate-pulse bg-gray-300",
+  line: "h-4 rounded animate-pulse bg-gray-300",
+  button: "h-12 rounded-full animate-pulse bg-gray-300",
+  box: "w-full h-48 rounded animate-pulse bg-gray-300",
 };
 
 function renderRepeatedSkeleton(
