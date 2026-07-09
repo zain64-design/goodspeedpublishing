@@ -164,6 +164,7 @@ export type GenreItem = {
   category: string;
   info: string;
   thumbnail?: string | StaticImageData;
+  blurDataURL?: string
 };
 
 export type FaqItem = {

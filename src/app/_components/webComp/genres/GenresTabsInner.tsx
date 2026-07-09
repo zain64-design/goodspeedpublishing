@@ -7,7 +7,6 @@ import Text from "@/app/_components/ui/Text";
 import CustomBtn from "@/app/_components/ui/CustomBtn";
 import { FiArrowRight } from "react-icons/fi";
 import ImageComp from "@/app/_components/ui/Image";
-import Skeleton from "@/app/_components/ui/Skeleton";
 
 type Props = {
   genres: GenreItem[];
@@ -21,7 +20,7 @@ export default function GenresTabsInner({ genres }: Props) {
       {(activeIndex, contentRefs) => (
         <>
           {GenresData?.map(
-            ({ id, title, info, thumbnail, category }, index) => (
+            ({ id, title, info, thumbnail, category, blurDataURL }, index) => (
               <Activity
                 key={id}
                 mode={activeIndex === index ? "visible" : "hidden"}
@@ -61,6 +60,7 @@ export default function GenresTabsInner({ genres }: Props) {
                     src={thumbnail}
                     width={670}
                     placeholder="blur"
+                    blurDataURL={blurDataURL}
                     height={435}
                     sizes="(max-width: 575px) 320px, (max-width: 991px) 100vw, 670px"
                     className="reflect-below mx-auto h-auto w-full max-w-167.5 object-contain"
