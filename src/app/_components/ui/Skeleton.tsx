@@ -4,7 +4,8 @@ import { BiImage } from "react-icons/bi";
 import type { SkeletonTypeProps } from "@/app/_types";
 
 const skeletonClasses: Record<string, string> = {
-  thumbnail: "w-20 h-20 rounded flex items-center justify-center animate-pulse bg-gray-300",
+  thumbnail:
+    "w-20 h-20 rounded flex items-center justify-center animate-pulse bg-gray-300",
   heading: "h-6 rounded animate-pulse bg-gray-300",
   line: "h-4 rounded animate-pulse bg-gray-300",
   button: "h-12 rounded-full animate-pulse bg-gray-300",

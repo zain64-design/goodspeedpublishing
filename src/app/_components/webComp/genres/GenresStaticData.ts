@@ -26,7 +26,7 @@ export const GenresData: GenreItem[] = [
     id: 4,
     title: "Romance",
     category: "romance",
-    info: 'We\'re suckers for a good "enemies-to-lovers" trope. We help you capture that butterflies-in-the-stomach feeling. Your readers are looking for a happily-ever-after, and we\'re here to make sure the sparks fly on every single page. Tissue boxes sold separately.',
+    info: "We're suckers for a good \"enemies-to-lovers\" trope. We help you capture that butterflies-in-the-stomach feeling. Your readers are looking for a happily-ever-after, and we're here to make sure the sparks fly on every single page. Tissue boxes sold separately.",
     thumbnail: "/images/genres/romance.webp",
   },
   {
@@ -89,7 +89,7 @@ export const GenresData: GenreItem[] = [
     id: 13,
     title: "Non-Fiction",
     category: "Non-Fiction",
-    info: 'Real life is weirder than fiction, and we\'re here to help you prove it. We organize your expertise into a narrative that\'s actually engaging. Let\'s make "learning stuff" feel like a total blast.',
+    info: "Real life is weirder than fiction, and we're here to help you prove it. We organize your expertise into a narrative that's actually engaging. Let's make \"learning stuff\" feel like a total blast.",
     thumbnail: "/images/genres/non-fiction.webp",
   },
 ];

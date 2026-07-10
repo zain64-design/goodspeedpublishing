@@ -57,15 +57,16 @@ export default function GenresTabsInner({ genres }: Props) {
                   </div>
                   {thumbnail && (
                     <ImageComp
-                    src={thumbnail}
-                    width={670}
-                    placeholder="blur"
-                    blurDataURL={blurDataURL}
-                    height={435}
-                    sizes="(max-width: 575px) 320px, (max-width: 991px) 100vw, 670px"
-                    className="reflect-below mx-auto h-auto w-full max-w-167.5 object-contain"
-                    alt={`image-${category}`}
-                  />)}
+                      src={thumbnail}
+                      width={670}
+                      placeholder="blur"
+                      blurDataURL={blurDataURL}
+                      height={435}
+                      sizes="(max-width: 575px) 320px, (max-width: 991px) 100vw, 670px"
+                      className="reflect-below mx-auto h-auto w-full max-w-167.5 object-contain"
+                      alt={`image-${category}`}
+                    />
+                  )}
                 </div>
               </Activity>
             ),
