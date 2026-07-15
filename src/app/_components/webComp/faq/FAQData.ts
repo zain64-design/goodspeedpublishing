@@ -1,10 +1,18 @@
-import type { FaqItem } from "@/app/_types";
+import type { AccordionItem } from "@/app/_types";
 
-export const FAQData: FaqItem[] = [
+export const FAQData: AccordionItem[] = [
   {
     id: 1,
     title: "How long does the publishing process take?",
-    desc: "Most projects take between 4 to 8 weeks, depending on package and revision turnaround.",
+      desc: [
+    {
+      text: "Most projects take between 4 to 8 weeks, depending on package and revision turnaround.",
+      subPoints: ["depending on package and revision turnaround.", "between 4 to 8 weeks, depending on package"]
+    },
+    {
+      text: "Most projects take between 4 to 8 weeks"
+    }
+  ]
   },
   {
     id: 2,

@@ -164,13 +164,18 @@ export type GenreItem = {
   category: string;
   info: string;
   thumbnail?: string | StaticImageData;
-  blurDataURL?: string
+  blurDataURL?: string;
 };
 
-export type FaqItem = {
+export type AccordionPoint = {
+  text: string;
+  subPoints?: string[];
+};
+
+export type AccordionItem = {
   id: number;
   title: string;
-  desc: string;
+  desc: React.ReactNode | AccordionPoint[];
 };
 
 export type AuthorItem = {
