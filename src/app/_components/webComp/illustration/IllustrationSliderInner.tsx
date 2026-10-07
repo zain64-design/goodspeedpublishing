@@ -29,7 +29,7 @@ export default function IllustrationSliderInner({ illustration }: Props) {
         // slidesPerView={4.8}
         loop={true}
         centeredSlides={true}
-        slidesPerGroupSkip={2}
+        // slidesPerGroupSkip={1}
         // breakpoints={{
         //   0: {
         //     slidesPerView: 2.2,
