@@ -24,47 +24,47 @@ export default function IllustrationSliderInner({ illustration }: Props) {
         spaceBetween={20}
         grabCursor={true}
         // allowTouchMove={false}
-        speed={200}
-        // slidesPerView={'auto'}
-        slidesPerView={4.8}
+        speed={1500}
+        slidesPerView={'auto'}
+        // slidesPerView={4.8}
         loop={true}
         centeredSlides={true}
         slidesPerGroupSkip={2}
-        breakpoints={{
-          0: {
-            slidesPerView: 2.2,
-          },
-          420: {
-            slidesPerView: 2.6,
-          },
-          576: {
-            slidesPerView: 2.8,
-          },
-          768: {
-            slidesPerView: 3.2,
-          },
-          992: {
-            slidesPerView: 3.6,
-          },
-          1200: {
-            slidesPerView: 3.8,
-          },
-          1400: {
-            slidesPerView: 4.2,
-          },
-          1600: {
-            slidesPerView: 4.6,
-          },
-          1820: {
-            slidesPerView: 4.8,
-          },
-        }}
+        // breakpoints={{
+        //   0: {
+        //     slidesPerView: 2.2,
+        //   },
+        //   420: {
+        //     slidesPerView: 2.6,
+        //   },
+        //   576: {
+        //     slidesPerView: 2.8,
+        //   },
+        //   768: {
+        //     slidesPerView: 3.2,
+        //   },
+        //   992: {
+        //     slidesPerView: 3.6,
+        //   },
+        //   1200: {
+        //     slidesPerView: 3.8,
+        //   },
+        //   1400: {
+        //     slidesPerView: 4.2,
+        //   },
+        //   1600: {
+        //     slidesPerView: 4.6,
+        //   },
+        //   1820: {
+        //     slidesPerView: 4.8,
+        //   },
+        // }}
       >
         {data?.map(({ id, img }, index) => (
-          <SwiperSlide className="" key={id}>
+          <SwiperSlide className="w-auto!" key={id}>
             <div className="ct-w relative">
-              {/* <ImageComp src={img} fill sizes="(max-width: 991px) 33vw, 20vw" className='sm:object-fill' alt="illustration" preload={index === 0} /> */}
-              <ImageComp
+              <ImageComp src={img} fill sizes="(max-width: 991px) 33vw, 20vw" className='sm:object-fill' alt="illustration" preload={index === 0} />
+              {/* <ImageComp
                 src={img}
                 width={390}
                 height={490}
@@ -72,7 +72,7 @@ export default function IllustrationSliderInner({ illustration }: Props) {
                 sizes="(max-width: 767px) 100vw, 390px"
                 className="max-h-[490px] w-full rounded-xl object-fill object-center md:rounded-2xl"
                 alt="illustration"
-              />
+              /> */}
             </div>
           </SwiperSlide>
         ))}
