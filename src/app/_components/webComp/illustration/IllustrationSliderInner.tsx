@@ -63,7 +63,7 @@ export default function IllustrationSliderInner({ illustration }: Props) {
         {data?.map(({ id, img }, index) => (
           <SwiperSlide className="w-auto!" key={id}>
             <div className="ct-w relative">
-              <ImageComp src={img} fill sizes="(max-width: 991px) 33vw, 20vw" className='object-cover' alt="illustration" preload={index === 0} />
+              <ImageComp src={img} fill sizes="(max-width: 640px) 240px, 400px" className='object-cover' alt="illustration" preload={index === 0} />
               {/* <ImageComp
                 src={img}
                 width={390}
